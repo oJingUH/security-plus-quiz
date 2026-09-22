@@ -336,6 +336,30 @@ def verify_questions(args):
                                 "%s: no discriminating verify token drawn from the "
                                 "correct option (answer=%r)" % (loc, correct_opt))
 
+                    # ANSWER-BEARING GROUNDING for True/False: a tf item's
+                    # verify token must ground the TRUE fact, not merely the
+                    # statement's subject. For a True statement the statement
+                    # IS the true fact, so the token must appear in the
+                    # question text; for a False statement the true fact is the
+                    # statement's contradiction (the inverted fact), so the
+                    # token must NOT appear in the question text — it must be
+                    # the inverted fact's term drawn from the cited section.
+                    if qtype == "tf" and ans_idx is not None:
+                        question_text = str(q.get("question", "")).strip()
+                        toks = verify if isinstance(verify, list) else []
+                        is_true = (ans_idx == 0)
+                        has_fact_token = any(
+                            isinstance(t, str) and (
+                                contains_ci(question_text, t) if is_true
+                                else not contains_ci(question_text, t))
+                            for t in toks)
+                        if not has_fact_token:
+                            errors.append(
+                                "%s: no verify token grounding the %s fact "
+                                "(answer=%r)"
+                                % (loc, "stated" if is_true else "inverted",
+                                   answer_text))
+
     for d in (1, 2, 3, 4, 5):
         have = domain_counts.get(d, 0)
         need = DOMAIN_MIN[d]

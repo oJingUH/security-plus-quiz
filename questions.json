@@ -2051,7 +2051,7 @@
       "section": "3.4 — Explain the importance of resilience and recovery in security architecture"
     },
     "verify": [
-      "Warm"
+      "requires setup"
     ]
   },
   {
@@ -2256,7 +2256,7 @@
       "section": "4.1 — Given a scenario, apply common security techniques to computing resources"
     },
     "verify": [
-      "MAM"
+      "applications"
     ]
   },
   {
@@ -2777,7 +2777,7 @@
       "section": "4.5 — Given a scenario, modify enterprise capabilities to enhance security"
     },
     "verify": [
-      "DMARC"
+      "DKIM"
     ]
   },
   {
@@ -3687,7 +3687,7 @@
       "section": "5.2 — Explain elements of the risk management process"
     },
     "verify": [
-      "Qualitative analysis"
+      "high/medium/low"
     ]
   },
   {
