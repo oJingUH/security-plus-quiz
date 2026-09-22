@@ -28,11 +28,15 @@ def _tmp_copy(src):
     return dst
 
 
-def run_verify(bank_path):
-    # Only --bank is overridden; acronyms/crypto default to the (correct) repo
-    # files, so any failure is attributable to the mutated bank.
-    r = subprocess.run([sys.executable, VB, "--vault", VAULT, "--bank", bank_path],
-                       capture_output=True, text=True)
+def run_verify(bank_path=None, acronyms_path=None, crypto_path=None):
+    cmd = [sys.executable, VB, "--vault", VAULT]
+    if bank_path:
+        cmd += ["--bank", bank_path]
+    if acronyms_path:
+        cmd += ["--acronyms", acronyms_path]
+    if crypto_path:
+        cmd += ["--crypto", crypto_path]
+    r = subprocess.run(cmd, capture_output=True, text=True)
     return r.returncode
 
 
@@ -79,7 +83,34 @@ def main():
     wrong_opt = t["options"][(t["answer"] + 1) % len(t["options"])]
     t["verify"] = [wrong_opt.strip()]
     json.dump(b, open(path, "w"))
-    check("non-discriminating verify token", run_verify(path))
+    check("non-discriminating verify token", run_verify(bank_path=path))
+
+    # --- steward C/D/E: drill-table content changed/swapped with verify intact ---
+    # C) expansion changed while verify strings stayed intact
+    path = _tmp_copy(os.path.join(HERE, "acronyms.json"))
+    a = json.load(open(path))
+    e = next(x for x in a if x["id"] == "a-mac")
+    e["expansion"] = "Access Control List"  # keep verify ["MAC", "Mandatory Access Control"]
+    json.dump(a, open(path, "w"))
+    check("expansion changed, verify intact (C)", run_verify(acronyms_path=path))
+
+    # D) acronym expansion swapped with another acronym's (both in section)
+    path = _tmp_copy(os.path.join(HERE, "acronyms.json"))
+    a = json.load(open(path))
+    mac = next(x for x in a if x["id"] == "a-mac")
+    rbac = next(x for x in a if x["id"] == "a-rbac")
+    mac["expansion"], rbac["expansion"] = rbac["expansion"], mac["expansion"]
+    json.dump(a, open(path, "w"))
+    check("acronym expansion swapped (D)", run_verify(acronyms_path=path))
+
+    # E) crypto value swapped with another value in the same section
+    path = _tmp_copy(os.path.join(HERE, "crypto.json"))
+    c = json.load(open(path))
+    aes = next(x for x in c if x["id"] == "c-aes")
+    des = next(x for x in c if x["id"] == "c-3des")
+    aes["value"], des["value"] = des["value"], aes["value"]
+    json.dump(c, open(path, "w"))
+    check("crypto value swapped (E)", run_verify(crypto_path=path))
 
     # --- (b) COLLISION INVARIANT: colliding drill prompt ---
     sys.path.insert(0, HERE)

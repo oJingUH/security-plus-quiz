@@ -47,6 +47,11 @@ CRYPTO_REQUIRED = ["id", "display", "algorithm", "property", "value",
 # The fields whose non-emptiness makes BOTH directions derivable.
 ACRONYM_CONTENT = ("acronym", "expansion")
 CRYPTO_CONTENT = ("algorithm", "property", "value")
+# The ANSWER-bearing fields: the values that appear as a drill item's answer,
+# which must each be covered by the entry's verify list so the gate can tell a
+# correct drill table from one whose content was swapped/changed (steward C/D/E).
+ACRONYM_ANSWER_FIELDS = ("acronym", "expansion")
+CRYPTO_ANSWER_FIELDS = ("algorithm", "value")
 
 
 def parse_answer(answer, num_options, qtype):
@@ -402,7 +407,7 @@ def find_prompt_collisions(items, label):
 
 
 def verify_drill_table(args, mod, table_path, required_fields, content_fields,
-                       label):
+                       answer_fields, label):
     """Validate one drill table (acronyms.json or crypto.json) and return
     0 (pass) or 1 (fail).
 
@@ -507,6 +512,19 @@ def verify_drill_table(args, mod, table_path, required_fields, content_fields,
                                 errors.append(
                                     "%s: expected value %r not found in %r > %r"
                                     % (loc, token, rel_note, section))
+                        # ANSWER-BEARING GROUNDING (drill table): each answer
+                        # field's value must be covered by the entry's own verify
+                        # list. This catches a content field (expansion/value)
+                        # changed or swapped while its verify strings stayed
+                        # intact (steward C/D/E).
+                        joined = " ".join(str(t) for t in verify)
+                        for f in answer_fields:
+                            v = e.get(f)
+                            if isinstance(v, str) and v.strip() \
+                                    and not grounded(joined, v):
+                                errors.append(
+                                    "%s: answer field %r (%r) not covered by "
+                                    "verify %r" % (loc, f, v, verify))
 
     # Both directions must be derivable: a mixed build yields exactly two items
     # per entry (one each way), covering both direction keys, with a non-empty
@@ -584,11 +602,11 @@ def main(argv=None):
 
     acronyms_ok = (verify_drill_table(args, acronyms_mod, args.acronyms,
                                       ACRONYM_REQUIRED, ACRONYM_CONTENT,
-                                      "Acronym") == 0)
+                                      ACRONYM_ANSWER_FIELDS, "Acronym") == 0)
     print()
     crypto_ok = (verify_drill_table(args, crypto_mod, args.crypto,
                                     CRYPTO_REQUIRED, CRYPTO_CONTENT,
-                                    "Crypto") == 0)
+                                    CRYPTO_ANSWER_FIELDS, "Crypto") == 0)
     print()
 
     ok = questions_ok and acronyms_ok and crypto_ok
