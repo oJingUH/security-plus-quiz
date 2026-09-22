@@ -1,0 +1,68 @@
+[
+  {
+    "id": "seed-aaa",
+    "display": "AAA",
+    "acronym": "AAA",
+    "expansion": "Authentication, Authorization, and Accounting",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.3 - Authentication & Authorization"
+    },
+    "verify": ["AAA", "Authentication, Authorization, and Accounting"]
+  },
+  {
+    "id": "seed-cia",
+    "display": "CIA",
+    "acronym": "CIA",
+    "expansion": "Confidentiality, Integrity, Availability",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.2 - Security Concepts"
+    },
+    "verify": ["CIA", "Confidentiality", "Integrity", "Availability"]
+  },
+  {
+    "id": "seed-mfa",
+    "display": "MFA",
+    "acronym": "MFA",
+    "expansion": "Multi-Factor Authentication",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.3 - Authentication & Authorization"
+    },
+    "verify": ["MFA", "Multi-Factor Authentication"]
+  },
+  {
+    "id": "seed-pki",
+    "display": "PKI",
+    "acronym": "PKI",
+    "expansion": "Public Key Infrastructure",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.4 - Cryptography"
+    },
+    "verify": ["PKI", "Public Key Infrastructure"]
+  },
+  {
+    "id": "seed-ids",
+    "display": "IDS",
+    "acronym": "IDS",
+    "expansion": "Intrusion Detection System",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.2 - Logging & Monitoring"
+    },
+    "verify": ["IDS", "Intrusion Detection System"]
+  },
+  {
+    "id": "seed-dlp",
+    "display": "DLP",
+    "acronym": "DLP",
+    "expansion": "Data Loss Prevention",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.3 - Secure Data Handling"
+    },
+    "verify": ["DLP", "Data Loss Prevention"]
+  }
+]

@@ -1,0 +1,225 @@
+[
+  {
+    "id": "seed-d1-001",
+    "domain": 1,
+    "type": "mc",
+    "question": "What are the three pillars of the CIA triad?",
+    "options": [
+      "Confidentiality, Integrity, Availability",
+      "Confidentiality, Integrity, Authentication",
+      "Confidentiality, Authorization, Accounting",
+      "Consistency, Integrity, Availability"
+    ],
+    "answer": 0,
+    "explanation": "The CIA triad is Confidentiality, Integrity, and Availability.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.2 - Security Concepts"
+    },
+    "verify": [
+      "Confidentiality",
+      "Integrity",
+      "Availability"
+    ]
+  },
+  {
+    "id": "seed-d1-002",
+    "domain": 1,
+    "type": "mc",
+    "question": "Which key decrypts a message that was encrypted with a recipient's public key?",
+    "options": [
+      "The sender's private key",
+      "The recipient's private key",
+      "The recipient's public key",
+      "A shared symmetric key"
+    ],
+    "answer": 1,
+    "explanation": "In asymmetric encryption, a message encrypted with a public key can only be decrypted by the matching private key.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.4 - Cryptography"
+    },
+    "verify": [
+      "public key",
+      "private key"
+    ]
+  },
+  {
+    "id": "seed-d2-001",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which type of malware encrypts a victim's files and demands payment for the decryption key?",
+    "options": [
+      "Worm",
+      "Ransomware",
+      "Trojan",
+      "Spyware"
+    ],
+    "answer": 1,
+    "explanation": "Ransomware encrypts files and demands payment to restore access.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.3 - Malware"
+    },
+    "verify": [
+      "Ransomware"
+    ]
+  },
+  {
+    "id": "seed-d2-002",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which social engineering attack targets high-level executives specifically?",
+    "options": [
+      "Phishing",
+      "Whaling",
+      "Vishing",
+      "Tailgating"
+    ],
+    "answer": 1,
+    "explanation": "Whaling is phishing aimed at high-value targets such as executives.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.2 - Social Engineering"
+    },
+    "verify": [
+      "Whaling"
+    ]
+  },
+  {
+    "id": "seed-d3-001",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which access control model assigns access based on security labels and clearances?",
+    "options": [
+      "DAC",
+      "RBAC",
+      "MAC",
+      "ABAC"
+    ],
+    "answer": 2,
+    "explanation": "Mandatory Access Control (MAC) uses security labels and clearances to enforce policy.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.2 - Access Control"
+    },
+    "verify": [
+      "Mandatory Access Control"
+    ]
+  },
+  {
+    "id": "seed-d3-002",
+    "domain": 3,
+    "type": "mc",
+    "question": "What is the primary purpose of a network DMZ?",
+    "options": [
+      "To isolate public-facing services from the internal network",
+      "To encrypt all outbound traffic",
+      "To cache web content",
+      "To load-balance internal servers"
+    ],
+    "answer": 0,
+    "explanation": "A DMZ hosts public-facing services while isolating them from the trusted internal network.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.1 - Secure Network Architecture"
+    },
+    "verify": [
+      "DMZ"
+    ]
+  },
+  {
+    "id": "seed-d4-001",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which phase of the incident response lifecycle comes first?",
+    "options": [
+      "Containment",
+      "Preparation",
+      "Eradication",
+      "Recovery"
+    ],
+    "answer": 1,
+    "explanation": "The incident response lifecycle begins with Preparation.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.1 - Incident Response"
+    },
+    "verify": [
+      "Preparation"
+    ]
+  },
+  {
+    "id": "seed-d4-002",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which protocol is commonly used to send log messages to a central log server?",
+    "options": [
+      "SNMP",
+      "Syslog",
+      "NTP",
+      "DHCP"
+    ],
+    "answer": 1,
+    "explanation": "Syslog is the standard protocol for forwarding log messages to a central server.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.2 - Logging & Monitoring"
+    },
+    "verify": [
+      "Syslog"
+    ]
+  },
+  {
+    "id": "seed-d5-001",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which policy defines how employees may use company computing resources?",
+    "options": [
+      "Acceptable Use Policy (AUP)",
+      "Business Continuity Plan (BCP)",
+      "Disaster Recovery Plan (DRP)",
+      "Service Level Agreement (SLA)"
+    ],
+    "answer": 0,
+    "explanation": "An Acceptable Use Policy (AUP) defines acceptable use of company resources.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.1 - Governance & Compliance"
+    },
+    "verify": [
+      "Acceptable Use Policy"
+    ]
+  },
+  {
+    "id": "seed-d5-002",
+    "domain": 5,
+    "type": "mc",
+    "question": "In risk management, which response accepts a risk without applying additional controls?",
+    "options": [
+      "Risk mitigation",
+      "Risk avoidance",
+      "Risk acceptance",
+      "Risk transference"
+    ],
+    "answer": 2,
+    "explanation": "Risk acceptance means acknowledging the risk and choosing to accept it without further controls.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.2 - Risk Management"
+    },
+    "verify": [
+      "Risk acceptance"
+    ]
+  }
+]

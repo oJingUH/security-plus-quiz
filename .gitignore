@@ -1,0 +1,18 @@
+# Personal progress and runtime state — never publish
+stats.json
+
+# Local revision snapshots kept for debugging
+.revs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store

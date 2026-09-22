@@ -1,0 +1,74 @@
+[
+  {
+    "id": "seed-aes-256",
+    "display": "AES-256",
+    "algorithm": "AES-256",
+    "property": "key size",
+    "value": "256-bit",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.4 - Cryptography"
+    },
+    "verify": ["AES-256", "256-bit"]
+  },
+  {
+    "id": "seed-sha-1",
+    "display": "SHA-1",
+    "algorithm": "SHA-1",
+    "property": "digest",
+    "value": "160-bit",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.4 - Cryptography"
+    },
+    "verify": ["SHA-1", "160-bit"]
+  },
+  {
+    "id": "seed-md5",
+    "display": "MD5",
+    "algorithm": "MD5",
+    "property": "digest",
+    "value": "128-bit",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.4 - Cryptography"
+    },
+    "verify": ["MD5", "128-bit"]
+  },
+  {
+    "id": "seed-sha-256",
+    "display": "SHA-256",
+    "algorithm": "SHA-256",
+    "property": "digest",
+    "value": "256-bit",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.4 - Cryptography"
+    },
+    "verify": ["SHA-256", "256-bit"]
+  },
+  {
+    "id": "seed-des",
+    "display": "DES",
+    "algorithm": "DES",
+    "property": "key size",
+    "value": "56-bit",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.4 - Cryptography"
+    },
+    "verify": ["DES", "56-bit"]
+  },
+  {
+    "id": "seed-aes",
+    "display": "AES",
+    "algorithm": "AES",
+    "property": "block size",
+    "value": "128-bit",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.4 - Cryptography"
+    },
+    "verify": ["AES", "128-bit"]
+  }
+]
