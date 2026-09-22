@@ -430,7 +430,7 @@
       "section": "1.4 — Explain the importance of using appropriate cryptographic solutions"
     },
     "verify": [
-      "s private key"
+      "private key"
     ]
   },
   {
@@ -1239,12 +1239,12 @@
     "question": "Which physical attack clones a payment card at a reader?",
     "options": [
       "Tailgating",
-      "Card skimming",
+      "Card skimming/cloning",
       "Dumpster diving",
       "Evil twin"
     ],
     "answer": 1,
-    "answer_text": "Card skimming",
+    "answer_text": "Card skimming/cloning",
     "explanation": "Card skimming/cloning reads card data at a compromised reader.",
     "difficulty": "medium",
     "source": {
@@ -1252,7 +1252,7 @@
       "section": "2.4 — Given a scenario, analyze indicators of malicious activity"
     },
     "verify": [
-      "card"
+      "skimming/cloning"
     ]
   },
   {
@@ -2189,7 +2189,7 @@
       "section": "4.1 — Given a scenario, apply common security techniques to computing resources"
     },
     "verify": [
-      "security"
+      "baseline"
     ]
   },
   {
@@ -2198,21 +2198,21 @@
     "type": "mc",
     "question": "Which mobile models are BYOD, COPE, CYOD, and COBO?",
     "options": [
-      "Device ownership models",
+      "Mobile device models",
       "Encryption standards",
       "Access control models",
       "Backup strategies"
     ],
     "answer": 0,
-    "answer_text": "Device ownership models",
-    "explanation": "BYOD, COPE, CYOD, and COBO are mobile device ownership models.",
+    "answer_text": "Mobile device models",
+    "explanation": "BYOD, COPE, CYOD, and COBO are mobile device models.",
     "difficulty": "medium",
     "source": {
       "note": "Domains/4 - Security Operations.md",
       "section": "4.1 — Given a scenario, apply common security techniques to computing resources"
     },
     "verify": [
-      "device"
+      "Mobile device"
     ]
   },
   {
@@ -3016,21 +3016,21 @@
     "type": "mc",
     "question": "FRR (false rejection rate) and FAR (false acceptance rate) express…",
     "options": [
-      "biometric accuracy",
+      "Biometrics accuracy",
       "encryption strength",
       "network latency",
       "password entropy"
     ],
     "answer": 0,
-    "answer_text": "biometric accuracy",
-    "explanation": "FRR and FAR express biometric accuracy.",
+    "answer_text": "Biometrics accuracy",
+    "explanation": "FRR and FAR express the accuracy of biometrics.",
     "difficulty": "hard",
     "source": {
       "note": "Domains/4 - Security Operations.md",
       "section": "4.6 — Given a scenario, implement and maintain identity and access management"
     },
     "verify": [
-      "accuracy"
+      "Biometrics"
     ]
   },
   {
@@ -3991,13 +3991,13 @@
     "type": "mc",
     "question": "A black box engagement means the tester has…",
     "options": [
-      "no knowledge of the environment",
+      "Unknown environment",
       "full knowledge",
       "partial knowledge",
       "administrative access"
     ],
     "answer": 0,
-    "answer_text": "no knowledge of the environment",
+    "answer_text": "Unknown environment",
     "explanation": "Black box is unknown; white box is known; gray box is partial.",
     "difficulty": "medium",
     "source": {
@@ -4005,7 +4005,7 @@
       "section": "5.5 — Explain types and purposes of audits and assessments"
     },
     "verify": [
-      "the environment"
+      "unknown"
     ]
   },
   {
