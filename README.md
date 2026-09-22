@@ -130,6 +130,12 @@ citation points into is resolved in this order: an explicit `--vault
 
 - JSON parses; every required field present; answer index/letter in range
 - no duplicate ids; exactly one correct option; unique options
+- ANSWER MIRROR: every question carries `answer_text` holding the correct
+  option's text, and `options[answer] == answer_text` (catches an in-range
+  answer-index flip and a text/answer contradiction)
+- ANSWER-BEARING GROUNDING: every multiple-choice question carries a `verify`
+  token drawn from the CORRECT option's text that is present in the cited
+  section and absent from every other option
 - every citation's note file exists and its section heading exists in it
   (exact match, em-dash sensitive)
 - for fact items (a `"verify"` list), the cited section actually contains each
@@ -144,7 +150,16 @@ It also validates `acronyms.json` and `crypto.json`:
   (exact match, em-dash sensitive)
 - every string in `verify` actually appears in the cited section (cell/token
   boundary)
+- ANSWER-BEARING GROUNDING: each entry's answer fields (acronym+expansion, or
+  algorithm+value) are covered by its `verify` list, so a content field changed
+  or swapped while its verify strings stay intact fails
+- COLLISION INVARIANT: no two drill items share a prompt with different expected
+  answers unless every expected answer is in each item's accept-list
 - both drill directions are derivable from every entry
+
+The negative-control suite (`verify_negative_controls.py`) mutates a copy of the
+bank and both drill tables one defect at a time and asserts the tightened gate
+exits non-zero for each.
 
 The question bank and drill tables are cited to a private Obsidian vault that
 is not distributed with this repo, so the citations cannot be re-verified
@@ -161,6 +176,7 @@ Edit `questions.json`. Each question is one object:
       "question": "Which algorithm produces a 160-bit digest?",
       "options": ["MD5", "SHA-1", "SHA-256", "SHA-512"],  // 4 for mc; ["True","False"] for tf
       "answer": 1,                 // 0-based index of the correct option
+      "answer_text": "SHA-1",     // MUST equal options[answer] (answer mirror)
       "explanation": "SHA-1 produces a 160-bit digest.",
       "difficulty": "easy",        // "easy" | "medium" | "hard"
       "source": {
