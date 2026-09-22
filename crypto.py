@@ -112,7 +112,17 @@ def _norm_text(s):
     return " ".join(str(s).strip().lower().split())
 
 
-def _make_item(entry, direction):
+def _accept_display(answer, accept):
+    """Human display of a correct answer that may have acceptable alternates.
+
+    e.g. "256-bit (also: 384-bit)". Single-accept answers are returned verbatim."""
+    others = [a for a in accept if _norm_text(a) != _norm_text(answer)]
+    if not others:
+        return answer
+    return "%s (also: %s)" % (answer, ", ".join(others))
+
+
+def _make_item(entry, direction, accept):
     algorithm = entry["algorithm"]
     prop = entry["property"]
     value = entry["value"]
@@ -122,12 +132,18 @@ def _make_item(entry, direction):
     else:
         prompt = "Which algorithm has a %s %s?" % (value, prop)
         answer = algorithm
-    explanation = "%s has a %s of %s." % (algorithm, prop, value)
+    if direction == DIR_A2V:
+        explanation = "%s has a %s of %s." % (algorithm, prop, _accept_display(value, accept))
+    elif len(accept) > 1:
+        explanation = "%s each have a %s of %s." % (" and ".join(accept), prop, value)
+    else:
+        explanation = "%s has a %s of %s." % (algorithm, prop, value)
     return {
         "id": entry["id"],
         "direction": direction,
         "prompt": prompt,
         "answer": answer,
+        "accept": list(accept),
         "display": entry["display"],
         "algorithm": algorithm,
         "property": prop,
@@ -142,13 +158,31 @@ def build_items(entries, direction=DIR_MIXED):
 
     'mixed' yields two items per entry (one each way). Every item is a distinct
     (id, direction) prompt, so shuffling a built list can never repeat a
-    question within a round."""
+    question within a round.
+
+    Some facts legitimately collide: ECC has two key sizes (256-bit and
+    384-bit), and both ECC and ChaCha20 use a 256-bit key. Each item therefore
+    carries an `accept` list of every valid answer for its (algorithm, property)
+    or (property, value) key — derived from the source table, not a
+    hand-maintained exception list — so a prompt never has two different
+    expected answers unless every one of them is acceptable."""
+    a2v_accept = {}  # (algorithm, property) -> [values]
+    v2a_accept = {}  # (property, value) -> [algorithms]
+    for e in entries:
+        k = (e["algorithm"], e["property"])
+        a2v_accept.setdefault(k, [])
+        if e["value"] not in a2v_accept[k]:
+            a2v_accept[k].append(e["value"])
+        k2 = (e["property"], e["value"])
+        v2a_accept.setdefault(k2, [])
+        if e["algorithm"] not in v2a_accept[k2]:
+            v2a_accept[k2].append(e["algorithm"])
     items = []
     for e in entries:
         if direction in (DIR_MIXED, DIR_A2V):
-            items.append(_make_item(e, DIR_A2V))
+            items.append(_make_item(e, DIR_A2V, a2v_accept[(e["algorithm"], e["property"])]))
         if direction in (DIR_MIXED, DIR_V2A):
-            items.append(_make_item(e, DIR_V2A))
+            items.append(_make_item(e, DIR_V2A, v2a_accept[(e["property"], e["value"])]))
     return items
 
 
@@ -164,14 +198,14 @@ def select_items(items, rng, length=None):
 def grade(item, raw):
     """Return (correct, correct_answer, explanation, source).
 
-    Free-text matching is case-insensitive and tolerant of whitespace."""
+    Free-text matching is case-insensitive and tolerant of whitespace. The
+    `accept` list (built by build_items from the source table) holds every
+    acceptable answer, so an ambiguous fact (ECC's two key sizes, or ECC vs
+    ChaCha20 both at 256-bit) accepts any of its valid values/algorithms."""
     got = _norm_text(raw)
-    if item["direction"] == DIR_A2V:
-        correct = got == _norm_text(item["value"])
-        correct_answer = item["value"]
-    else:
-        correct = got == _norm_text(item["algorithm"])
-        correct_answer = item["algorithm"]
+    accept = item.get("accept") or [item["answer"]]
+    correct = any(_norm_text(a) == got for a in accept)
+    correct_answer = _accept_display(item["answer"], accept)
     return correct, correct_answer, item["explanation"], item["source"]
 
 

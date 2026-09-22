@@ -105,7 +105,18 @@ def _norm_text(s):
     return " ".join(str(s).strip().lower().split())
 
 
-def _make_item(entry, direction):
+def _accept_display(answer, accept):
+    """Human display of a correct answer that may have acceptable alternates.
+
+    e.g. "Mandatory Access Control (also: Media Access Control, Message
+    Authentication Code)". Single-accept answers are returned verbatim."""
+    others = [a for a in accept if _norm_text(a) != _norm_text(answer)]
+    if not others:
+        return answer
+    return "%s (also: %s)" % (answer, ", ".join(others))
+
+
+def _make_item(entry, direction, accept):
     acronym = entry["acronym"]
     expansion = entry["expansion"]
     if direction == DIR_A2E:
@@ -114,12 +125,18 @@ def _make_item(entry, direction):
     else:
         prompt = "Which acronym means '%s'?" % expansion
         answer = acronym
-    explanation = "%s stands for %s." % (acronym, expansion)
+    # A multi-expansion acronym (e.g. MAC) admits several correct answers on
+    # the a2e direction, so the explanation lists every official expansion.
+    if direction == DIR_A2E and len(accept) > 1:
+        explanation = "%s stands for %s." % (acronym, _accept_display(expansion, accept))
+    else:
+        explanation = "%s stands for %s." % (acronym, expansion)
     return {
         "id": entry["id"],
         "direction": direction,
         "prompt": prompt,
         "answer": answer,
+        "accept": list(accept),
         "display": entry["display"],
         "acronym": acronym,
         "expansion": expansion,
@@ -133,13 +150,24 @@ def build_items(entries, direction=DIR_MIXED):
 
     'mixed' yields two items per entry (one each way). Every item is a distinct
     (id, direction) prompt, so shuffling a built list can never repeat a
-    question within a round."""
+    question within a round.
+
+    An acronym may have several official expansions (MAC, PAM, RA, RBAC, SAN).
+    Each a2e item therefore carries an `accept` list of EVERY expansion for its
+    acronym — derived from the source table, not a hand-maintained exception
+    list — so a prompt never has two different expected answers unless every one
+    of them is acceptable."""
+    a2e_accept = {}
+    for e in entries:
+        a2e_accept.setdefault(e["acronym"], [])
+        if e["expansion"] not in a2e_accept[e["acronym"]]:
+            a2e_accept[e["acronym"]].append(e["expansion"])
     items = []
     for e in entries:
         if direction in (DIR_MIXED, DIR_A2E):
-            items.append(_make_item(e, DIR_A2E))
+            items.append(_make_item(e, DIR_A2E, a2e_accept[e["acronym"]]))
         if direction in (DIR_MIXED, DIR_E2A):
-            items.append(_make_item(e, DIR_E2A))
+            items.append(_make_item(e, DIR_E2A, [e["acronym"]]))
     return items
 
 
@@ -155,14 +183,14 @@ def select_items(items, rng, length=None):
 def grade(item, raw):
     """Return (correct, correct_answer, explanation, source).
 
-    Free-text matching is case-insensitive and tolerant of whitespace."""
+    Free-text matching is case-insensitive and tolerant of whitespace. The
+    `accept` list (built by build_items from the source table) holds every
+    acceptable answer, so a multi-expansion acronym accepts any of its official
+    expansions."""
     got = _norm_text(raw)
-    if item["direction"] == DIR_A2E:
-        correct = got == _norm_text(item["expansion"])
-        correct_answer = item["expansion"]
-    else:
-        correct = got == _norm_text(item["acronym"])
-        correct_answer = item["acronym"]
+    accept = item.get("accept") or [item["answer"]]
+    correct = any(_norm_text(a) == got for a in accept)
+    correct_answer = _accept_display(item["answer"], accept)
     return correct, correct_answer, item["explanation"], item["source"]
 
 
