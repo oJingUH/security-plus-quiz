@@ -128,13 +128,22 @@ def _make_item(entry, direction, accept):
     algorithm = entry["algorithm"]
     prop = entry["property"]
     value = entry["value"]
+    is_control = prop in ("control category", "control type")
     if direction == DIR_A2V:
         prompt = "%s - %s?" % (algorithm, prop)
         answer = value
+    elif is_control:
+        prompt = "Which %s means '%s'?" % (prop, value)
+        answer = algorithm
     else:
         prompt = "Which algorithm has a %s %s?" % (value, prop)
         answer = algorithm
-    if direction == DIR_A2V:
+    if is_control:
+        if direction == DIR_A2V:
+            explanation = "%s is a %s meaning '%s'." % (algorithm, prop, value)
+        else:
+            explanation = "%s is the %s meaning '%s'." % (algorithm, prop, value)
+    elif direction == DIR_A2V:
         explanation = "%s has a %s of %s." % (algorithm, prop, _accept_display(value, accept))
     elif len(accept) > 1:
         explanation = "%s each have a %s of %s." % (" and ".join(accept), prop, value)
