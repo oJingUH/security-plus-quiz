@@ -1,74 +1,662 @@
 [
   {
-    "id": "seed-aes-256",
-    "display": "AES-256",
-    "algorithm": "AES-256",
-    "property": "key size",
-    "value": "256-bit",
-    "source": {
-      "note": "Domains/1 - General Security Concepts.md",
-      "section": "1.4 - Cryptography"
-    },
-    "verify": ["AES-256", "256-bit"]
-  },
-  {
-    "id": "seed-sha-1",
-    "display": "SHA-1",
-    "algorithm": "SHA-1",
-    "property": "digest",
-    "value": "160-bit",
-    "source": {
-      "note": "Domains/1 - General Security Concepts.md",
-      "section": "1.4 - Cryptography"
-    },
-    "verify": ["SHA-1", "160-bit"]
-  },
-  {
-    "id": "seed-md5",
+    "id": "c-md5",
     "display": "MD5",
     "algorithm": "MD5",
-    "property": "digest",
+    "property": "digest size",
     "value": "128-bit",
     "source": {
-      "note": "Domains/1 - General Security Concepts.md",
-      "section": "1.4 - Cryptography"
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Hashing and integrity"
     },
-    "verify": ["MD5", "128-bit"]
+    "verify": [
+      "MD5",
+      "128-bit"
+    ]
   },
   {
-    "id": "seed-sha-256",
+    "id": "c-sha-1",
+    "display": "SHA-1",
+    "algorithm": "SHA-1",
+    "property": "digest size",
+    "value": "160-bit",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Hashing and integrity"
+    },
+    "verify": [
+      "SHA-1",
+      "160-bit"
+    ]
+  },
+  {
+    "id": "c-sha-224",
+    "display": "SHA-224",
+    "algorithm": "SHA-224",
+    "property": "digest size",
+    "value": "224-bit",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Hashing and integrity"
+    },
+    "verify": [
+      "SHA-224",
+      "224-bit"
+    ]
+  },
+  {
+    "id": "c-sha-256",
     "display": "SHA-256",
     "algorithm": "SHA-256",
-    "property": "digest",
+    "property": "digest size",
     "value": "256-bit",
     "source": {
-      "note": "Domains/1 - General Security Concepts.md",
-      "section": "1.4 - Cryptography"
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Hashing and integrity"
     },
-    "verify": ["SHA-256", "256-bit"]
+    "verify": [
+      "SHA-256",
+      "256-bit"
+    ]
   },
   {
-    "id": "seed-des",
+    "id": "c-sha-384",
+    "display": "SHA-384",
+    "algorithm": "SHA-384",
+    "property": "digest size",
+    "value": "384-bit",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Hashing and integrity"
+    },
+    "verify": [
+      "SHA-384",
+      "384-bit"
+    ]
+  },
+  {
+    "id": "c-sha-512",
+    "display": "SHA-512",
+    "algorithm": "SHA-512",
+    "property": "digest size",
+    "value": "512-bit",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Hashing and integrity"
+    },
+    "verify": [
+      "SHA-512",
+      "512-bit"
+    ]
+  },
+  {
+    "id": "c-aes",
+    "display": "AES (key size)",
+    "algorithm": "AES",
+    "property": "key size",
+    "value": "128, 192, and 256 bits",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Symmetric cryptography"
+    },
+    "verify": [
+      "AES",
+      "128, 192, and 256 bits"
+    ]
+  },
+  {
+    "id": "c-aes-block-size",
+    "display": "AES (block size)",
+    "algorithm": "AES",
+    "property": "block size",
+    "value": "128-bit",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Symmetric cryptography"
+    },
+    "verify": [
+      "AES",
+      "128-bit"
+    ]
+  },
+  {
+    "id": "c-3des",
+    "display": "3DES (key size)",
+    "algorithm": "3DES",
+    "property": "key size",
+    "value": "168-bit",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Symmetric cryptography"
+    },
+    "verify": [
+      "3DES",
+      "168-bit"
+    ]
+  },
+  {
+    "id": "c-3des-block-size",
+    "display": "3DES (block size)",
+    "algorithm": "3DES",
+    "property": "block size",
+    "value": "64-bit",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Symmetric cryptography"
+    },
+    "verify": [
+      "3DES",
+      "64-bit"
+    ]
+  },
+  {
+    "id": "c-des",
     "display": "DES",
     "algorithm": "DES",
     "property": "key size",
     "value": "56-bit",
     "source": {
-      "note": "Domains/1 - General Security Concepts.md",
-      "section": "1.4 - Cryptography"
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Symmetric cryptography"
     },
-    "verify": ["DES", "56-bit"]
+    "verify": [
+      "DES",
+      "56-bit"
+    ]
   },
   {
-    "id": "seed-aes",
-    "display": "AES",
-    "algorithm": "AES",
-    "property": "block size",
-    "value": "128-bit",
+    "id": "c-chacha20",
+    "display": "ChaCha20",
+    "algorithm": "ChaCha20",
+    "property": "key size",
+    "value": "256-bit",
     "source": {
-      "note": "Domains/1 - General Security Concepts.md",
-      "section": "1.4 - Cryptography"
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Symmetric cryptography"
     },
-    "verify": ["AES", "128-bit"]
+    "verify": [
+      "ChaCha20",
+      "256-bit"
+    ]
+  },
+  {
+    "id": "c-rsa",
+    "display": "RSA (minimum key size)",
+    "algorithm": "RSA",
+    "property": "minimum key size",
+    "value": "2048-bit",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Asymmetric cryptography and key exchange"
+    },
+    "verify": [
+      "RSA",
+      "2048-bit"
+    ]
+  },
+  {
+    "id": "c-rsa-key-size-through-2030",
+    "display": "RSA (key size (through 2030))",
+    "algorithm": "RSA",
+    "property": "key size (through 2030)",
+    "value": "3072-bit",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Asymmetric cryptography and key exchange"
+    },
+    "verify": [
+      "RSA",
+      "3072-bit"
+    ]
+  },
+  {
+    "id": "c-rsa-high-assurance-key-size",
+    "display": "RSA (high-assurance key size)",
+    "algorithm": "RSA",
+    "property": "high-assurance key size",
+    "value": "4096-bit",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Asymmetric cryptography and key exchange"
+    },
+    "verify": [
+      "RSA",
+      "4096-bit"
+    ]
+  },
+  {
+    "id": "c-ecc",
+    "display": "ECC (key size)",
+    "algorithm": "ECC",
+    "property": "key size",
+    "value": "256-bit",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Asymmetric cryptography and key exchange"
+    },
+    "verify": [
+      "ECC",
+      "256-bit"
+    ]
+  },
+  {
+    "id": "c-ecc-key-size",
+    "display": "ECC (key size) #2",
+    "algorithm": "ECC",
+    "property": "key size",
+    "value": "384-bit",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Asymmetric cryptography and key exchange"
+    },
+    "verify": [
+      "ECC",
+      "384-bit"
+    ]
+  },
+  {
+    "id": "c-pbkdf2",
+    "display": "PBKDF2",
+    "algorithm": "PBKDF2",
+    "property": "key stretching",
+    "value": "10,000+ iterations",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Hashing and integrity"
+    },
+    "verify": [
+      "PBKDF2",
+      "10,000+ iterations"
+    ]
+  },
+  {
+    "id": "c-bcrypt",
+    "display": "bcrypt",
+    "algorithm": "bcrypt",
+    "property": "key stretching",
+    "value": "adaptive work factor",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Hashing and integrity"
+    },
+    "verify": [
+      "bcrypt",
+      "adaptive work factor"
+    ]
+  },
+  {
+    "id": "c-argon2",
+    "display": "Argon2",
+    "algorithm": "Argon2",
+    "property": "key stretching",
+    "value": "memory-hard",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Hashing and integrity"
+    },
+    "verify": [
+      "Argon2",
+      "memory-hard"
+    ]
+  },
+  {
+    "id": "c-ssh",
+    "display": "SSH",
+    "algorithm": "SSH",
+    "property": "default port",
+    "value": "22",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Security-Relevant Ports and Protocols"
+    },
+    "verify": [
+      "SSH",
+      "22"
+    ]
+  },
+  {
+    "id": "c-kerberos",
+    "display": "Kerberos",
+    "algorithm": "Kerberos",
+    "property": "default port",
+    "value": "88",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Security-Relevant Ports and Protocols"
+    },
+    "verify": [
+      "Kerberos",
+      "88"
+    ]
+  },
+  {
+    "id": "c-ldap",
+    "display": "LDAP",
+    "algorithm": "LDAP",
+    "property": "default port",
+    "value": "389",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Security-Relevant Ports and Protocols"
+    },
+    "verify": [
+      "LDAP",
+      "389"
+    ]
+  },
+  {
+    "id": "c-ldaps",
+    "display": "LDAPS",
+    "algorithm": "LDAPS",
+    "property": "default port",
+    "value": "636",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Security-Relevant Ports and Protocols"
+    },
+    "verify": [
+      "LDAPS",
+      "636"
+    ]
+  },
+  {
+    "id": "c-smb",
+    "display": "SMB",
+    "algorithm": "SMB",
+    "property": "default port",
+    "value": "445",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Security-Relevant Ports and Protocols"
+    },
+    "verify": [
+      "SMB",
+      "445"
+    ]
+  },
+  {
+    "id": "c-https",
+    "display": "HTTPS",
+    "algorithm": "HTTPS",
+    "property": "default port",
+    "value": "443",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Security-Relevant Ports and Protocols"
+    },
+    "verify": [
+      "HTTPS",
+      "443"
+    ]
+  },
+  {
+    "id": "c-ike",
+    "display": "IKE",
+    "algorithm": "IKE",
+    "property": "default port",
+    "value": "500",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Security-Relevant Ports and Protocols"
+    },
+    "verify": [
+      "IKE",
+      "500"
+    ]
+  },
+  {
+    "id": "c-nat-t",
+    "display": "NAT-T",
+    "algorithm": "NAT-T",
+    "property": "default port",
+    "value": "4500",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Security-Relevant Ports and Protocols"
+    },
+    "verify": [
+      "NAT-T",
+      "4500"
+    ]
+  },
+  {
+    "id": "c-radius",
+    "display": "RADIUS",
+    "algorithm": "RADIUS",
+    "property": "default port",
+    "value": "1812/1813",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Security-Relevant Ports and Protocols"
+    },
+    "verify": [
+      "RADIUS",
+      "1812/1813"
+    ]
+  },
+  {
+    "id": "c-tacacs",
+    "display": "TACACS+",
+    "algorithm": "TACACS+",
+    "property": "default port",
+    "value": "49",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Security-Relevant Ports and Protocols"
+    },
+    "verify": [
+      "TACACS+",
+      "49"
+    ]
+  },
+  {
+    "id": "c-snmp",
+    "display": "SNMP",
+    "algorithm": "SNMP",
+    "property": "default port",
+    "value": "161/162",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Security-Relevant Ports and Protocols"
+    },
+    "verify": [
+      "SNMP",
+      "161/162"
+    ]
+  },
+  {
+    "id": "c-rdp",
+    "display": "RDP",
+    "algorithm": "RDP",
+    "property": "default port",
+    "value": "3389",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Security-Relevant Ports and Protocols"
+    },
+    "verify": [
+      "RDP",
+      "3389"
+    ]
+  },
+  {
+    "id": "c-ntp",
+    "display": "NTP",
+    "algorithm": "NTP",
+    "property": "default port",
+    "value": "123",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Security-Relevant Ports and Protocols"
+    },
+    "verify": [
+      "NTP",
+      "123"
+    ]
+  },
+  {
+    "id": "c-syslog",
+    "display": "Syslog",
+    "algorithm": "Syslog",
+    "property": "default port",
+    "value": "514",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Security-Relevant Ports and Protocols"
+    },
+    "verify": [
+      "Syslog",
+      "514"
+    ]
+  },
+  {
+    "id": "c-technical",
+    "display": "Technical",
+    "algorithm": "Technical",
+    "property": "control category",
+    "value": "Technology/logic-based",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Control Categories and Types"
+    },
+    "verify": [
+      "Technical",
+      "Technology/logic-based"
+    ]
+  },
+  {
+    "id": "c-managerial",
+    "display": "Managerial",
+    "algorithm": "Managerial",
+    "property": "control category",
+    "value": "Management/policy-based",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Control Categories and Types"
+    },
+    "verify": [
+      "Managerial",
+      "Management/policy-based"
+    ]
+  },
+  {
+    "id": "c-operational",
+    "display": "Operational",
+    "algorithm": "Operational",
+    "property": "control category",
+    "value": "Day-to-day procedures by people",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Control Categories and Types"
+    },
+    "verify": [
+      "Operational",
+      "Day-to-day procedures by people"
+    ]
+  },
+  {
+    "id": "c-physical",
+    "display": "Physical",
+    "algorithm": "Physical",
+    "property": "control category",
+    "value": "Tangible safeguards",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Control Categories and Types"
+    },
+    "verify": [
+      "Physical",
+      "Tangible safeguards"
+    ]
+  },
+  {
+    "id": "c-preventive",
+    "display": "Preventive",
+    "algorithm": "Preventive",
+    "property": "control type",
+    "value": "Stop an event before it happens",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Control Categories and Types"
+    },
+    "verify": [
+      "Preventive",
+      "Stop an event before it happens"
+    ]
+  },
+  {
+    "id": "c-deterrent",
+    "display": "Deterrent",
+    "algorithm": "Deterrent",
+    "property": "control type",
+    "value": "Discourage an attack",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Control Categories and Types"
+    },
+    "verify": [
+      "Deterrent",
+      "Discourage an attack"
+    ]
+  },
+  {
+    "id": "c-detective",
+    "display": "Detective",
+    "algorithm": "Detective",
+    "property": "control type",
+    "value": "Identify and log an event",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Control Categories and Types"
+    },
+    "verify": [
+      "Detective",
+      "Identify and log an event"
+    ]
+  },
+  {
+    "id": "c-corrective",
+    "display": "Corrective",
+    "algorithm": "Corrective",
+    "property": "control type",
+    "value": "Fix after an event",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Control Categories and Types"
+    },
+    "verify": [
+      "Corrective",
+      "Fix after an event"
+    ]
+  },
+  {
+    "id": "c-compensating",
+    "display": "Compensating",
+    "algorithm": "Compensating",
+    "property": "control type",
+    "value": "Alternative control when the primary is not feasible",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Control Categories and Types"
+    },
+    "verify": [
+      "Compensating",
+      "Alternative control when the primary is not feasible"
+    ]
+  },
+  {
+    "id": "c-directive",
+    "display": "Directive",
+    "algorithm": "Directive",
+    "property": "control type",
+    "value": "Mandate behavior through policy",
+    "source": {
+      "note": "Facts/SY0-701 Verbatim Facts.md",
+      "section": "Control Categories and Types"
+    },
+    "verify": [
+      "Directive",
+      "Mandate behavior through policy"
+    ]
   }
 ]

@@ -1,68 +1,4426 @@
 [
   {
-    "id": "seed-aaa",
+    "id": "a-2fa",
+    "display": "2FA",
+    "acronym": "2FA",
+    "expansion": "Two-factor Authentication",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "2FA",
+      "Two-factor Authentication"
+    ]
+  },
+  {
+    "id": "a-3des",
+    "display": "3DES",
+    "acronym": "3DES",
+    "expansion": "Triple Data Encryption Standard",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "3DES",
+      "Triple Data Encryption Standard"
+    ]
+  },
+  {
+    "id": "a-aaa",
     "display": "AAA",
     "acronym": "AAA",
     "expansion": "Authentication, Authorization, and Accounting",
     "source": {
-      "note": "Domains/1 - General Security Concepts.md",
-      "section": "1.3 - Authentication & Authorization"
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
     },
-    "verify": ["AAA", "Authentication, Authorization, and Accounting"]
+    "verify": [
+      "AAA",
+      "Authentication, Authorization, and Accounting"
+    ]
   },
   {
-    "id": "seed-cia",
+    "id": "a-acl",
+    "display": "ACL",
+    "acronym": "ACL",
+    "expansion": "Access Control List",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ACL",
+      "Access Control List"
+    ]
+  },
+  {
+    "id": "a-aes",
+    "display": "AES",
+    "acronym": "AES",
+    "expansion": "Advanced Encryption Standard",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "AES",
+      "Advanced Encryption Standard"
+    ]
+  },
+  {
+    "id": "a-aes-256",
+    "display": "AES-256",
+    "acronym": "AES-256",
+    "expansion": "Advanced Encryption Standards 256-bit",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "AES-256",
+      "Advanced Encryption Standards 256-bit"
+    ]
+  },
+  {
+    "id": "a-ah",
+    "display": "AH",
+    "acronym": "AH",
+    "expansion": "Authentication Header",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "AH",
+      "Authentication Header"
+    ]
+  },
+  {
+    "id": "a-ai",
+    "display": "AI",
+    "acronym": "AI",
+    "expansion": "Artificial Intelligence",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "AI",
+      "Artificial Intelligence"
+    ]
+  },
+  {
+    "id": "a-ais",
+    "display": "AIS",
+    "acronym": "AIS",
+    "expansion": "Automated Indicator Sharing",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "AIS",
+      "Automated Indicator Sharing"
+    ]
+  },
+  {
+    "id": "a-ale",
+    "display": "ALE",
+    "acronym": "ALE",
+    "expansion": "Annualized Loss Expectancy",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ALE",
+      "Annualized Loss Expectancy"
+    ]
+  },
+  {
+    "id": "a-ap",
+    "display": "AP",
+    "acronym": "AP",
+    "expansion": "Access Point",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "AP",
+      "Access Point"
+    ]
+  },
+  {
+    "id": "a-api",
+    "display": "API",
+    "acronym": "API",
+    "expansion": "Application Programming Interface",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "API",
+      "Application Programming Interface"
+    ]
+  },
+  {
+    "id": "a-apt",
+    "display": "APT",
+    "acronym": "APT",
+    "expansion": "Advanced Persistent Threat",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "APT",
+      "Advanced Persistent Threat"
+    ]
+  },
+  {
+    "id": "a-aro",
+    "display": "ARO",
+    "acronym": "ARO",
+    "expansion": "Annualized Rate of Occurrence",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ARO",
+      "Annualized Rate of Occurrence"
+    ]
+  },
+  {
+    "id": "a-arp",
+    "display": "ARP",
+    "acronym": "ARP",
+    "expansion": "Address Resolution Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ARP",
+      "Address Resolution Protocol"
+    ]
+  },
+  {
+    "id": "a-aslr",
+    "display": "ASLR",
+    "acronym": "ASLR",
+    "expansion": "Address Space Layout Randomization",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ASLR",
+      "Address Space Layout Randomization"
+    ]
+  },
+  {
+    "id": "a-att-ck",
+    "display": "ATT&CK",
+    "acronym": "ATT&CK",
+    "expansion": "Adversarial Tactics, Techniques, and Common Knowledge",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ATT&CK",
+      "Adversarial Tactics, Techniques, and Common Knowledge"
+    ]
+  },
+  {
+    "id": "a-aup",
+    "display": "AUP",
+    "acronym": "AUP",
+    "expansion": "Acceptable Use Policy",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "AUP",
+      "Acceptable Use Policy"
+    ]
+  },
+  {
+    "id": "a-av",
+    "display": "AV",
+    "acronym": "AV",
+    "expansion": "Antivirus",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "AV",
+      "Antivirus"
+    ]
+  },
+  {
+    "id": "a-bash",
+    "display": "BASH",
+    "acronym": "BASH",
+    "expansion": "Bourne Again Shell",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "BASH",
+      "Bourne Again Shell"
+    ]
+  },
+  {
+    "id": "a-bcp",
+    "display": "BCP",
+    "acronym": "BCP",
+    "expansion": "Business Continuity Planning",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "BCP",
+      "Business Continuity Planning"
+    ]
+  },
+  {
+    "id": "a-bgp",
+    "display": "BGP",
+    "acronym": "BGP",
+    "expansion": "Border Gateway Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "BGP",
+      "Border Gateway Protocol"
+    ]
+  },
+  {
+    "id": "a-bia",
+    "display": "BIA",
+    "acronym": "BIA",
+    "expansion": "Business Impact Analysis",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "BIA",
+      "Business Impact Analysis"
+    ]
+  },
+  {
+    "id": "a-bios",
+    "display": "BIOS",
+    "acronym": "BIOS",
+    "expansion": "Basic Input/Output System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "BIOS",
+      "Basic Input/Output System"
+    ]
+  },
+  {
+    "id": "a-bpa",
+    "display": "BPA",
+    "acronym": "BPA",
+    "expansion": "Business Partners Agreement",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "BPA",
+      "Business Partners Agreement"
+    ]
+  },
+  {
+    "id": "a-byod",
+    "display": "BYOD",
+    "acronym": "BYOD",
+    "expansion": "Bring Your Own Device",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "BYOD",
+      "Bring Your Own Device"
+    ]
+  },
+  {
+    "id": "a-ca",
+    "display": "CA",
+    "acronym": "CA",
+    "expansion": "Certificate Authority",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CA",
+      "Certificate Authority"
+    ]
+  },
+  {
+    "id": "a-captcha",
+    "display": "CAPTCHA",
+    "acronym": "CAPTCHA",
+    "expansion": "Completely Automated Public Turing Test to Tell Computers and Humans Apart",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CAPTCHA",
+      "Completely Automated Public Turing Test to Tell Computers and Humans Apart"
+    ]
+  },
+  {
+    "id": "a-casb",
+    "display": "CASB",
+    "acronym": "CASB",
+    "expansion": "Cloud Access Security Broker",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CASB",
+      "Cloud Access Security Broker"
+    ]
+  },
+  {
+    "id": "a-cbc",
+    "display": "CBC",
+    "acronym": "CBC",
+    "expansion": "Cipher Block Chaining",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CBC",
+      "Cipher Block Chaining"
+    ]
+  },
+  {
+    "id": "a-ccmp",
+    "display": "CCMP",
+    "acronym": "CCMP",
+    "expansion": "Counter Mode/CBC-MAC Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CCMP",
+      "Counter Mode/CBC-MAC Protocol"
+    ]
+  },
+  {
+    "id": "a-cctv",
+    "display": "CCTV",
+    "acronym": "CCTV",
+    "expansion": "Closed-circuit Television",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CCTV",
+      "Closed-circuit Television"
+    ]
+  },
+  {
+    "id": "a-cert",
+    "display": "CERT",
+    "acronym": "CERT",
+    "expansion": "Computer Emergency Response Team",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CERT",
+      "Computer Emergency Response Team"
+    ]
+  },
+  {
+    "id": "a-chap",
+    "display": "CHAP",
+    "acronym": "CHAP",
+    "expansion": "Challenge Handshake Authentication Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CHAP",
+      "Challenge Handshake Authentication Protocol"
+    ]
+  },
+  {
+    "id": "a-cia",
     "display": "CIA",
     "acronym": "CIA",
     "expansion": "Confidentiality, Integrity, Availability",
     "source": {
-      "note": "Domains/1 - General Security Concepts.md",
-      "section": "1.2 - Security Concepts"
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
     },
-    "verify": ["CIA", "Confidentiality", "Integrity", "Availability"]
+    "verify": [
+      "CIA",
+      "Confidentiality, Integrity, Availability"
+    ]
   },
   {
-    "id": "seed-mfa",
-    "display": "MFA",
-    "acronym": "MFA",
-    "expansion": "Multi-Factor Authentication",
+    "id": "a-cio",
+    "display": "CIO",
+    "acronym": "CIO",
+    "expansion": "Chief Information Officer",
     "source": {
-      "note": "Domains/1 - General Security Concepts.md",
-      "section": "1.3 - Authentication & Authorization"
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
     },
-    "verify": ["MFA", "Multi-Factor Authentication"]
+    "verify": [
+      "CIO",
+      "Chief Information Officer"
+    ]
   },
   {
-    "id": "seed-pki",
-    "display": "PKI",
-    "acronym": "PKI",
-    "expansion": "Public Key Infrastructure",
+    "id": "a-cirt",
+    "display": "CIRT",
+    "acronym": "CIRT",
+    "expansion": "Computer Incident Response Team",
     "source": {
-      "note": "Domains/1 - General Security Concepts.md",
-      "section": "1.4 - Cryptography"
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
     },
-    "verify": ["PKI", "Public Key Infrastructure"]
+    "verify": [
+      "CIRT",
+      "Computer Incident Response Team"
+    ]
   },
   {
-    "id": "seed-ids",
-    "display": "IDS",
-    "acronym": "IDS",
-    "expansion": "Intrusion Detection System",
+    "id": "a-cms",
+    "display": "CMS",
+    "acronym": "CMS",
+    "expansion": "Content Management System",
     "source": {
-      "note": "Domains/4 - Security Operations.md",
-      "section": "4.2 - Logging & Monitoring"
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
     },
-    "verify": ["IDS", "Intrusion Detection System"]
+    "verify": [
+      "CMS",
+      "Content Management System"
+    ]
   },
   {
-    "id": "seed-dlp",
+    "id": "a-cobo",
+    "display": "COBO",
+    "acronym": "COBO",
+    "expansion": "Corporate-owned, Business-only",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "COBO",
+      "Corporate-owned, Business-only"
+    ]
+  },
+  {
+    "id": "a-coop",
+    "display": "COOP",
+    "acronym": "COOP",
+    "expansion": "Continuity of Operation Planning",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "COOP",
+      "Continuity of Operation Planning"
+    ]
+  },
+  {
+    "id": "a-cope",
+    "display": "COPE",
+    "acronym": "COPE",
+    "expansion": "Corporate Owned, Personally Enabled",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "COPE",
+      "Corporate Owned, Personally Enabled"
+    ]
+  },
+  {
+    "id": "a-cp",
+    "display": "CP",
+    "acronym": "CP",
+    "expansion": "Contingency Planning",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CP",
+      "Contingency Planning"
+    ]
+  },
+  {
+    "id": "a-crc",
+    "display": "CRC",
+    "acronym": "CRC",
+    "expansion": "Cyclical Redundancy Check",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CRC",
+      "Cyclical Redundancy Check"
+    ]
+  },
+  {
+    "id": "a-crl",
+    "display": "CRL",
+    "acronym": "CRL",
+    "expansion": "Certificate Revocation List",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CRL",
+      "Certificate Revocation List"
+    ]
+  },
+  {
+    "id": "a-cso",
+    "display": "CSO",
+    "acronym": "CSO",
+    "expansion": "Chief Security Officer",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CSO",
+      "Chief Security Officer"
+    ]
+  },
+  {
+    "id": "a-csp",
+    "display": "CSP",
+    "acronym": "CSP",
+    "expansion": "Cloud Service Provider",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CSP",
+      "Cloud Service Provider"
+    ]
+  },
+  {
+    "id": "a-csr",
+    "display": "CSR",
+    "acronym": "CSR",
+    "expansion": "Certificate Signing Request",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CSR",
+      "Certificate Signing Request"
+    ]
+  },
+  {
+    "id": "a-csrf",
+    "display": "CSRF",
+    "acronym": "CSRF",
+    "expansion": "Cross-site Request Forgery",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CSRF",
+      "Cross-site Request Forgery"
+    ]
+  },
+  {
+    "id": "a-ctm",
+    "display": "CTM",
+    "acronym": "CTM",
+    "expansion": "Counter Mode",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CTM",
+      "Counter Mode"
+    ]
+  },
+  {
+    "id": "a-cto",
+    "display": "CTO",
+    "acronym": "CTO",
+    "expansion": "Chief Technology Officer",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CTO",
+      "Chief Technology Officer"
+    ]
+  },
+  {
+    "id": "a-cve",
+    "display": "CVE",
+    "acronym": "CVE",
+    "expansion": "Common Vulnerability Enumeration",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CVE",
+      "Common Vulnerability Enumeration"
+    ]
+  },
+  {
+    "id": "a-cvss",
+    "display": "CVSS",
+    "acronym": "CVSS",
+    "expansion": "Common Vulnerability Scoring System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CVSS",
+      "Common Vulnerability Scoring System"
+    ]
+  },
+  {
+    "id": "a-cyod",
+    "display": "CYOD",
+    "acronym": "CYOD",
+    "expansion": "Choose Your Own Device",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "CYOD",
+      "Choose Your Own Device"
+    ]
+  },
+  {
+    "id": "a-dac",
+    "display": "DAC",
+    "acronym": "DAC",
+    "expansion": "Discretionary Access Control",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DAC",
+      "Discretionary Access Control"
+    ]
+  },
+  {
+    "id": "a-dba",
+    "display": "DBA",
+    "acronym": "DBA",
+    "expansion": "Database Administrator",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DBA",
+      "Database Administrator"
+    ]
+  },
+  {
+    "id": "a-ddos",
+    "display": "DDoS",
+    "acronym": "DDoS",
+    "expansion": "Distributed Denial of Service",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DDoS",
+      "Distributed Denial of Service"
+    ]
+  },
+  {
+    "id": "a-dep",
+    "display": "DEP",
+    "acronym": "DEP",
+    "expansion": "Data Execution Prevention",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DEP",
+      "Data Execution Prevention"
+    ]
+  },
+  {
+    "id": "a-des",
+    "display": "DES",
+    "acronym": "DES",
+    "expansion": "Digital Encryption Standard",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DES",
+      "Digital Encryption Standard"
+    ]
+  },
+  {
+    "id": "a-dhcp",
+    "display": "DHCP",
+    "acronym": "DHCP",
+    "expansion": "Dynamic Host Configuration Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DHCP",
+      "Dynamic Host Configuration Protocol"
+    ]
+  },
+  {
+    "id": "a-dhe",
+    "display": "DHE",
+    "acronym": "DHE",
+    "expansion": "Diffie-Hellman Ephemeral",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DHE",
+      "Diffie-Hellman Ephemeral"
+    ]
+  },
+  {
+    "id": "a-dkim",
+    "display": "DKIM",
+    "acronym": "DKIM",
+    "expansion": "DomainKeys Identified Mail",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DKIM",
+      "DomainKeys Identified Mail"
+    ]
+  },
+  {
+    "id": "a-dll",
+    "display": "DLL",
+    "acronym": "DLL",
+    "expansion": "Dynamic Link Library",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DLL",
+      "Dynamic Link Library"
+    ]
+  },
+  {
+    "id": "a-dlp",
     "display": "DLP",
     "acronym": "DLP",
     "expansion": "Data Loss Prevention",
     "source": {
-      "note": "Domains/3 - Security Architecture.md",
-      "section": "3.3 - Secure Data Handling"
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
     },
-    "verify": ["DLP", "Data Loss Prevention"]
+    "verify": [
+      "DLP",
+      "Data Loss Prevention"
+    ]
+  },
+  {
+    "id": "a-dmarc",
+    "display": "DMARC",
+    "acronym": "DMARC",
+    "expansion": "Domain Message Authentication Reporting and Conformance",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DMARC",
+      "Domain Message Authentication Reporting and Conformance"
+    ]
+  },
+  {
+    "id": "a-dnat",
+    "display": "DNAT",
+    "acronym": "DNAT",
+    "expansion": "Destination Network Address Translation",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DNAT",
+      "Destination Network Address Translation"
+    ]
+  },
+  {
+    "id": "a-dns",
+    "display": "DNS",
+    "acronym": "DNS",
+    "expansion": "Domain Name System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DNS",
+      "Domain Name System"
+    ]
+  },
+  {
+    "id": "a-dnssec",
+    "display": "DNSSEC",
+    "acronym": "DNSSEC",
+    "expansion": "Domain Name System Security Extensions",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DNSSEC",
+      "Domain Name System Security Extensions"
+    ]
+  },
+  {
+    "id": "a-dos",
+    "display": "DoS",
+    "acronym": "DoS",
+    "expansion": "Denial of Service",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DoS",
+      "Denial of Service"
+    ]
+  },
+  {
+    "id": "a-dpo",
+    "display": "DPO",
+    "acronym": "DPO",
+    "expansion": "Data Privacy Officer",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DPO",
+      "Data Privacy Officer"
+    ]
+  },
+  {
+    "id": "a-drp",
+    "display": "DRP",
+    "acronym": "DRP",
+    "expansion": "Disaster Recovery Plan",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DRP",
+      "Disaster Recovery Plan"
+    ]
+  },
+  {
+    "id": "a-dsa",
+    "display": "DSA",
+    "acronym": "DSA",
+    "expansion": "Digital Signature Algorithm",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DSA",
+      "Digital Signature Algorithm"
+    ]
+  },
+  {
+    "id": "a-dsl",
+    "display": "DSL",
+    "acronym": "DSL",
+    "expansion": "Digital Subscriber Line",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "DSL",
+      "Digital Subscriber Line"
+    ]
+  },
+  {
+    "id": "a-eap",
+    "display": "EAP",
+    "acronym": "EAP",
+    "expansion": "Extensible Authentication Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "EAP",
+      "Extensible Authentication Protocol"
+    ]
+  },
+  {
+    "id": "a-ecb",
+    "display": "ECB",
+    "acronym": "ECB",
+    "expansion": "Electronic Code Book",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ECB",
+      "Electronic Code Book"
+    ]
+  },
+  {
+    "id": "a-ecc",
+    "display": "ECC",
+    "acronym": "ECC",
+    "expansion": "Elliptic Curve Cryptography",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ECC",
+      "Elliptic Curve Cryptography"
+    ]
+  },
+  {
+    "id": "a-ecdhe",
+    "display": "ECDHE",
+    "acronym": "ECDHE",
+    "expansion": "Elliptic Curve Diffie-Hellman Ephemeral",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ECDHE",
+      "Elliptic Curve Diffie-Hellman Ephemeral"
+    ]
+  },
+  {
+    "id": "a-ecdsa",
+    "display": "ECDSA",
+    "acronym": "ECDSA",
+    "expansion": "Elliptic Curve Digital Signature Algorithm",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ECDSA",
+      "Elliptic Curve Digital Signature Algorithm"
+    ]
+  },
+  {
+    "id": "a-edr",
+    "display": "EDR",
+    "acronym": "EDR",
+    "expansion": "Endpoint Detection and Response",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "EDR",
+      "Endpoint Detection and Response"
+    ]
+  },
+  {
+    "id": "a-efs",
+    "display": "EFS",
+    "acronym": "EFS",
+    "expansion": "Encrypted File System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "EFS",
+      "Encrypted File System"
+    ]
+  },
+  {
+    "id": "a-esp",
+    "display": "ESP",
+    "acronym": "ESP",
+    "expansion": "Encapsulated Security Payload",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ESP",
+      "Encapsulated Security Payload"
+    ]
+  },
+  {
+    "id": "a-eula",
+    "display": "EULA",
+    "acronym": "EULA",
+    "expansion": "End User License Agreement",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "EULA",
+      "End User License Agreement"
+    ]
+  },
+  {
+    "id": "a-facl",
+    "display": "FACL",
+    "acronym": "FACL",
+    "expansion": "File System Access Control List",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "FACL",
+      "File System Access Control List"
+    ]
+  },
+  {
+    "id": "a-fde",
+    "display": "FDE",
+    "acronym": "FDE",
+    "expansion": "Full Disk Encryption",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "FDE",
+      "Full Disk Encryption"
+    ]
+  },
+  {
+    "id": "a-fim",
+    "display": "FIM",
+    "acronym": "FIM",
+    "expansion": "File Integrity Management",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "FIM",
+      "File Integrity Management"
+    ]
+  },
+  {
+    "id": "a-fpga",
+    "display": "FPGA",
+    "acronym": "FPGA",
+    "expansion": "Field Programmable Gate Array",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "FPGA",
+      "Field Programmable Gate Array"
+    ]
+  },
+  {
+    "id": "a-frr",
+    "display": "FRR",
+    "acronym": "FRR",
+    "expansion": "False Rejection Rate",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "FRR",
+      "False Rejection Rate"
+    ]
+  },
+  {
+    "id": "a-ftp",
+    "display": "FTP",
+    "acronym": "FTP",
+    "expansion": "File Transfer Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "FTP",
+      "File Transfer Protocol"
+    ]
+  },
+  {
+    "id": "a-ftps",
+    "display": "FTPS",
+    "acronym": "FTPS",
+    "expansion": "Secured File Transfer Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "FTPS",
+      "Secured File Transfer Protocol"
+    ]
+  },
+  {
+    "id": "a-gcm",
+    "display": "GCM",
+    "acronym": "GCM",
+    "expansion": "Galois Counter Mode",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "GCM",
+      "Galois Counter Mode"
+    ]
+  },
+  {
+    "id": "a-gdpr",
+    "display": "GDPR",
+    "acronym": "GDPR",
+    "expansion": "General Data Protection Regulation",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "GDPR",
+      "General Data Protection Regulation"
+    ]
+  },
+  {
+    "id": "a-gpg",
+    "display": "GPG",
+    "acronym": "GPG",
+    "expansion": "Gnu Privacy Guard",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "GPG",
+      "Gnu Privacy Guard"
+    ]
+  },
+  {
+    "id": "a-gpo",
+    "display": "GPO",
+    "acronym": "GPO",
+    "expansion": "Group Policy Object",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "GPO",
+      "Group Policy Object"
+    ]
+  },
+  {
+    "id": "a-gre",
+    "display": "GRE",
+    "acronym": "GRE",
+    "expansion": "Generic Routing Encapsulation",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "GRE",
+      "Generic Routing Encapsulation"
+    ]
+  },
+  {
+    "id": "a-ha",
+    "display": "HA",
+    "acronym": "HA",
+    "expansion": "High Availability",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "HA",
+      "High Availability"
+    ]
+  },
+  {
+    "id": "a-hdd",
+    "display": "HDD",
+    "acronym": "HDD",
+    "expansion": "Hard Disk Drive",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "HDD",
+      "Hard Disk Drive"
+    ]
+  },
+  {
+    "id": "a-hids",
+    "display": "HIDS",
+    "acronym": "HIDS",
+    "expansion": "Host-based Intrusion Detection System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "HIDS",
+      "Host-based Intrusion Detection System"
+    ]
+  },
+  {
+    "id": "a-hips",
+    "display": "HIPS",
+    "acronym": "HIPS",
+    "expansion": "Host-based Intrusion Prevention System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "HIPS",
+      "Host-based Intrusion Prevention System"
+    ]
+  },
+  {
+    "id": "a-hmac",
+    "display": "HMAC",
+    "acronym": "HMAC",
+    "expansion": "Hashed Message Authentication Code",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "HMAC",
+      "Hashed Message Authentication Code"
+    ]
+  },
+  {
+    "id": "a-hotp",
+    "display": "HOTP",
+    "acronym": "HOTP",
+    "expansion": "HMAC-based One-time Password",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "HOTP",
+      "HMAC-based One-time Password"
+    ]
+  },
+  {
+    "id": "a-hsm",
+    "display": "HSM",
+    "acronym": "HSM",
+    "expansion": "Hardware Security Module",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "HSM",
+      "Hardware Security Module"
+    ]
+  },
+  {
+    "id": "a-html",
+    "display": "HTML",
+    "acronym": "HTML",
+    "expansion": "Hypertext Markup Language",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "HTML",
+      "Hypertext Markup Language"
+    ]
+  },
+  {
+    "id": "a-http",
+    "display": "HTTP",
+    "acronym": "HTTP",
+    "expansion": "Hypertext Transfer Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "HTTP",
+      "Hypertext Transfer Protocol"
+    ]
+  },
+  {
+    "id": "a-https",
+    "display": "HTTPS",
+    "acronym": "HTTPS",
+    "expansion": "Hypertext Transfer Protocol Secure",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "HTTPS",
+      "Hypertext Transfer Protocol Secure"
+    ]
+  },
+  {
+    "id": "a-hvac",
+    "display": "HVAC",
+    "acronym": "HVAC",
+    "expansion": "Heating, Ventilation Air Conditioning",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "HVAC",
+      "Heating, Ventilation Air Conditioning"
+    ]
+  },
+  {
+    "id": "a-iaas",
+    "display": "IaaS",
+    "acronym": "IaaS",
+    "expansion": "Infrastructure as a Service",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IaaS",
+      "Infrastructure as a Service"
+    ]
+  },
+  {
+    "id": "a-iac",
+    "display": "IaC",
+    "acronym": "IaC",
+    "expansion": "Infrastructure as Code",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IaC",
+      "Infrastructure as Code"
+    ]
+  },
+  {
+    "id": "a-iam",
+    "display": "IAM",
+    "acronym": "IAM",
+    "expansion": "Identity and Access Management",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IAM",
+      "Identity and Access Management"
+    ]
+  },
+  {
+    "id": "a-icmp",
+    "display": "ICMP",
+    "acronym": "ICMP",
+    "expansion": "Internet Control Message Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ICMP",
+      "Internet Control Message Protocol"
+    ]
+  },
+  {
+    "id": "a-ics",
+    "display": "ICS",
+    "acronym": "ICS",
+    "expansion": "Industrial Control Systems",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ICS",
+      "Industrial Control Systems"
+    ]
+  },
+  {
+    "id": "a-idea",
+    "display": "IDEA",
+    "acronym": "IDEA",
+    "expansion": "International Data Encryption Algorithm",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IDEA",
+      "International Data Encryption Algorithm"
+    ]
+  },
+  {
+    "id": "a-idp",
+    "display": "IdP",
+    "acronym": "IdP",
+    "expansion": "Identity Provider",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IdP",
+      "Identity Provider"
+    ]
+  },
+  {
+    "id": "a-ids",
+    "display": "IDS",
+    "acronym": "IDS",
+    "expansion": "Intrusion Detection System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IDS",
+      "Intrusion Detection System"
+    ]
+  },
+  {
+    "id": "a-ieee",
+    "display": "IEEE",
+    "acronym": "IEEE",
+    "expansion": "Institute of Electrical and Electronics Engineers",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IEEE",
+      "Institute of Electrical and Electronics Engineers"
+    ]
+  },
+  {
+    "id": "a-ike",
+    "display": "IKE",
+    "acronym": "IKE",
+    "expansion": "Internet Key Exchange",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IKE",
+      "Internet Key Exchange"
+    ]
+  },
+  {
+    "id": "a-im",
+    "display": "IM",
+    "acronym": "IM",
+    "expansion": "Instant Messaging",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IM",
+      "Instant Messaging"
+    ]
+  },
+  {
+    "id": "a-imap",
+    "display": "IMAP",
+    "acronym": "IMAP",
+    "expansion": "Internet Message Access Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IMAP",
+      "Internet Message Access Protocol"
+    ]
+  },
+  {
+    "id": "a-ioc",
+    "display": "IoC",
+    "acronym": "IoC",
+    "expansion": "Indicators of Compromise",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IoC",
+      "Indicators of Compromise"
+    ]
+  },
+  {
+    "id": "a-iot",
+    "display": "IoT",
+    "acronym": "IoT",
+    "expansion": "Internet of Things",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IoT",
+      "Internet of Things"
+    ]
+  },
+  {
+    "id": "a-ip",
+    "display": "IP",
+    "acronym": "IP",
+    "expansion": "Internet Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IP",
+      "Internet Protocol"
+    ]
+  },
+  {
+    "id": "a-ips",
+    "display": "IPS",
+    "acronym": "IPS",
+    "expansion": "Intrusion Prevention System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IPS",
+      "Intrusion Prevention System"
+    ]
+  },
+  {
+    "id": "a-ipsec",
+    "display": "IPSec",
+    "acronym": "IPSec",
+    "expansion": "Internet Protocol Security",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IPSec",
+      "Internet Protocol Security"
+    ]
+  },
+  {
+    "id": "a-ir",
+    "display": "IR",
+    "acronym": "IR",
+    "expansion": "Incident Response",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IR",
+      "Incident Response"
+    ]
+  },
+  {
+    "id": "a-irc",
+    "display": "IRC",
+    "acronym": "IRC",
+    "expansion": "Internet Relay Chat",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IRC",
+      "Internet Relay Chat"
+    ]
+  },
+  {
+    "id": "a-irp",
+    "display": "IRP",
+    "acronym": "IRP",
+    "expansion": "Incident Response Plan",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IRP",
+      "Incident Response Plan"
+    ]
+  },
+  {
+    "id": "a-iso",
+    "display": "ISO",
+    "acronym": "ISO",
+    "expansion": "International Standards Organization",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ISO",
+      "International Standards Organization"
+    ]
+  },
+  {
+    "id": "a-isp",
+    "display": "ISP",
+    "acronym": "ISP",
+    "expansion": "Internet Service Provider",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ISP",
+      "Internet Service Provider"
+    ]
+  },
+  {
+    "id": "a-isso",
+    "display": "ISSO",
+    "acronym": "ISSO",
+    "expansion": "Information Systems Security Officer",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ISSO",
+      "Information Systems Security Officer"
+    ]
+  },
+  {
+    "id": "a-iv",
+    "display": "IV",
+    "acronym": "IV",
+    "expansion": "Initialization Vector",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "IV",
+      "Initialization Vector"
+    ]
+  },
+  {
+    "id": "a-kdc",
+    "display": "KDC",
+    "acronym": "KDC",
+    "expansion": "Key Distribution Center",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "KDC",
+      "Key Distribution Center"
+    ]
+  },
+  {
+    "id": "a-kek",
+    "display": "KEK",
+    "acronym": "KEK",
+    "expansion": "Key Encryption Key",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "KEK",
+      "Key Encryption Key"
+    ]
+  },
+  {
+    "id": "a-l2tp",
+    "display": "L2TP",
+    "acronym": "L2TP",
+    "expansion": "Layer 2 Tunneling Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "L2TP",
+      "Layer 2 Tunneling Protocol"
+    ]
+  },
+  {
+    "id": "a-lan",
+    "display": "LAN",
+    "acronym": "LAN",
+    "expansion": "Local Area Network",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "LAN",
+      "Local Area Network"
+    ]
+  },
+  {
+    "id": "a-ldap",
+    "display": "LDAP",
+    "acronym": "LDAP",
+    "expansion": "Lightweight Directory Access Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "LDAP",
+      "Lightweight Directory Access Protocol"
+    ]
+  },
+  {
+    "id": "a-leap",
+    "display": "LEAP",
+    "acronym": "LEAP",
+    "expansion": "Lightweight Extensible Authentication Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "LEAP",
+      "Lightweight Extensible Authentication Protocol"
+    ]
+  },
+  {
+    "id": "a-maas",
+    "display": "MaaS",
+    "acronym": "MaaS",
+    "expansion": "Monitoring as a Service",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MaaS",
+      "Monitoring as a Service"
+    ]
+  },
+  {
+    "id": "a-mac",
+    "display": "MAC (Mandatory Access Control)",
+    "acronym": "MAC",
+    "expansion": "Mandatory Access Control",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MAC",
+      "Mandatory Access Control"
+    ]
+  },
+  {
+    "id": "a-mac-media",
+    "display": "MAC (Media Access Control)",
+    "acronym": "MAC",
+    "expansion": "Media Access Control",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MAC",
+      "Media Access Control"
+    ]
+  },
+  {
+    "id": "a-mac-message",
+    "display": "MAC (Message Authentication Code)",
+    "acronym": "MAC",
+    "expansion": "Message Authentication Code",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MAC",
+      "Message Authentication Code"
+    ]
+  },
+  {
+    "id": "a-man",
+    "display": "MAN",
+    "acronym": "MAN",
+    "expansion": "Metropolitan Area Network",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MAN",
+      "Metropolitan Area Network"
+    ]
+  },
+  {
+    "id": "a-mbr",
+    "display": "MBR",
+    "acronym": "MBR",
+    "expansion": "Master Boot Record",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MBR",
+      "Master Boot Record"
+    ]
+  },
+  {
+    "id": "a-md5",
+    "display": "MD5",
+    "acronym": "MD5",
+    "expansion": "Message Digest 5",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MD5",
+      "Message Digest 5"
+    ]
+  },
+  {
+    "id": "a-mdm",
+    "display": "MDM",
+    "acronym": "MDM",
+    "expansion": "Mobile Device Management",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MDM",
+      "Mobile Device Management"
+    ]
+  },
+  {
+    "id": "a-mfa",
+    "display": "MFA",
+    "acronym": "MFA",
+    "expansion": "Multifactor Authentication",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MFA",
+      "Multifactor Authentication"
+    ]
+  },
+  {
+    "id": "a-mfd",
+    "display": "MFD",
+    "acronym": "MFD",
+    "expansion": "Multifunction Device",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MFD",
+      "Multifunction Device"
+    ]
+  },
+  {
+    "id": "a-ml",
+    "display": "ML",
+    "acronym": "ML",
+    "expansion": "Machine Learning",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ML",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "a-mms",
+    "display": "MMS",
+    "acronym": "MMS",
+    "expansion": "Multimedia Message Service",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MMS",
+      "Multimedia Message Service"
+    ]
+  },
+  {
+    "id": "a-moa",
+    "display": "MOA",
+    "acronym": "MOA",
+    "expansion": "Memorandum of Agreement",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MOA",
+      "Memorandum of Agreement"
+    ]
+  },
+  {
+    "id": "a-mou",
+    "display": "MOU",
+    "acronym": "MOU",
+    "expansion": "Memorandum of Understanding",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MOU",
+      "Memorandum of Understanding"
+    ]
+  },
+  {
+    "id": "a-mpls",
+    "display": "MPLS",
+    "acronym": "MPLS",
+    "expansion": "Multi-protocol Label Switching",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MPLS",
+      "Multi-protocol Label Switching"
+    ]
+  },
+  {
+    "id": "a-msa",
+    "display": "MSA",
+    "acronym": "MSA",
+    "expansion": "Master Service Agreement",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MSA",
+      "Master Service Agreement"
+    ]
+  },
+  {
+    "id": "a-mschap",
+    "display": "MSCHAP",
+    "acronym": "MSCHAP",
+    "expansion": "Microsoft Challenge Handshake Authentication Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MSCHAP",
+      "Microsoft Challenge Handshake Authentication Protocol"
+    ]
+  },
+  {
+    "id": "a-msp",
+    "display": "MSP",
+    "acronym": "MSP",
+    "expansion": "Managed Service Provider",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MSP",
+      "Managed Service Provider"
+    ]
+  },
+  {
+    "id": "a-mssp",
+    "display": "MSSP",
+    "acronym": "MSSP",
+    "expansion": "Managed Security Service Provider",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MSSP",
+      "Managed Security Service Provider"
+    ]
+  },
+  {
+    "id": "a-mtbf",
+    "display": "MTBF",
+    "acronym": "MTBF",
+    "expansion": "Mean Time Between Failures",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MTBF",
+      "Mean Time Between Failures"
+    ]
+  },
+  {
+    "id": "a-mttf",
+    "display": "MTTF",
+    "acronym": "MTTF",
+    "expansion": "Mean Time to Failure",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MTTF",
+      "Mean Time to Failure"
+    ]
+  },
+  {
+    "id": "a-mttr",
+    "display": "MTTR",
+    "acronym": "MTTR",
+    "expansion": "Mean Time to Recover",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MTTR",
+      "Mean Time to Recover"
+    ]
+  },
+  {
+    "id": "a-mtu",
+    "display": "MTU",
+    "acronym": "MTU",
+    "expansion": "Maximum Transmission Unit",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "MTU",
+      "Maximum Transmission Unit"
+    ]
+  },
+  {
+    "id": "a-nac",
+    "display": "NAC",
+    "acronym": "NAC",
+    "expansion": "Network Access Control",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "NAC",
+      "Network Access Control"
+    ]
+  },
+  {
+    "id": "a-nat",
+    "display": "NAT",
+    "acronym": "NAT",
+    "expansion": "Network Address Translation",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "NAT",
+      "Network Address Translation"
+    ]
+  },
+  {
+    "id": "a-nda",
+    "display": "NDA",
+    "acronym": "NDA",
+    "expansion": "Non-disclosure Agreement",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "NDA",
+      "Non-disclosure Agreement"
+    ]
+  },
+  {
+    "id": "a-nfc",
+    "display": "NFC",
+    "acronym": "NFC",
+    "expansion": "Near Field Communication",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "NFC",
+      "Near Field Communication"
+    ]
+  },
+  {
+    "id": "a-ngfw",
+    "display": "NGFW",
+    "acronym": "NGFW",
+    "expansion": "Next-generation Firewall",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "NGFW",
+      "Next-generation Firewall"
+    ]
+  },
+  {
+    "id": "a-nids",
+    "display": "NIDS",
+    "acronym": "NIDS",
+    "expansion": "Network-based Intrusion Detection System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "NIDS",
+      "Network-based Intrusion Detection System"
+    ]
+  },
+  {
+    "id": "a-nips",
+    "display": "NIPS",
+    "acronym": "NIPS",
+    "expansion": "Network-based Intrusion Prevention System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "NIPS",
+      "Network-based Intrusion Prevention System"
+    ]
+  },
+  {
+    "id": "a-nist",
+    "display": "NIST",
+    "acronym": "NIST",
+    "expansion": "National Institute of Standards & Technology",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "NIST",
+      "National Institute of Standards & Technology"
+    ]
+  },
+  {
+    "id": "a-ntfs",
+    "display": "NTFS",
+    "acronym": "NTFS",
+    "expansion": "New Technology File System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "NTFS",
+      "New Technology File System"
+    ]
+  },
+  {
+    "id": "a-ntlm",
+    "display": "NTLM",
+    "acronym": "NTLM",
+    "expansion": "New Technology LAN Manager",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "NTLM",
+      "New Technology LAN Manager"
+    ]
+  },
+  {
+    "id": "a-ntp",
+    "display": "NTP",
+    "acronym": "NTP",
+    "expansion": "Network Time Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "NTP",
+      "Network Time Protocol"
+    ]
+  },
+  {
+    "id": "a-oauth",
+    "display": "OAUTH",
+    "acronym": "OAUTH",
+    "expansion": "Open Authorization",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "OAUTH",
+      "Open Authorization"
+    ]
+  },
+  {
+    "id": "a-ocsp",
+    "display": "OCSP",
+    "acronym": "OCSP",
+    "expansion": "Online Certificate Status Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "OCSP",
+      "Online Certificate Status Protocol"
+    ]
+  },
+  {
+    "id": "a-oid",
+    "display": "OID",
+    "acronym": "OID",
+    "expansion": "Object Identifier",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "OID",
+      "Object Identifier"
+    ]
+  },
+  {
+    "id": "a-os",
+    "display": "OS",
+    "acronym": "OS",
+    "expansion": "Operating System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "OS",
+      "Operating System"
+    ]
+  },
+  {
+    "id": "a-osint",
+    "display": "OSINT",
+    "acronym": "OSINT",
+    "expansion": "Open-source Intelligence",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "OSINT",
+      "Open-source Intelligence"
+    ]
+  },
+  {
+    "id": "a-ospf",
+    "display": "OSPF",
+    "acronym": "OSPF",
+    "expansion": "Open Shortest Path First",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "OSPF",
+      "Open Shortest Path First"
+    ]
+  },
+  {
+    "id": "a-ot",
+    "display": "OT",
+    "acronym": "OT",
+    "expansion": "Operational Technology",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "OT",
+      "Operational Technology"
+    ]
+  },
+  {
+    "id": "a-ota",
+    "display": "OTA",
+    "acronym": "OTA",
+    "expansion": "Over the Air",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "OTA",
+      "Over the Air"
+    ]
+  },
+  {
+    "id": "a-oval",
+    "display": "OVAL",
+    "acronym": "OVAL",
+    "expansion": "Open Vulnerability Assessment Language",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "OVAL",
+      "Open Vulnerability Assessment Language"
+    ]
+  },
+  {
+    "id": "a-p2p",
+    "display": "P2P",
+    "acronym": "P2P",
+    "expansion": "Peer to Peer",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "P2P",
+      "Peer to Peer"
+    ]
+  },
+  {
+    "id": "a-paas",
+    "display": "PaaS",
+    "acronym": "PaaS",
+    "expansion": "Platform as a Service",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PaaS",
+      "Platform as a Service"
+    ]
+  },
+  {
+    "id": "a-pac",
+    "display": "PAC",
+    "acronym": "PAC",
+    "expansion": "Proxy Auto Configuration",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PAC",
+      "Proxy Auto Configuration"
+    ]
+  },
+  {
+    "id": "a-pam",
+    "display": "PAM (Privileged Access Management)",
+    "acronym": "PAM",
+    "expansion": "Privileged Access Management",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PAM",
+      "Privileged Access Management"
+    ]
+  },
+  {
+    "id": "a-pam-pluggable",
+    "display": "PAM (Pluggable Authentication Modules)",
+    "acronym": "PAM",
+    "expansion": "Pluggable Authentication Modules",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PAM",
+      "Pluggable Authentication Modules"
+    ]
+  },
+  {
+    "id": "a-pap",
+    "display": "PAP",
+    "acronym": "PAP",
+    "expansion": "Password Authentication Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PAP",
+      "Password Authentication Protocol"
+    ]
+  },
+  {
+    "id": "a-pat",
+    "display": "PAT",
+    "acronym": "PAT",
+    "expansion": "Port Address Translation",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PAT",
+      "Port Address Translation"
+    ]
+  },
+  {
+    "id": "a-pbkdf2",
+    "display": "PBKDF2",
+    "acronym": "PBKDF2",
+    "expansion": "Password-based Key Derivation Function 2",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PBKDF2",
+      "Password-based Key Derivation Function 2"
+    ]
+  },
+  {
+    "id": "a-pbx",
+    "display": "PBX",
+    "acronym": "PBX",
+    "expansion": "Private Branch Exchange",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PBX",
+      "Private Branch Exchange"
+    ]
+  },
+  {
+    "id": "a-pcap",
+    "display": "PCAP",
+    "acronym": "PCAP",
+    "expansion": "Packet Capture",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PCAP",
+      "Packet Capture"
+    ]
+  },
+  {
+    "id": "a-pci-dss",
+    "display": "PCI DSS",
+    "acronym": "PCI DSS",
+    "expansion": "Payment Card Industry Data Security Standard",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PCI DSS",
+      "Payment Card Industry Data Security Standard"
+    ]
+  },
+  {
+    "id": "a-peap",
+    "display": "PEAP",
+    "acronym": "PEAP",
+    "expansion": "Protected Extensible Authentication Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PEAP",
+      "Protected Extensible Authentication Protocol"
+    ]
+  },
+  {
+    "id": "a-ped",
+    "display": "PED",
+    "acronym": "PED",
+    "expansion": "Personal Electronic Device",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PED",
+      "Personal Electronic Device"
+    ]
+  },
+  {
+    "id": "a-pem",
+    "display": "PEM",
+    "acronym": "PEM",
+    "expansion": "Privacy Enhanced Mail",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PEM",
+      "Privacy Enhanced Mail"
+    ]
+  },
+  {
+    "id": "a-pfs",
+    "display": "PFS",
+    "acronym": "PFS",
+    "expansion": "Perfect Forward Secrecy",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PFS",
+      "Perfect Forward Secrecy"
+    ]
+  },
+  {
+    "id": "a-pgp",
+    "display": "PGP",
+    "acronym": "PGP",
+    "expansion": "Pretty Good Privacy",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PGP",
+      "Pretty Good Privacy"
+    ]
+  },
+  {
+    "id": "a-phi",
+    "display": "PHI",
+    "acronym": "PHI",
+    "expansion": "Personal Health Information",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PHI",
+      "Personal Health Information"
+    ]
+  },
+  {
+    "id": "a-pii",
+    "display": "PII",
+    "acronym": "PII",
+    "expansion": "Personally Identifiable Information",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PII",
+      "Personally Identifiable Information"
+    ]
+  },
+  {
+    "id": "a-piv",
+    "display": "PIV",
+    "acronym": "PIV",
+    "expansion": "Personal Identity Verification",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PIV",
+      "Personal Identity Verification"
+    ]
+  },
+  {
+    "id": "a-pkcs",
+    "display": "PKCS",
+    "acronym": "PKCS",
+    "expansion": "Public Key Cryptography Standards",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PKCS",
+      "Public Key Cryptography Standards"
+    ]
+  },
+  {
+    "id": "a-pki",
+    "display": "PKI",
+    "acronym": "PKI",
+    "expansion": "Public Key Infrastructure",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PKI",
+      "Public Key Infrastructure"
+    ]
+  },
+  {
+    "id": "a-pop",
+    "display": "POP",
+    "acronym": "POP",
+    "expansion": "Post Office Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "POP",
+      "Post Office Protocol"
+    ]
+  },
+  {
+    "id": "a-pots",
+    "display": "POTS",
+    "acronym": "POTS",
+    "expansion": "Plain Old Telephone Service",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "POTS",
+      "Plain Old Telephone Service"
+    ]
+  },
+  {
+    "id": "a-ppp",
+    "display": "PPP",
+    "acronym": "PPP",
+    "expansion": "Point-to-Point Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PPP",
+      "Point-to-Point Protocol"
+    ]
+  },
+  {
+    "id": "a-pptp",
+    "display": "PPTP",
+    "acronym": "PPTP",
+    "expansion": "Point-to-Point Tunneling Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PPTP",
+      "Point-to-Point Tunneling Protocol"
+    ]
+  },
+  {
+    "id": "a-psk",
+    "display": "PSK",
+    "acronym": "PSK",
+    "expansion": "Pre-shared Key",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PSK",
+      "Pre-shared Key"
+    ]
+  },
+  {
+    "id": "a-ptz",
+    "display": "PTZ",
+    "acronym": "PTZ",
+    "expansion": "Pan-tilt-zoom",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PTZ",
+      "Pan-tilt-zoom"
+    ]
+  },
+  {
+    "id": "a-pup",
+    "display": "PUP",
+    "acronym": "PUP",
+    "expansion": "Potentially Unwanted Program",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "PUP",
+      "Potentially Unwanted Program"
+    ]
+  },
+  {
+    "id": "a-ra",
+    "display": "RA (Recovery Agent)",
+    "acronym": "RA",
+    "expansion": "Recovery Agent",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RA",
+      "Recovery Agent"
+    ]
+  },
+  {
+    "id": "a-ra-registration",
+    "display": "RA (Registration Authority)",
+    "acronym": "RA",
+    "expansion": "Registration Authority",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RA",
+      "Registration Authority"
+    ]
+  },
+  {
+    "id": "a-rad",
+    "display": "RAD",
+    "acronym": "RAD",
+    "expansion": "Rapid Application Development",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RAD",
+      "Rapid Application Development"
+    ]
+  },
+  {
+    "id": "a-radius",
+    "display": "RADIUS",
+    "acronym": "RADIUS",
+    "expansion": "Remote Authentication Dial-in User Service",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RADIUS",
+      "Remote Authentication Dial-in User Service"
+    ]
+  },
+  {
+    "id": "a-raid",
+    "display": "RAID",
+    "acronym": "RAID",
+    "expansion": "Redundant Array of Inexpensive Disks",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RAID",
+      "Redundant Array of Inexpensive Disks"
+    ]
+  },
+  {
+    "id": "a-ras",
+    "display": "RAS",
+    "acronym": "RAS",
+    "expansion": "Remote Access Server",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RAS",
+      "Remote Access Server"
+    ]
+  },
+  {
+    "id": "a-rat",
+    "display": "RAT",
+    "acronym": "RAT",
+    "expansion": "Remote Access Trojan",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RAT",
+      "Remote Access Trojan"
+    ]
+  },
+  {
+    "id": "a-rbac",
+    "display": "RBAC (Role-based Access Control)",
+    "acronym": "RBAC",
+    "expansion": "Role-based Access Control",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RBAC",
+      "Role-based Access Control"
+    ]
+  },
+  {
+    "id": "a-rbac-rule-based",
+    "display": "RBAC (Rule-based Access Control)",
+    "acronym": "RBAC",
+    "expansion": "Rule-based Access Control",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RBAC",
+      "Rule-based Access Control"
+    ]
+  },
+  {
+    "id": "a-rc4",
+    "display": "RC4",
+    "acronym": "RC4",
+    "expansion": "Rivest Cipher version 4",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RC4",
+      "Rivest Cipher version 4"
+    ]
+  },
+  {
+    "id": "a-rdp",
+    "display": "RDP",
+    "acronym": "RDP",
+    "expansion": "Remote Desktop Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RDP",
+      "Remote Desktop Protocol"
+    ]
+  },
+  {
+    "id": "a-rfid",
+    "display": "RFID",
+    "acronym": "RFID",
+    "expansion": "Radio Frequency Identifier",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RFID",
+      "Radio Frequency Identifier"
+    ]
+  },
+  {
+    "id": "a-ripemd",
+    "display": "RIPEMD",
+    "acronym": "RIPEMD",
+    "expansion": "RACE Integrity Primitives Evaluation Message Digest",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RIPEMD",
+      "RACE Integrity Primitives Evaluation Message Digest"
+    ]
+  },
+  {
+    "id": "a-roi",
+    "display": "ROI",
+    "acronym": "ROI",
+    "expansion": "Return on Investment",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "ROI",
+      "Return on Investment"
+    ]
+  },
+  {
+    "id": "a-rpo",
+    "display": "RPO",
+    "acronym": "RPO",
+    "expansion": "Recovery Point Objective",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RPO",
+      "Recovery Point Objective"
+    ]
+  },
+  {
+    "id": "a-rsa",
+    "display": "RSA",
+    "acronym": "RSA",
+    "expansion": "Rivest, Shamir, & Adleman",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RSA",
+      "Rivest, Shamir, & Adleman"
+    ]
+  },
+  {
+    "id": "a-rtbh",
+    "display": "RTBH",
+    "acronym": "RTBH",
+    "expansion": "Remotely Triggered Black Hole",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RTBH",
+      "Remotely Triggered Black Hole"
+    ]
+  },
+  {
+    "id": "a-rto",
+    "display": "RTO",
+    "acronym": "RTO",
+    "expansion": "Recovery Time Objective",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RTO",
+      "Recovery Time Objective"
+    ]
+  },
+  {
+    "id": "a-rtos",
+    "display": "RTOS",
+    "acronym": "RTOS",
+    "expansion": "Real-time Operating System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RTOS",
+      "Real-time Operating System"
+    ]
+  },
+  {
+    "id": "a-rtp",
+    "display": "RTP",
+    "acronym": "RTP",
+    "expansion": "Real-time Transport Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "RTP",
+      "Real-time Transport Protocol"
+    ]
+  },
+  {
+    "id": "a-s-mime",
+    "display": "S/MIME",
+    "acronym": "S/MIME",
+    "expansion": "Secure/Multipurpose Internet Mail Extensions",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "S/MIME",
+      "Secure/Multipurpose Internet Mail Extensions"
+    ]
+  },
+  {
+    "id": "a-saas",
+    "display": "SaaS",
+    "acronym": "SaaS",
+    "expansion": "Software as a Service",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SaaS",
+      "Software as a Service"
+    ]
+  },
+  {
+    "id": "a-sae",
+    "display": "SAE",
+    "acronym": "SAE",
+    "expansion": "Simultaneous Authentication of Equals",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SAE",
+      "Simultaneous Authentication of Equals"
+    ]
+  },
+  {
+    "id": "a-saml",
+    "display": "SAML",
+    "acronym": "SAML",
+    "expansion": "Security Assertions Markup Language",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SAML",
+      "Security Assertions Markup Language"
+    ]
+  },
+  {
+    "id": "a-san",
+    "display": "SAN (Storage Area Network)",
+    "acronym": "SAN",
+    "expansion": "Storage Area Network",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SAN",
+      "Storage Area Network"
+    ]
+  },
+  {
+    "id": "a-san-subject",
+    "display": "SAN (Subject Alternative Name)",
+    "acronym": "SAN",
+    "expansion": "Subject Alternative Name",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SAN",
+      "Subject Alternative Name"
+    ]
+  },
+  {
+    "id": "a-sase",
+    "display": "SASE",
+    "acronym": "SASE",
+    "expansion": "Secure Access Service Edge",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SASE",
+      "Secure Access Service Edge"
+    ]
+  },
+  {
+    "id": "a-scada",
+    "display": "SCADA",
+    "acronym": "SCADA",
+    "expansion": "Supervisory Control and Data Acquisition",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SCADA",
+      "Supervisory Control and Data Acquisition"
+    ]
+  },
+  {
+    "id": "a-scap",
+    "display": "SCAP",
+    "acronym": "SCAP",
+    "expansion": "Security Content Automation Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SCAP",
+      "Security Content Automation Protocol"
+    ]
+  },
+  {
+    "id": "a-scep",
+    "display": "SCEP",
+    "acronym": "SCEP",
+    "expansion": "Simple Certificate Enrollment Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SCEP",
+      "Simple Certificate Enrollment Protocol"
+    ]
+  },
+  {
+    "id": "a-sd-wan",
+    "display": "SD-WAN",
+    "acronym": "SD-WAN",
+    "expansion": "Software-defined Wide Area Network",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SD-WAN",
+      "Software-defined Wide Area Network"
+    ]
+  },
+  {
+    "id": "a-sdk",
+    "display": "SDK",
+    "acronym": "SDK",
+    "expansion": "Software Development Kit",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SDK",
+      "Software Development Kit"
+    ]
+  },
+  {
+    "id": "a-sdlc",
+    "display": "SDLC",
+    "acronym": "SDLC",
+    "expansion": "Software Development Lifecycle",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SDLC",
+      "Software Development Lifecycle"
+    ]
+  },
+  {
+    "id": "a-sdlm",
+    "display": "SDLM",
+    "acronym": "SDLM",
+    "expansion": "Software Development Lifecycle Methodology",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SDLM",
+      "Software Development Lifecycle Methodology"
+    ]
+  },
+  {
+    "id": "a-sdn",
+    "display": "SDN",
+    "acronym": "SDN",
+    "expansion": "Software-defined Networking",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SDN",
+      "Software-defined Networking"
+    ]
+  },
+  {
+    "id": "a-sed",
+    "display": "SED",
+    "acronym": "SED",
+    "expansion": "Self-encrypting Drives",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SED",
+      "Self-encrypting Drives"
+    ]
+  },
+  {
+    "id": "a-seh",
+    "display": "SEH",
+    "acronym": "SEH",
+    "expansion": "Structured Exception Handler",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SEH",
+      "Structured Exception Handler"
+    ]
+  },
+  {
+    "id": "a-sftp",
+    "display": "SFTP",
+    "acronym": "SFTP",
+    "expansion": "Secured File Transfer Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SFTP",
+      "Secured File Transfer Protocol"
+    ]
+  },
+  {
+    "id": "a-sha",
+    "display": "SHA",
+    "acronym": "SHA",
+    "expansion": "Secure Hashing Algorithm",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SHA",
+      "Secure Hashing Algorithm"
+    ]
+  },
+  {
+    "id": "a-siem",
+    "display": "SIEM",
+    "acronym": "SIEM",
+    "expansion": "Security Information and Event Management",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SIEM",
+      "Security Information and Event Management"
+    ]
+  },
+  {
+    "id": "a-sim",
+    "display": "SIM",
+    "acronym": "SIM",
+    "expansion": "Subscriber Identity Module",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SIM",
+      "Subscriber Identity Module"
+    ]
+  },
+  {
+    "id": "a-sla",
+    "display": "SLA",
+    "acronym": "SLA",
+    "expansion": "Service-level Agreement",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SLA",
+      "Service-level Agreement"
+    ]
+  },
+  {
+    "id": "a-sle",
+    "display": "SLE",
+    "acronym": "SLE",
+    "expansion": "Single Loss Expectancy",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SLE",
+      "Single Loss Expectancy"
+    ]
+  },
+  {
+    "id": "a-smb",
+    "display": "SMB",
+    "acronym": "SMB",
+    "expansion": "Server Message Block",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SMB",
+      "Server Message Block"
+    ]
+  },
+  {
+    "id": "a-sms",
+    "display": "SMS",
+    "acronym": "SMS",
+    "expansion": "Short Message Service",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SMS",
+      "Short Message Service"
+    ]
+  },
+  {
+    "id": "a-smtp",
+    "display": "SMTP",
+    "acronym": "SMTP",
+    "expansion": "Simple Mail Transfer Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SMTP",
+      "Simple Mail Transfer Protocol"
+    ]
+  },
+  {
+    "id": "a-snmp",
+    "display": "SNMP",
+    "acronym": "SNMP",
+    "expansion": "Simple Network Management Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SNMP",
+      "Simple Network Management Protocol"
+    ]
+  },
+  {
+    "id": "a-soap",
+    "display": "SOAP",
+    "acronym": "SOAP",
+    "expansion": "Simple Object Access Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SOAP",
+      "Simple Object Access Protocol"
+    ]
+  },
+  {
+    "id": "a-soar",
+    "display": "SOAR",
+    "acronym": "SOAR",
+    "expansion": "Security Orchestration, Automation, Response",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SOAR",
+      "Security Orchestration, Automation, Response"
+    ]
+  },
+  {
+    "id": "a-soc",
+    "display": "SoC",
+    "acronym": "SoC",
+    "expansion": "System on Chip",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SoC",
+      "System on Chip"
+    ]
+  },
+  {
+    "id": "a-soc-security",
+    "display": "SOC",
+    "acronym": "SOC",
+    "expansion": "Security Operations Center",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SOC",
+      "Security Operations Center"
+    ]
+  },
+  {
+    "id": "a-sow",
+    "display": "SOW",
+    "acronym": "SOW",
+    "expansion": "Statement of Work",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SOW",
+      "Statement of Work"
+    ]
+  },
+  {
+    "id": "a-spf",
+    "display": "SPF",
+    "acronym": "SPF",
+    "expansion": "Sender Policy Framework",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SPF",
+      "Sender Policy Framework"
+    ]
+  },
+  {
+    "id": "a-spim",
+    "display": "SPIM",
+    "acronym": "SPIM",
+    "expansion": "Spam over Internet Messaging",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SPIM",
+      "Spam over Internet Messaging"
+    ]
+  },
+  {
+    "id": "a-sql",
+    "display": "SQL",
+    "acronym": "SQL",
+    "expansion": "Structured Query Language",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SQL",
+      "Structured Query Language"
+    ]
+  },
+  {
+    "id": "a-sqli",
+    "display": "SQLi",
+    "acronym": "SQLi",
+    "expansion": "SQL Injection",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SQLi",
+      "SQL Injection"
+    ]
+  },
+  {
+    "id": "a-srtp",
+    "display": "SRTP",
+    "acronym": "SRTP",
+    "expansion": "Secure Real-Time Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SRTP",
+      "Secure Real-Time Protocol"
+    ]
+  },
+  {
+    "id": "a-ssd",
+    "display": "SSD",
+    "acronym": "SSD",
+    "expansion": "Solid State Drive",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SSD",
+      "Solid State Drive"
+    ]
+  },
+  {
+    "id": "a-ssh",
+    "display": "SSH",
+    "acronym": "SSH",
+    "expansion": "Secure Shell",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SSH",
+      "Secure Shell"
+    ]
+  },
+  {
+    "id": "a-ssl",
+    "display": "SSL",
+    "acronym": "SSL",
+    "expansion": "Secure Sockets Layer",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SSL",
+      "Secure Sockets Layer"
+    ]
+  },
+  {
+    "id": "a-sso",
+    "display": "SSO",
+    "acronym": "SSO",
+    "expansion": "Single Sign-on",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SSO",
+      "Single Sign-on"
+    ]
+  },
+  {
+    "id": "a-stix",
+    "display": "STIX",
+    "acronym": "STIX",
+    "expansion": "Structured Threat Information eXchange",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "STIX",
+      "Structured Threat Information eXchange"
+    ]
+  },
+  {
+    "id": "a-swg",
+    "display": "SWG",
+    "acronym": "SWG",
+    "expansion": "Secure Web Gateway",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "SWG",
+      "Secure Web Gateway"
+    ]
+  },
+  {
+    "id": "a-tacacs",
+    "display": "TACACS+",
+    "acronym": "TACACS+",
+    "expansion": "Terminal Access Controller Access Control System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "TACACS+",
+      "Terminal Access Controller Access Control System"
+    ]
+  },
+  {
+    "id": "a-taxii",
+    "display": "TAXII",
+    "acronym": "TAXII",
+    "expansion": "Trusted Automated eXchange of Indicator Information",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "TAXII",
+      "Trusted Automated eXchange of Indicator Information"
+    ]
+  },
+  {
+    "id": "a-tcp-ip",
+    "display": "TCP/IP",
+    "acronym": "TCP/IP",
+    "expansion": "Transmission Control Protocol/Internet Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "TCP/IP",
+      "Transmission Control Protocol/Internet Protocol"
+    ]
+  },
+  {
+    "id": "a-tgt",
+    "display": "TGT",
+    "acronym": "TGT",
+    "expansion": "Ticket Granting Ticket",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "TGT",
+      "Ticket Granting Ticket"
+    ]
+  },
+  {
+    "id": "a-tkip",
+    "display": "TKIP",
+    "acronym": "TKIP",
+    "expansion": "Temporal Key Integrity Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "TKIP",
+      "Temporal Key Integrity Protocol"
+    ]
+  },
+  {
+    "id": "a-tls",
+    "display": "TLS",
+    "acronym": "TLS",
+    "expansion": "Transport Layer Security",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "TLS",
+      "Transport Layer Security"
+    ]
+  },
+  {
+    "id": "a-toc",
+    "display": "TOC",
+    "acronym": "TOC",
+    "expansion": "Time-of-check",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "TOC",
+      "Time-of-check"
+    ]
+  },
+  {
+    "id": "a-totp",
+    "display": "TOTP",
+    "acronym": "TOTP",
+    "expansion": "Time-based One-time Password",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "TOTP",
+      "Time-based One-time Password"
+    ]
+  },
+  {
+    "id": "a-tou",
+    "display": "TOU",
+    "acronym": "TOU",
+    "expansion": "Time-of-use",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "TOU",
+      "Time-of-use"
+    ]
+  },
+  {
+    "id": "a-tpm",
+    "display": "TPM",
+    "acronym": "TPM",
+    "expansion": "Trusted Platform Module",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "TPM",
+      "Trusted Platform Module"
+    ]
+  },
+  {
+    "id": "a-ttp",
+    "display": "TTP",
+    "acronym": "TTP",
+    "expansion": "Tactics, Techniques, and Procedures",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "TTP",
+      "Tactics, Techniques, and Procedures"
+    ]
+  },
+  {
+    "id": "a-uat",
+    "display": "UAT",
+    "acronym": "UAT",
+    "expansion": "User Acceptance Testing",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "UAT",
+      "User Acceptance Testing"
+    ]
+  },
+  {
+    "id": "a-uav",
+    "display": "UAV",
+    "acronym": "UAV",
+    "expansion": "Unmanned Aerial Vehicle",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "UAV",
+      "Unmanned Aerial Vehicle"
+    ]
+  },
+  {
+    "id": "a-uba",
+    "display": "UBA",
+    "acronym": "UBA",
+    "expansion": "User Behavior Analytics",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "UBA",
+      "User Behavior Analytics"
+    ]
+  },
+  {
+    "id": "a-udp",
+    "display": "UDP",
+    "acronym": "UDP",
+    "expansion": "User Datagram Protocol",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "UDP",
+      "User Datagram Protocol"
+    ]
+  },
+  {
+    "id": "a-uefi",
+    "display": "UEFI",
+    "acronym": "UEFI",
+    "expansion": "Unified Extensible Firmware Interface",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "UEFI",
+      "Unified Extensible Firmware Interface"
+    ]
+  },
+  {
+    "id": "a-uem",
+    "display": "UEM",
+    "acronym": "UEM",
+    "expansion": "Unified Endpoint Management",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "UEM",
+      "Unified Endpoint Management"
+    ]
+  },
+  {
+    "id": "a-ups",
+    "display": "UPS",
+    "acronym": "UPS",
+    "expansion": "Uninterruptible Power Supply",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "UPS",
+      "Uninterruptible Power Supply"
+    ]
+  },
+  {
+    "id": "a-uri",
+    "display": "URI",
+    "acronym": "URI",
+    "expansion": "Uniform Resource Identifier",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "URI",
+      "Uniform Resource Identifier"
+    ]
+  },
+  {
+    "id": "a-url",
+    "display": "URL",
+    "acronym": "URL",
+    "expansion": "Universal Resource Locator",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "URL",
+      "Universal Resource Locator"
+    ]
+  },
+  {
+    "id": "a-usb",
+    "display": "USB",
+    "acronym": "USB",
+    "expansion": "Universal Serial Bus",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "USB",
+      "Universal Serial Bus"
+    ]
+  },
+  {
+    "id": "a-usb-otg",
+    "display": "USB OTG",
+    "acronym": "USB OTG",
+    "expansion": "USB On the Go",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "USB OTG",
+      "USB On the Go"
+    ]
+  },
+  {
+    "id": "a-utm",
+    "display": "UTM",
+    "acronym": "UTM",
+    "expansion": "Unified Threat Management",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "UTM",
+      "Unified Threat Management"
+    ]
+  },
+  {
+    "id": "a-utp",
+    "display": "UTP",
+    "acronym": "UTP",
+    "expansion": "Unshielded Twisted Pair",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "UTP",
+      "Unshielded Twisted Pair"
+    ]
+  },
+  {
+    "id": "a-vba",
+    "display": "VBA",
+    "acronym": "VBA",
+    "expansion": "Visual Basic",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "VBA",
+      "Visual Basic"
+    ]
+  },
+  {
+    "id": "a-vde",
+    "display": "VDE",
+    "acronym": "VDE",
+    "expansion": "Virtual Desktop Environment",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "VDE",
+      "Virtual Desktop Environment"
+    ]
+  },
+  {
+    "id": "a-vdi",
+    "display": "VDI",
+    "acronym": "VDI",
+    "expansion": "Virtual Desktop Infrastructure",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "VDI",
+      "Virtual Desktop Infrastructure"
+    ]
+  },
+  {
+    "id": "a-vlan",
+    "display": "VLAN",
+    "acronym": "VLAN",
+    "expansion": "Virtual Local Area Network",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "VLAN",
+      "Virtual Local Area Network"
+    ]
+  },
+  {
+    "id": "a-vlsm",
+    "display": "VLSM",
+    "acronym": "VLSM",
+    "expansion": "Variable Length Subnet Masking",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "VLSM",
+      "Variable Length Subnet Masking"
+    ]
+  },
+  {
+    "id": "a-vm",
+    "display": "VM",
+    "acronym": "VM",
+    "expansion": "Virtual Machine",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "VM",
+      "Virtual Machine"
+    ]
+  },
+  {
+    "id": "a-voip",
+    "display": "VoIP",
+    "acronym": "VoIP",
+    "expansion": "Voice over IP",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "VoIP",
+      "Voice over IP"
+    ]
+  },
+  {
+    "id": "a-vpc",
+    "display": "VPC",
+    "acronym": "VPC",
+    "expansion": "Virtual Private Cloud",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "VPC",
+      "Virtual Private Cloud"
+    ]
+  },
+  {
+    "id": "a-vpn",
+    "display": "VPN",
+    "acronym": "VPN",
+    "expansion": "Virtual Private Network",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "VPN",
+      "Virtual Private Network"
+    ]
+  },
+  {
+    "id": "a-vtc",
+    "display": "VTC",
+    "acronym": "VTC",
+    "expansion": "Video Teleconferencing",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "VTC",
+      "Video Teleconferencing"
+    ]
+  },
+  {
+    "id": "a-waf",
+    "display": "WAF",
+    "acronym": "WAF",
+    "expansion": "Web Application Firewall",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "WAF",
+      "Web Application Firewall"
+    ]
+  },
+  {
+    "id": "a-wap",
+    "display": "WAP",
+    "acronym": "WAP",
+    "expansion": "Wireless Access Point",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "WAP",
+      "Wireless Access Point"
+    ]
+  },
+  {
+    "id": "a-wep",
+    "display": "WEP",
+    "acronym": "WEP",
+    "expansion": "Wired Equivalent Privacy",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "WEP",
+      "Wired Equivalent Privacy"
+    ]
+  },
+  {
+    "id": "a-wids",
+    "display": "WIDS",
+    "acronym": "WIDS",
+    "expansion": "Wireless Intrusion Detection System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "WIDS",
+      "Wireless Intrusion Detection System"
+    ]
+  },
+  {
+    "id": "a-wips",
+    "display": "WIPS",
+    "acronym": "WIPS",
+    "expansion": "Wireless Intrusion Prevention System",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "WIPS",
+      "Wireless Intrusion Prevention System"
+    ]
+  },
+  {
+    "id": "a-wo",
+    "display": "WO",
+    "acronym": "WO",
+    "expansion": "Work Order",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "WO",
+      "Work Order"
+    ]
+  },
+  {
+    "id": "a-wpa",
+    "display": "WPA",
+    "acronym": "WPA",
+    "expansion": "Wi-Fi Protected Access",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "WPA",
+      "Wi-Fi Protected Access"
+    ]
+  },
+  {
+    "id": "a-wps",
+    "display": "WPS",
+    "acronym": "WPS",
+    "expansion": "Wi-Fi Protected Setup",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "WPS",
+      "Wi-Fi Protected Setup"
+    ]
+  },
+  {
+    "id": "a-wtls",
+    "display": "WTLS",
+    "acronym": "WTLS",
+    "expansion": "Wireless TLS",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "WTLS",
+      "Wireless TLS"
+    ]
+  },
+  {
+    "id": "a-xdr",
+    "display": "XDR",
+    "acronym": "XDR",
+    "expansion": "Extended Detection and Response",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "XDR",
+      "Extended Detection and Response"
+    ]
+  },
+  {
+    "id": "a-xml",
+    "display": "XML",
+    "acronym": "XML",
+    "expansion": "Extensible Markup Language",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "XML",
+      "Extensible Markup Language"
+    ]
+  },
+  {
+    "id": "a-xor",
+    "display": "XOR",
+    "acronym": "XOR",
+    "expansion": "Exclusive Or",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "XOR",
+      "Exclusive Or"
+    ]
+  },
+  {
+    "id": "a-xsrf",
+    "display": "XSRF",
+    "acronym": "XSRF",
+    "expansion": "Cross-site Request Forgery",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "XSRF",
+      "Cross-site Request Forgery"
+    ]
+  },
+  {
+    "id": "a-xss",
+    "display": "XSS",
+    "acronym": "XSS",
+    "expansion": "Cross-site Scripting",
+    "source": {
+      "note": "Practice/Flashcards.md",
+      "section": "Common Acronyms"
+    },
+    "verify": [
+      "XSS",
+      "Cross-site Scripting"
+    ]
   }
 ]

@@ -1,33 +1,403 @@
 [
   {
-    "id": "seed-d1-001",
+    "id": "d1-001",
     "domain": 1,
     "type": "mc",
-    "question": "What are the three pillars of the CIA triad?",
+    "question": "A firewall is which category and type of security control?",
     "options": [
-      "Confidentiality, Integrity, Availability",
-      "Confidentiality, Integrity, Authentication",
-      "Confidentiality, Authorization, Accounting",
-      "Consistency, Integrity, Availability"
+      "Technical, preventive",
+      "Technical, detective",
+      "Managerial, preventive",
+      "Physical, deterrent"
     ],
     "answer": 0,
-    "explanation": "The CIA triad is Confidentiality, Integrity, and Availability.",
+    "explanation": "A firewall is a technology-based safeguard that stops events before they occur — technical and preventive.",
     "difficulty": "easy",
     "source": {
       "note": "Domains/1 - General Security Concepts.md",
-      "section": "1.2 - Security Concepts"
+      "section": "1.1 — Compare and contrast various types of security controls"
     },
     "verify": [
-      "Confidentiality",
-      "Integrity",
-      "Availability"
+      "Technical",
+      "Preventive"
     ]
   },
   {
-    "id": "seed-d1-002",
+    "id": "d1-002",
     "domain": 1,
     "type": "mc",
-    "question": "Which key decrypts a message that was encrypted with a recipient's public key?",
+    "question": "Which control type fixes or restores the environment after an event?",
+    "options": [
+      "Preventive",
+      "Deterrent",
+      "Corrective",
+      "Detective"
+    ],
+    "answer": 2,
+    "explanation": "Corrective controls fix the environment after an event, e.g. backups and patches.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.1 — Compare and contrast various types of security controls"
+    },
+    "verify": [
+      "Corrective"
+    ]
+  },
+  {
+    "id": "d1-003",
+    "domain": 1,
+    "type": "mc",
+    "question": "Which control category is carried out day-to-day by people, such as awareness training?",
+    "options": [
+      "Technical",
+      "Managerial",
+      "Operational",
+      "Physical"
+    ],
+    "answer": 2,
+    "explanation": "Operational controls are day-to-day procedures performed by people.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.1 — Compare and contrast various types of security controls"
+    },
+    "verify": [
+      "Operational"
+    ]
+  },
+  {
+    "id": "d1-004",
+    "domain": 1,
+    "type": "mc",
+    "question": "Locks, fences, guards, and cameras belong to which control category?",
+    "options": [
+      "Technical",
+      "Managerial",
+      "Operational",
+      "Physical"
+    ],
+    "answer": 3,
+    "explanation": "These are tangible safeguards — the physical category.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.1 — Compare and contrast various types of security controls"
+    },
+    "verify": [
+      "Physical"
+    ]
+  },
+  {
+    "id": "d1-005",
+    "domain": 1,
+    "type": "mc",
+    "question": "A compensating control is used when…",
+    "options": [
+      "the primary control is not feasible",
+      "a control must be documented",
+      "an attacker has already breached the network",
+      "a control is more expensive than the risk"
+    ],
+    "answer": 0,
+    "explanation": "A compensating control is an alternative used when the primary control cannot be applied (e.g. segmenting a legacy system you cannot patch).",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.1 — Compare and contrast various types of security controls"
+    },
+    "verify": [
+      "Compensating"
+    ]
+  },
+  {
+    "id": "d1-006",
+    "domain": 1,
+    "type": "mc",
+    "question": "Which control type discourages an attack by making it risky or undesirable?",
+    "options": [
+      "Detective",
+      "Deterrent",
+      "Corrective",
+      "Directive"
+    ],
+    "answer": 1,
+    "explanation": "Deterrent controls (warning signs, cameras, an AUP) discourage attackers.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.1 — Compare and contrast various types of security controls"
+    },
+    "verify": [
+      "Deterrent"
+    ]
+  },
+  {
+    "id": "d1-007",
+    "domain": 1,
+    "type": "tf",
+    "question": "A security policy is a managerial control that is directive.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "A policy is management-based (managerial) and mandates behavior (directive).",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.1 — Compare and contrast various types of security controls"
+    },
+    "verify": [
+      "Managerial",
+      "Directive"
+    ]
+  },
+  {
+    "id": "d1-008",
+    "domain": 1,
+    "type": "mc",
+    "question": "Which CIA triad principle is achieved with hashing and digital signatures?",
+    "options": [
+      "Confidentiality",
+      "Integrity",
+      "Availability",
+      "Non-repudiation"
+    ],
+    "answer": 1,
+    "explanation": "Integrity ensures data is accurate and unaltered, achieved with hashing and digital signatures.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.2 — Summarize fundamental security concepts"
+    },
+    "verify": [
+      "Integrity"
+    ]
+  },
+  {
+    "id": "d1-009",
+    "domain": 1,
+    "type": "mc",
+    "question": "Which AAA element determines what an authenticated identity may do?",
+    "options": [
+      "Authentication",
+      "Authorization",
+      "Accounting",
+      "Auditing"
+    ],
+    "answer": 1,
+    "explanation": "Authorization determines what the identity may do.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.2 — Summarize fundamental security concepts"
+    },
+    "verify": [
+      "Authorization"
+    ]
+  },
+  {
+    "id": "d1-010",
+    "domain": 1,
+    "type": "mc",
+    "question": "Which authorization model ties permissions to roles?",
+    "options": [
+      "DAC",
+      "MAC",
+      "RBAC",
+      "ABAC"
+    ],
+    "answer": 2,
+    "explanation": "RBAC ties permissions to roles rather than individuals.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.2 — Summarize fundamental security concepts"
+    },
+    "verify": [
+      "RBAC"
+    ]
+  },
+  {
+    "id": "d1-011",
+    "domain": 1,
+    "type": "mc",
+    "question": "Zero Trust assumes…",
+    "options": [
+      "implicit trust for internal devices",
+      "no implicit trust based on location or device",
+      "trust once authenticated",
+      "trust for known VPN users"
+    ],
+    "answer": 1,
+    "explanation": "Zero Trust assumes no implicit trust based on location or device — never trust, always verify.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.2 — Summarize fundamental security concepts"
+    },
+    "verify": [
+      "Zero Trust"
+    ]
+  },
+  {
+    "id": "d1-012",
+    "domain": 1,
+    "type": "mc",
+    "question": "What is a mantrap?",
+    "options": [
+      "A decoy system to attract attackers",
+      "A two-door access control vestibule allowing one person at a time",
+      "A network of honeypots",
+      "A type of badge reader"
+    ],
+    "answer": 1,
+    "explanation": "A mantrap is a two-door vestibule that allows only one person through at a time.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.2 — Summarize fundamental security concepts"
+    },
+    "verify": [
+      "mantraps"
+    ]
+  },
+  {
+    "id": "d1-013",
+    "domain": 1,
+    "type": "mc",
+    "question": "A honeypot is…",
+    "options": [
+      "a decoy system designed to attract attackers",
+      "an encrypted tunnel",
+      "a load balancer",
+      "a database of threat signatures"
+    ],
+    "answer": 0,
+    "explanation": "A honeypot is a decoy system that lures attackers and reveals their activity.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.2 — Summarize fundamental security concepts"
+    },
+    "verify": [
+      "honeypot"
+    ]
+  },
+  {
+    "id": "d1-014",
+    "domain": 1,
+    "type": "mc",
+    "question": "What is the role of the change advisory board (CAB)?",
+    "options": [
+      "To review and approve higher-risk changes",
+      "To write user documentation",
+      "To enforce encryption standards",
+      "To monitor network traffic"
+    ],
+    "answer": 0,
+    "explanation": "The CAB reviews and approves higher-risk changes.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.3 — Explain the importance of change management processes and the impact to security"
+    },
+    "verify": [
+      "CAB"
+    ]
+  },
+  {
+    "id": "d1-015",
+    "domain": 1,
+    "type": "mc",
+    "question": "What is a backout plan?",
+    "options": [
+      "A predefined way to revert a change if it fails",
+      "A schedule of future changes",
+      "A list of approved vendors",
+      "A security awareness module"
+    ],
+    "answer": 0,
+    "explanation": "A backout plan (rollback) reverts a change if it fails or causes problems.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.3 — Explain the importance of change management processes and the impact to security"
+    },
+    "verify": [
+      "rollback"
+    ]
+  },
+  {
+    "id": "d1-016",
+    "domain": 1,
+    "type": "mc",
+    "question": "What is a maintenance window?",
+    "options": [
+      "An approved period for applying a change with minimal business impact",
+      "A time to perform penetration tests",
+      "A backup schedule",
+      "A patch download window"
+    ],
+    "answer": 0,
+    "explanation": "A maintenance window is the approved period for applying a change with minimal impact.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.3 — Explain the importance of change management processes and the impact to security"
+    },
+    "verify": [
+      "Maintenance window"
+    ]
+  },
+  {
+    "id": "d1-017",
+    "domain": 1,
+    "type": "tf",
+    "question": "Poor change management is a leading cause of unintended outages and misconfigurations.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Unmanaged changes frequently cause outages and misconfigurations that create vulnerabilities.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.3 — Explain the importance of change management processes and the impact to security"
+    },
+    "verify": [
+      "change management"
+    ]
+  },
+  {
+    "id": "d1-018",
+    "domain": 1,
+    "type": "mc",
+    "question": "Which cryptographic goal is provided by encryption?",
+    "options": [
+      "Integrity",
+      "Confidentiality",
+      "Non-repudiation",
+      "Availability"
+    ],
+    "answer": 1,
+    "explanation": "Encryption provides confidentiality — only authorized parties can read the data.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.4 — Explain the importance of using appropriate cryptographic solutions"
+    },
+    "verify": [
+      "confidentiality"
+    ]
+  },
+  {
+    "id": "d1-019",
+    "domain": 1,
+    "type": "mc",
+    "question": "Which key decrypts a message that was encrypted with the recipient's public key?",
     "options": [
       "The sender's private key",
       "The recipient's private key",
@@ -35,191 +405,3612 @@
       "A shared symmetric key"
     ],
     "answer": 1,
-    "explanation": "In asymmetric encryption, a message encrypted with a public key can only be decrypted by the matching private key.",
+    "explanation": "In asymmetric encryption, only the matching private key can decrypt what the public key encrypted.",
     "difficulty": "medium",
     "source": {
       "note": "Domains/1 - General Security Concepts.md",
-      "section": "1.4 - Cryptography"
+      "section": "1.4 — Explain the importance of using appropriate cryptographic solutions"
     },
     "verify": [
-      "public key",
-      "private key"
+      "private key",
+      "public key"
     ]
   },
   {
-    "id": "seed-d2-001",
-    "domain": 2,
+    "id": "d1-020",
+    "domain": 1,
     "type": "mc",
-    "question": "Which type of malware encrypts a victim's files and demands payment for the decryption key?",
+    "question": "What is the digest size of SHA-1?",
     "options": [
-      "Worm",
-      "Ransomware",
-      "Trojan",
-      "Spyware"
+      "128-bit",
+      "160-bit",
+      "224-bit",
+      "256-bit"
     ],
     "answer": 1,
-    "explanation": "Ransomware encrypts files and demands payment to restore access.",
+    "explanation": "SHA-1 produces a 160-bit digest.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.4 — Explain the importance of using appropriate cryptographic solutions"
+    },
+    "verify": [
+      "SHA-1",
+      "160-bit"
+    ]
+  },
+  {
+    "id": "d1-021",
+    "domain": 1,
+    "type": "mc",
+    "question": "What is the digest size of MD5?",
+    "options": [
+      "128-bit",
+      "160-bit",
+      "192-bit",
+      "256-bit"
+    ],
+    "answer": 0,
+    "explanation": "MD5 produces a 128-bit digest.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.4 — Explain the importance of using appropriate cryptographic solutions"
+    },
+    "verify": [
+      "MD5",
+      "128-bit"
+    ]
+  },
+  {
+    "id": "d1-022",
+    "domain": 1,
+    "type": "mc",
+    "question": "What is the minimum recommended RSA key size?",
+    "options": [
+      "1024-bit",
+      "2048-bit",
+      "3072-bit",
+      "4096-bit"
+    ],
+    "answer": 1,
+    "explanation": "RSA minimum is 2048-bit; 1024-bit is disallowed.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.4 — Explain the importance of using appropriate cryptographic solutions"
+    },
+    "verify": [
+      "RSA",
+      "2048-bit"
+    ]
+  },
+  {
+    "id": "d2-001",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which threat actor is government-sponsored, highly resourced, and motivated by espionage?",
+    "options": [
+      "Hacktivist",
+      "Nation-state",
+      "Script kiddie",
+      "Insider threat"
+    ],
+    "answer": 1,
+    "explanation": "Nation-state actors are government-sponsored and pursue espionage or geopolitical advantage.",
     "difficulty": "easy",
     "source": {
       "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
-      "section": "2.3 - Malware"
+      "section": "2.1 — Compare and contrast common threat actors and motivations"
     },
     "verify": [
-      "Ransomware"
+      "Nation-state"
     ]
   },
   {
-    "id": "seed-d2-002",
+    "id": "d2-002",
     "domain": 2,
     "type": "mc",
-    "question": "Which social engineering attack targets high-level executives specifically?",
+    "question": "Which threat actor is motivated by political or social causes rather than money?",
     "options": [
-      "Phishing",
-      "Whaling",
-      "Vishing",
-      "Tailgating"
+      "Organized crime",
+      "Nation-state",
+      "Hacktivist",
+      "Script kiddie"
     ],
-    "answer": 1,
-    "explanation": "Whaling is phishing aimed at high-value targets such as executives.",
+    "answer": 2,
+    "explanation": "Hacktivists are ideologically driven.",
     "difficulty": "medium",
     "source": {
       "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
-      "section": "2.2 - Social Engineering"
+      "section": "2.1 — Compare and contrast common threat actors and motivations"
+    },
+    "verify": [
+      "Hacktivist"
+    ]
+  },
+  {
+    "id": "d2-003",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which threat actor is a low-skill user of pre-built tools, often seeking notoriety?",
+    "options": [
+      "Script kiddie",
+      "APT",
+      "Insider threat",
+      "Organized crime"
+    ],
+    "answer": 0,
+    "explanation": "A script kiddie uses pre-built tools with low skill.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.1 — Compare and contrast common threat actors and motivations"
+    },
+    "verify": [
+      "Script kiddie"
+    ]
+  },
+  {
+    "id": "d2-004",
+    "domain": 2,
+    "type": "mc",
+    "question": "An advanced persistent threat (APT) is best described as…",
+    "options": [
+      "a single hacker",
+      "a sophisticated, prolonged, targeted intrusion campaign",
+      "a type of malware",
+      "a phishing email"
+    ],
+    "answer": 1,
+    "explanation": "An APT is a campaign — advanced, persistent, and targeted, not a single person.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.1 — Compare and contrast common threat actors and motivations"
+    },
+    "verify": [
+      "APT"
+    ]
+  },
+  {
+    "id": "d2-005",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which threat actor is a current or former employee or contractor with authorized access?",
+    "options": [
+      "Nation-state",
+      "Organized crime",
+      "Insider threat",
+      "Hacktivist"
+    ],
+    "answer": 2,
+    "explanation": "An insider threat has authorized access and can be malicious or accidental.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.1 — Compare and contrast common threat actors and motivations"
+    },
+    "verify": [
+      "Insider threat"
+    ]
+  },
+  {
+    "id": "d2-006",
+    "domain": 2,
+    "type": "tf",
+    "question": "Shadow IT is technology deployed and used without the approval of the IT/security organization.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Shadow IT is a blind spot that often becomes an entry point.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.1 — Compare and contrast common threat actors and motivations"
+    },
+    "verify": [
+      "Shadow IT"
+    ]
+  },
+  {
+    "id": "d2-007",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which threat vector targets high-value executives?",
+    "options": [
+      "Phishing",
+      "Spear phishing",
+      "Whaling",
+      "Vishing"
+    ],
+    "answer": 2,
+    "explanation": "Whaling is phishing aimed at high-value executives.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.2 — Explain common threat vectors and attack surfaces"
     },
     "verify": [
       "Whaling"
     ]
   },
   {
-    "id": "seed-d3-001",
-    "domain": 3,
+    "id": "d2-008",
+    "domain": 2,
     "type": "mc",
-    "question": "Which access control model assigns access based on security labels and clearances?",
+    "question": "Smishing is phishing via…",
     "options": [
-      "DAC",
-      "RBAC",
-      "MAC",
-      "ABAC"
+      "email",
+      "SMS text messages",
+      "voice calls",
+      "a compromised website"
     ],
-    "answer": 2,
-    "explanation": "Mandatory Access Control (MAC) uses security labels and clearances to enforce policy.",
+    "answer": 1,
+    "explanation": "Smishing uses SMS text messages; vishing uses voice calls.",
     "difficulty": "medium",
     "source": {
-      "note": "Domains/3 - Security Architecture.md",
-      "section": "3.2 - Access Control"
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.2 — Explain common threat vectors and attack surfaces"
     },
     "verify": [
-      "Mandatory Access Control"
+      "Smishing"
     ]
   },
   {
-    "id": "seed-d3-002",
-    "domain": 3,
+    "id": "d2-009",
+    "domain": 2,
     "type": "mc",
-    "question": "What is the primary purpose of a network DMZ?",
+    "question": "A watering hole attack…",
     "options": [
-      "To isolate public-facing services from the internal network",
-      "To encrypt all outbound traffic",
-      "To cache web content",
-      "To load-balance internal servers"
+      "compromises a website frequently visited by the intended targets",
+      "floods a network with traffic",
+      "guesses passwords",
+      "uses removable media"
     ],
     "answer": 0,
-    "explanation": "A DMZ hosts public-facing services while isolating them from the trusted internal network.",
+    "explanation": "A watering hole compromises a site the targets already visit.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.2 — Explain common threat vectors and attack surfaces"
+    },
+    "verify": [
+      "Watering hole"
+    ]
+  },
+  {
+    "id": "d2-010",
+    "domain": 2,
+    "type": "mc",
+    "question": "A supply chain attack…",
+    "options": [
+      "compromises a trusted third party or vendor to reach downstream customers",
+      "steals credentials from executives",
+      "denies service to a server",
+      "hides data inside an image"
+    ],
+    "answer": 0,
+    "explanation": "Supply chain attacks compromise a trusted vendor to reach their customers.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.2 — Explain common threat vectors and attack surfaces"
+    },
+    "verify": [
+      "Supply chain"
+    ]
+  },
+  {
+    "id": "d2-011",
+    "domain": 2,
+    "type": "tf",
+    "question": "Unsecured networks, default credentials, and excessive permissions expand the attack surface.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "These factors widen the attack surface an attacker can target.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.2 — Explain common threat vectors and attack surfaces"
+    },
+    "verify": [
+      "attack surface"
+    ]
+  },
+  {
+    "id": "d2-012",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which vulnerability has no patch available at the time of exploitation?",
+    "options": [
+      "Misconfiguration",
+      "Zero-day",
+      "Weak credentials",
+      "End-of-life software"
+    ],
+    "answer": 1,
+    "explanation": "A zero-day is unknown to the vendor, so no patch exists when exploited.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.3 — Explain various types of vulnerabilities"
+    },
+    "verify": [
+      "Zero-day"
+    ]
+  },
+  {
+    "id": "d2-013",
+    "domain": 2,
+    "type": "mc",
+    "question": "An exposed public S3 bucket is an example of which vulnerability type?",
+    "options": [
+      "Zero-day",
+      "Misconfiguration",
+      "Firmware",
+      "Race condition"
+    ],
+    "answer": 1,
+    "explanation": "Leaving cloud storage public is a misconfiguration, among the most exploited weaknesses.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.3 — Explain various types of vulnerabilities"
+    },
+    "verify": [
+      "misconfiguration"
+    ]
+  },
+  {
+    "id": "d2-014",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which vulnerability category no longer receives patches and remains exploitable?",
+    "options": [
+      "Zero-day",
+      "End-of-life (EOL) software",
+      "Weak cryptography",
+      "VM escape"
+    ],
+    "answer": 1,
+    "explanation": "EOL software no longer receives patches, so it stays exploitable.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.3 — Explain various types of vulnerabilities"
+    },
+    "verify": [
+      "End-of-life (EOL) software"
+    ]
+  },
+  {
+    "id": "d2-015",
+    "domain": 2,
+    "type": "mc",
+    "question": "A race condition is…",
+    "options": [
+      "an outcome that depends on timing",
+      "a flaw in encryption",
+      "a denial of service",
+      "a credential attack"
+    ],
+    "answer": 0,
+    "explanation": "A race condition depends on timing; TOCTOU is the classic example.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.3 — Explain various types of vulnerabilities"
+    },
+    "verify": [
+      "Race condition"
+    ]
+  },
+  {
+    "id": "d2-016",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which of the following is a web application vulnerability?",
+    "options": [
+      "Buffer overflow",
+      "SQL injection",
+      "VM escape",
+      "Card skimming"
+    ],
+    "answer": 1,
+    "explanation": "SQL injection, XSS, and CSRF are the classic web application vulnerabilities.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.3 — Explain various types of vulnerabilities"
+    },
+    "verify": [
+      "SQL injection"
+    ]
+  },
+  {
+    "id": "d2-017",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which malware self-propagates over a network without user action?",
+    "options": [
+      "Virus",
+      "Worm",
+      "Trojan",
+      "Logic bomb"
+    ],
+    "answer": 1,
+    "explanation": "A worm spreads on its own; a virus needs a host and user action.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.4 — Given a scenario, analyze indicators of malicious activity"
+    },
+    "verify": [
+      "Worm"
+    ]
+  },
+  {
+    "id": "d2-018",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which malware encrypts data and demands payment for the key?",
+    "options": [
+      "Spyware",
+      "Ransomware",
+      "Rootkit",
+      "Keylogger"
+    ],
+    "answer": 1,
+    "explanation": "Ransomware encrypts data and demands payment to restore access.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.4 — Given a scenario, analyze indicators of malicious activity"
+    },
+    "verify": [
+      "Ransomware"
+    ]
+  },
+  {
+    "id": "d2-019",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which malware disguises itself as legitimate software?",
+    "options": [
+      "Trojan",
+      "Worm",
+      "Botnet",
+      "Backdoor"
+    ],
+    "answer": 0,
+    "explanation": "A Trojan disguises itself as legitimate software to trick the user.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.4 — Given a scenario, analyze indicators of malicious activity"
+    },
+    "verify": [
+      "Trojan"
+    ]
+  },
+  {
+    "id": "d2-020",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which malware hides its presence and grants privileged access?",
+    "options": [
+      "Keylogger",
+      "Rootkit",
+      "Spyware",
+      "Virus"
+    ],
+    "answer": 1,
+    "explanation": "A rootkit hides its presence and grants the attacker privileged access.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.4 — Given a scenario, analyze indicators of malicious activity"
+    },
+    "verify": [
+      "Rootkit"
+    ]
+  },
+  {
+    "id": "d2-021",
+    "domain": 2,
+    "type": "mc",
+    "question": "A network of compromised machines controlled by a C2 server is a…",
+    "options": [
+      "botnet",
+      "honeynet",
+      "VLAN",
+      "DMZ"
+    ],
+    "answer": 0,
+    "explanation": "A botnet is compromised zombies controlled by command-and-control.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.4 — Given a scenario, analyze indicators of malicious activity"
+    },
+    "verify": [
+      "Botnet"
+    ]
+  },
+  {
+    "id": "d2-022",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which password attack tries a few passwords against many accounts?",
+    "options": [
+      "Brute force",
+      "Dictionary",
+      "Spraying",
+      "Rainbow table"
+    ],
+    "answer": 2,
+    "explanation": "Spraying tries a few common passwords against many accounts to avoid lockout.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.4 — Given a scenario, analyze indicators of malicious activity"
+    },
+    "verify": [
+      "spraying"
+    ]
+  },
+  {
+    "id": "d2-023",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which indicator suggests a credential attack?",
+    "options": [
+      "Account lockouts and repeated failed logins",
+      "Higher CPU usage",
+      "A new software install",
+      "Slower network throughput"
+    ],
+    "answer": 0,
+    "explanation": "Account lockouts, repeated failed logins, and impossible travel indicate credential attacks.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.4 — Given a scenario, analyze indicators of malicious activity"
+    },
+    "verify": [
+      "account lockouts"
+    ]
+  },
+  {
+    "id": "d2-024",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which mitigation divides the network into isolated segments to limit lateral movement?",
+    "options": [
+      "Network segmentation",
+      "Patching",
+      "Encryption",
+      "Least privilege"
+    ],
+    "answer": 0,
+    "explanation": "Segmentation limits lateral movement after a breach.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.5 — Explain the purpose of mitigation techniques used to secure the enterprise"
+    },
+    "verify": [
+      "Network segmentation"
+    ]
+  },
+  {
+    "id": "d2-025",
+    "domain": 2,
+    "type": "mc",
+    "question": "An allow list…",
+    "options": [
+      "permits only approved items",
+      "blocks known-bad items",
+      "logs all traffic",
+      "encrypts all data"
+    ],
+    "answer": 0,
+    "explanation": "An allow list permits only approved items; a deny list blocks known-bad items.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.5 — Explain the purpose of mitigation techniques used to secure the enterprise"
+    },
+    "verify": [
+      "Allow list"
+    ]
+  },
+  {
+    "id": "d2-026",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which mitigation separates an infected system from the rest of the network?",
+    "options": [
+      "Patching",
+      "Isolation / quarantine",
+      "Encryption",
+      "Continuous monitoring"
+    ],
+    "answer": 1,
+    "explanation": "Isolation/quarantine separates the infected system from the network.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.5 — Explain the purpose of mitigation techniques used to secure the enterprise"
+    },
+    "verify": [
+      "Isolation / quarantine"
+    ]
+  },
+  {
+    "id": "d2-027",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which mitigation grants only the access a subject needs, limiting damage from a compromised account?",
+    "options": [
+      "Least privilege",
+      "Hashing",
+      "Logging",
+      "Redundancy"
+    ],
+    "answer": 0,
+    "explanation": "Least privilege limits the damage of a compromised account.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.5 — Explain the purpose of mitigation techniques used to secure the enterprise"
+    },
+    "verify": [
+      "Least privilege"
+    ]
+  },
+  {
+    "id": "d2-028",
+    "domain": 2,
+    "type": "tf",
+    "question": "Patching remediates known vulnerabilities before they are exploited.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Patching closes known vulnerabilities before attackers can exploit them.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.5 — Explain the purpose of mitigation techniques used to secure the enterprise"
+    },
+    "verify": [
+      "Patching"
+    ]
+  },
+  {
+    "id": "d2-029",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which malware category attaches to a host file and requires user action to spread?",
+    "options": [
+      "Worm",
+      "Virus",
+      "Botnet",
+      "Backdoor"
+    ],
+    "answer": 1,
+    "explanation": "A virus attaches to a host file and needs user action; a worm does not.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.4 — Given a scenario, analyze indicators of malicious activity"
+    },
+    "verify": [
+      "Virus"
+    ]
+  },
+  {
+    "id": "d2-030",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which malware is a covert method of bypassing normal authentication?",
+    "options": [
+      "Backdoor",
+      "Spyware",
+      "Logic bomb",
+      "Keylogger"
+    ],
+    "answer": 0,
+    "explanation": "A backdoor bypasses normal authentication covertly.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.4 — Given a scenario, analyze indicators of malicious activity"
+    },
+    "verify": [
+      "Backdoor"
+    ]
+  },
+  {
+    "id": "d2-031",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which cryptographic attack works against a captured hash?",
+    "options": [
+      "Online brute force",
+      "Rainbow-table",
+      "Session hijacking",
+      "SQL injection"
+    ],
+    "answer": 1,
+    "explanation": "Offline attacks (like rainbow tables) work on a captured hash; online attacks are rate-limited.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.4 — Given a scenario, analyze indicators of malicious activity"
+    },
+    "verify": [
+      "rainbow-table"
+    ]
+  },
+  {
+    "id": "d2-032",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which network attack redirects traffic to an unknown host?",
+    "options": [
+      "DDoS",
+      "DNS poisoning",
+      "VLAN hopping",
+      "MAC flooding"
+    ],
+    "answer": 1,
+    "explanation": "On-path or DNS attacks often redirect traffic to an unknown host.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.4 — Given a scenario, analyze indicators of malicious activity"
+    },
+    "verify": [
+      "DNS poisoning"
+    ]
+  },
+  {
+    "id": "d2-033",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which physical attack clones a payment card at a reader?",
+    "options": [
+      "Tailgating",
+      "Card skimming",
+      "Dumpster diving",
+      "Evil twin"
+    ],
+    "answer": 1,
+    "explanation": "Card skimming/cloning reads card data at a compromised reader.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.4 — Given a scenario, analyze indicators of malicious activity"
+    },
+    "verify": [
+      "card skimming/cloning"
+    ]
+  },
+  {
+    "id": "d2-034",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which mitigation disables unnecessary services, changes defaults, and restricts access?",
+    "options": [
+      "System hardening",
+      "Encryption",
+      "Load balancing",
+      "Backup"
+    ],
+    "answer": 0,
+    "explanation": "System hardening reduces the attack surface by removing what is not needed.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.5 — Explain the purpose of mitigation techniques used to secure the enterprise"
+    },
+    "verify": [
+      "System hardening"
+    ]
+  },
+  {
+    "id": "d2-035",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which mitigation uses honeypots and honeynets to misdirect attackers?",
+    "options": [
+      "Deception",
+      "Encryption",
+      "Patching",
+      "Allow lists"
+    ],
+    "answer": 0,
+    "explanation": "Deception technologies misdirect attackers and provide early warning.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.5 — Explain the purpose of mitigation techniques used to secure the enterprise"
+    },
+    "verify": [
+      "Deception"
+    ]
+  },
+  {
+    "id": "d2-036",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which mitigation prevents configuration drift and misconfiguration?",
+    "options": [
+      "Secure baselines",
+      "Sandboxing",
+      "Data masking",
+      "Tokenization"
+    ],
+    "answer": 0,
+    "explanation": "Configuration enforcement via secure baselines prevents drift.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.5 — Explain the purpose of mitigation techniques used to secure the enterprise"
+    },
+    "verify": [
+      "Secure baselines"
+    ]
+  },
+  {
+    "id": "d2-037",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which vulnerability category includes VM escape and hypervisor flaws?",
+    "options": [
+      "Virtualization",
+      "Cloud",
+      "Mobile",
+      "Zero-day"
+    ],
+    "answer": 0,
+    "explanation": "VM escape and hypervisor flaws are virtualization vulnerabilities.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.3 — Explain various types of vulnerabilities"
+    },
+    "verify": [
+      "Virtualization"
+    ]
+  },
+  {
+    "id": "d2-038",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which vulnerability is introduced through third-party products or code?",
+    "options": [
+      "Supply chain",
+      "Zero-day",
+      "Misconfiguration",
+      "EOL software"
+    ],
+    "answer": 0,
+    "explanation": "Supply chain risk is introduced through third-party products and code.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.3 — Explain various types of vulnerabilities"
+    },
+    "verify": [
+      "Supply chain"
+    ]
+  },
+  {
+    "id": "d2-039",
+    "domain": 2,
+    "type": "mc",
+    "question": "Which threat vector requires physical or local access to a system?",
+    "options": [
+      "Direct access",
+      "Phishing",
+      "Watering hole",
+      "Supply chain"
+    ],
+    "answer": 0,
+    "explanation": "Direct access attacks require physical or local access.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.2 — Explain common threat vectors and attack surfaces"
+    },
+    "verify": [
+      "Direct access"
+    ]
+  },
+  {
+    "id": "d2-040",
+    "domain": 2,
+    "type": "tf",
+    "question": "An insider threat can be either malicious or accidental.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Insider threats may be malicious or accidental.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.1 — Compare and contrast common threat actors and motivations"
+    },
+    "verify": [
+      "Insider threat"
+    ]
+  },
+  {
+    "id": "d3-001",
+    "domain": 3,
+    "type": "mc",
+    "question": "In the IaaS model, the customer secures…",
+    "options": [
+      "the operating system and up",
+      "only the physical data center",
+      "the hypervisor",
+      "the cloud provider's hardware"
+    ],
+    "answer": 0,
+    "explanation": "In IaaS the provider secures infrastructure; the customer secures the OS and up.",
     "difficulty": "medium",
     "source": {
       "note": "Domains/3 - Security Architecture.md",
-      "section": "3.1 - Secure Network Architecture"
+      "section": "3.1 — Compare and contrast security implications of different architecture models"
     },
     "verify": [
-      "DMZ"
+      "IaaS"
     ]
   },
   {
-    "id": "seed-d4-001",
-    "domain": 4,
+    "id": "d3-002",
+    "domain": 3,
     "type": "mc",
-    "question": "Which phase of the incident response lifecycle comes first?",
+    "question": "Which cloud model gives you software that you secure at the data and access level?",
     "options": [
-      "Containment",
-      "Preparation",
-      "Eradication",
-      "Recovery"
+      "IaaS",
+      "PaaS",
+      "SaaS",
+      "On-premises"
+    ],
+    "answer": 2,
+    "explanation": "In SaaS the provider manages everything but your data and access remain your responsibility.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.1 — Compare and contrast security implications of different architecture models"
+    },
+    "verify": [
+      "SaaS"
+    ]
+  },
+  {
+    "id": "d3-003",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which are the four NIST cloud deployment models?",
+    "options": [
+      "public, private, community, hybrid",
+      "IaaS, PaaS, SaaS, FaaS",
+      "local, remote, edge, fog",
+      "primary, secondary, tertiary, quaternary"
+    ],
+    "answer": 0,
+    "explanation": "Deployment models are public, private, community, and hybrid.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.1 — Compare and contrast security implications of different architecture models"
+    },
+    "verify": [
+      "public, private, community, and hybrid"
+    ]
+  },
+  {
+    "id": "d3-004",
+    "domain": 3,
+    "type": "mc",
+    "question": "A misconfigured cloud bucket is primarily whose responsibility?",
+    "options": [
+      "The cloud provider",
+      "The customer",
+      "The software vendor",
+      "The regulator"
     ],
     "answer": 1,
-    "explanation": "The incident response lifecycle begins with Preparation.",
+    "explanation": "The customer secures what they put in the cloud — a misconfigured bucket is the customer's.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.1 — Compare and contrast security implications of different architecture models"
+    },
+    "verify": [
+      "misconfigured cloud bucket"
+    ]
+  },
+  {
+    "id": "d3-005",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which architecture manages infrastructure through version-controlled code?",
+    "options": [
+      "Serverless",
+      "Infrastructure as Code (IaC)",
+      "Microservices",
+      "Containers"
+    ],
+    "answer": 1,
+    "explanation": "IaC manages infrastructure through version-controlled, repeatable code.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.1 — Compare and contrast security implications of different architecture models"
+    },
+    "verify": [
+      "Infrastructure as Code"
+    ]
+  },
+  {
+    "id": "d3-006",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which operational technology controls industrial processes such as power and water?",
+    "options": [
+      "ICS/SCADA",
+      "IoT",
+      "RTOS",
+      "FPGA"
+    ],
+    "answer": 0,
+    "explanation": "ICS/SCADA controls industrial processes and is a form of operational technology (OT).",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.1 — Compare and contrast security implications of different architecture models"
+    },
+    "verify": [
+      "ICS/SCADA"
+    ]
+  },
+  {
+    "id": "d3-007",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which system is a real-time operating system with deterministic timing?",
+    "options": [
+      "RTOS",
+      "SoC",
+      "IoT",
+      "Serverless"
+    ],
+    "answer": 0,
+    "explanation": "An RTOS provides deterministic, safety-critical timing.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.1 — Compare and contrast security implications of different architecture models"
+    },
+    "verify": [
+      "RTOS"
+    ]
+  },
+  {
+    "id": "d3-008",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which zone hosts public-facing services between external and internal networks?",
+    "options": [
+      "Screened subnet (DMZ)",
+      "Management VLAN",
+      "Guest network",
+      "Backup network"
+    ],
+    "answer": 0,
+    "explanation": "A screened subnet (DMZ) hosts public-facing services between external and internal networks.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.2 — Given a scenario, apply security principles to secure enterprise infrastructure"
+    },
+    "verify": [
+      "Screened subnet (DMZ)"
+    ]
+  },
+  {
+    "id": "d3-009",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which firewall type filters traffic and tracks connection state?",
+    "options": [
+      "Stateless",
+      "Stateful",
+      "WAF",
+      "UTM"
+    ],
+    "answer": 1,
+    "explanation": "A stateful firewall filters rules and tracks connection state.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.2 — Given a scenario, apply security principles to secure enterprise infrastructure"
+    },
+    "verify": [
+      "Stateful"
+    ]
+  },
+  {
+    "id": "d3-010",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which device protects web apps at the application layer (Layer 7)?",
+    "options": [
+      "WAF",
+      "NGFW",
+      "Stateless firewall",
+      "Load balancer"
+    ],
+    "answer": 0,
+    "explanation": "A WAF protects web applications at Layer 7.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.2 — Given a scenario, apply security principles to secure enterprise infrastructure"
+    },
+    "verify": [
+      "WAF"
+    ]
+  },
+  {
+    "id": "d3-011",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which control detects suspicious activity passively (out-of-band)?",
+    "options": [
+      "IPS",
+      "IDS",
+      "NAC",
+      "Firewall"
+    ],
+    "answer": 1,
+    "explanation": "IDS detects (passive); IPS detects and blocks (inline).",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.2 — Given a scenario, apply security principles to secure enterprise infrastructure"
+    },
+    "verify": [
+      "IDS"
+    ]
+  },
+  {
+    "id": "d3-012",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which control both detects and blocks traffic inline?",
+    "options": [
+      "IDS",
+      "IPS",
+      "NAC",
+      "Load balancer"
+    ],
+    "answer": 1,
+    "explanation": "IPS detects and blocks inline.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.2 — Given a scenario, apply security principles to secure enterprise infrastructure"
+    },
+    "verify": [
+      "IPS"
+    ]
+  },
+  {
+    "id": "d3-013",
+    "domain": 3,
+    "type": "mc",
+    "question": "IPsec's AH provides…",
+    "options": [
+      "integrity only",
+      "encryption and integrity",
+      "confidentiality only",
+      "authentication and non-repudiation"
+    ],
+    "answer": 0,
+    "explanation": "AH provides integrity only; ESP provides encryption + integrity.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.2 — Given a scenario, apply security principles to secure enterprise infrastructure"
+    },
+    "verify": [
+      "AH"
+    ]
+  },
+  {
+    "id": "d3-014",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which service converges SWG, CASB, ZTNA, and FWaaS with SD-WAN into a cloud-delivered service?",
+    "options": [
+      "SASE",
+      "NAC",
+      "UTM",
+      "VPN"
+    ],
+    "answer": 0,
+    "explanation": "SASE converges network security services with SD-WAN into a cloud-delivered service.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.2 — Given a scenario, apply security principles to secure enterprise infrastructure"
+    },
+    "verify": [
+      "SASE"
+    ]
+  },
+  {
+    "id": "d3-015",
+    "domain": 3,
+    "type": "tf",
+    "question": "A load balancer distributes traffic across servers for scalability and high availability.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Load balancers distribute traffic for scalability and high availability.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.2 — Given a scenario, apply security principles to secure enterprise infrastructure"
+    },
+    "verify": [
+      "Load balancer"
+    ]
+  },
+  {
+    "id": "d3-016",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which are the three data states?",
+    "options": [
+      "at rest, in transit, and in use",
+      "public, private, secret",
+      "structured, unstructured, semi-structured",
+      "hot, warm, cold"
+    ],
+    "answer": 0,
+    "explanation": "The three data states are at rest, in transit, and in use.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.3 — Compare and contrast concepts and strategies to protect data"
+    },
+    "verify": [
+      "at rest, in transit, and in use"
+    ]
+  },
+  {
+    "id": "d3-017",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which data type is protected health information?",
+    "options": [
+      "PII",
+      "PHI",
+      "PCI",
+      "CHD"
+    ],
+    "answer": 1,
+    "explanation": "PHI is protected health information.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.3 — Compare and contrast concepts and strategies to protect data"
+    },
+    "verify": [
+      "PHI"
+    ]
+  },
+  {
+    "id": "d3-018",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which strategy replaces sensitive data with a surrogate token with no exploitable value if stolen?",
+    "options": [
+      "Data masking",
+      "Tokenization",
+      "Encryption",
+      "Obfuscation"
+    ],
+    "answer": 1,
+    "explanation": "Tokenization replaces the value with a token; masking hides part of the value.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.3 — Compare and contrast concepts and strategies to protect data"
+    },
+    "verify": [
+      "Tokenization"
+    ]
+  },
+  {
+    "id": "d3-019",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which strategy shows only partial data, such as the last four digits of a card number?",
+    "options": [
+      "Data masking",
+      "Tokenization",
+      "Encryption",
+      "Hashing"
+    ],
+    "answer": 0,
+    "explanation": "Data masking shows only partial data.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.3 — Compare and contrast concepts and strategies to protect data"
+    },
+    "verify": [
+      "Data masking"
+    ]
+  },
+  {
+    "id": "d3-020",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which concept means data is subject to the laws of the jurisdiction where it resides?",
+    "options": [
+      "Data classification",
+      "Data sovereignty",
+      "Data retention",
+      "Data obfuscation"
+    ],
+    "answer": 1,
+    "explanation": "Data sovereignty ties data to the laws of its location.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.3 — Compare and contrast concepts and strategies to protect data"
+    },
+    "verify": [
+      "Data sovereignty"
+    ]
+  },
+  {
+    "id": "d3-021",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which tool monitors and blocks unauthorized transfer of sensitive data?",
+    "options": [
+      "DLP",
+      "SIEM",
+      "NAC",
+      "WAF"
+    ],
+    "answer": 0,
+    "explanation": "DLP monitors and blocks unauthorized data transfer.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.3 — Compare and contrast concepts and strategies to protect data"
+    },
+    "verify": [
+      "DLP"
+    ]
+  },
+  {
+    "id": "d3-022",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which recovery site is fully operational and ready immediately?",
+    "options": [
+      "Hot",
+      "Warm",
+      "Cold",
+      "Virtual"
+    ],
+    "answer": 0,
+    "explanation": "A hot site is fully operational and ready immediately.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.4 — Explain the importance of resilience and recovery in security architecture"
+    },
+    "verify": [
+      "Hot"
+    ]
+  },
+  {
+    "id": "d3-023",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which recovery site has space and power only?",
+    "options": [
+      "Hot",
+      "Warm",
+      "Cold",
+      "Offline"
+    ],
+    "answer": 2,
+    "explanation": "A cold site has space/power only.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.4 — Explain the importance of resilience and recovery in security architecture"
+    },
+    "verify": [
+      "Cold"
+    ]
+  },
+  {
+    "id": "d3-024",
+    "domain": 3,
+    "type": "mc",
+    "question": "RTO (Recovery Time Objective) is the…",
+    "options": [
+      "maximum acceptable downtime",
+      "maximum acceptable data loss",
+      "backup frequency",
+      "retention period"
+    ],
+    "answer": 0,
+    "explanation": "RTO is the maximum acceptable downtime to restore service.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.4 — Explain the importance of resilience and recovery in security architecture"
+    },
+    "verify": [
+      "RTO"
+    ]
+  },
+  {
+    "id": "d3-025",
+    "domain": 3,
+    "type": "mc",
+    "question": "RPO (Recovery Point Objective) is the…",
+    "options": [
+      "maximum acceptable data loss",
+      "maximum acceptable downtime",
+      "restore time",
+      "replication interval"
+    ],
+    "answer": 0,
+    "explanation": "RPO is the maximum acceptable data loss measured in time.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.4 — Explain the importance of resilience and recovery in security architecture"
+    },
+    "verify": [
+      "RPO"
+    ]
+  },
+  {
+    "id": "d3-026",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which power device bridges to a generator during an outage?",
+    "options": [
+      "UPS",
+      "PDU",
+      "Firewall",
+      "Load balancer"
+    ],
+    "answer": 0,
+    "explanation": "A UPS (uninterruptible power supply) bridges to a generator.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.4 — Explain the importance of resilience and recovery in security architecture"
+    },
+    "verify": [
+      "UPS"
+    ]
+  },
+  {
+    "id": "d3-027",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which plan keeps critical functions running during a disruption?",
+    "options": [
+      "COOP",
+      "DRP",
+      "IRP",
+      "AUP"
+    ],
+    "answer": 0,
+    "explanation": "COOP (continuity of operations planning) keeps critical functions running.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.4 — Explain the importance of resilience and recovery in security architecture"
+    },
+    "verify": [
+      "COOP"
+    ]
+  },
+  {
+    "id": "d3-028",
+    "domain": 3,
+    "type": "tf",
+    "question": "A warm recovery site has equipment present but requires setup.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "A warm site has equipment present but requires setup.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.4 — Explain the importance of resilience and recovery in security architecture"
+    },
+    "verify": [
+      "Warm"
+    ]
+  },
+  {
+    "id": "d3-029",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which architecture shares the host kernel and relies on namespaces and control groups for isolation?",
+    "options": [
+      "Containers",
+      "Virtual machines",
+      "Serverless",
+      "IaaS"
+    ],
+    "answer": 0,
+    "explanation": "Containers share the host kernel and use namespaces and control groups.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.1 — Compare and contrast security implications of different architecture models"
+    },
+    "verify": [
+      "Containers"
+    ]
+  },
+  {
+    "id": "d3-030",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which firewall bundles firewall, IPS, AV, and VPN in one appliance?",
+    "options": [
+      "UTM",
+      "NGFW",
+      "WAF",
+      "Stateless"
+    ],
+    "answer": 0,
+    "explanation": "UTM bundles firewall, IPS, AV, and VPN in one appliance.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.2 — Given a scenario, apply security principles to secure enterprise infrastructure"
+    },
+    "verify": [
+      "UTM"
+    ]
+  },
+  {
+    "id": "d3-031",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which encryption protocol provides AH and ESP for site-to-site or remote access VPNs?",
+    "options": [
+      "IPsec",
+      "TLS",
+      "SSH",
+      "WPA2"
+    ],
+    "answer": 0,
+    "explanation": "IPsec uses AH (integrity) and ESP (encryption + integrity).",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.2 — Given a scenario, apply security principles to secure enterprise infrastructure"
+    },
+    "verify": [
+      "IPsec"
+    ]
+  },
+  {
+    "id": "d3-032",
+    "domain": 3,
+    "type": "mc",
+    "question": "Which backup type records only the changes since the last backup of any kind?",
+    "options": [
+      "Incremental",
+      "Differential",
+      "Full",
+      "Snapshot"
+    ],
+    "answer": 0,
+    "explanation": "An incremental backup captures changes since the last backup of any type.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.4 — Explain the importance of resilience and recovery in security architecture"
+    },
+    "verify": [
+      "incremental"
+    ]
+  },
+  {
+    "id": "d4-001",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which technique runs untrusted code in an isolated environment so it cannot affect the host?",
+    "options": [
+      "Sandboxing",
+      "Hardening",
+      "Patching",
+      "Geofencing"
+    ],
+    "answer": 0,
+    "explanation": "Sandboxing isolates untrusted code from the host.",
     "difficulty": "easy",
     "source": {
       "note": "Domains/4 - Security Operations.md",
-      "section": "4.1 - Incident Response"
+      "section": "4.1 — Given a scenario, apply common security techniques to computing resources"
     },
     "verify": [
-      "Preparation"
+      "Sandboxing"
     ]
   },
   {
-    "id": "seed-d4-002",
+    "id": "d4-002",
     "domain": 4,
     "type": "mc",
-    "question": "Which protocol is commonly used to send log messages to a central log server?",
+    "question": "Hardening is performed relative to a…",
     "options": [
-      "SNMP",
+      "security baseline",
+      "firewall rule",
+      "backup",
+      "password policy"
+    ],
+    "answer": 0,
+    "explanation": "Hardening is relative to a baseline — a known-good secure configuration.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.1 — Given a scenario, apply common security techniques to computing resources"
+    },
+    "verify": [
+      "Security baseline"
+    ]
+  },
+  {
+    "id": "d4-003",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which mobile models are BYOD, COPE, CYOD, and COBO?",
+    "options": [
+      "Device ownership models",
+      "Encryption standards",
+      "Access control models",
+      "Backup strategies"
+    ],
+    "answer": 0,
+    "explanation": "BYOD, COPE, CYOD, and COBO are mobile device ownership models.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.1 — Given a scenario, apply common security techniques to computing resources"
+    },
+    "verify": [
+      "BYOD, COPE, CYOD, and COBO"
+    ]
+  },
+  {
+    "id": "d4-004",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which technique remotely erases a lost device?",
+    "options": [
+      "Remote wipe",
+      "Sandboxing",
+      "Geofencing",
+      "MDM enrollment"
+    ],
+    "answer": 0,
+    "explanation": "Remote wipe erases a lost device remotely.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.1 — Given a scenario, apply common security techniques to computing resources"
+    },
+    "verify": [
+      "remote wipe"
+    ]
+  },
+  {
+    "id": "d4-005",
+    "domain": 4,
+    "type": "tf",
+    "question": "MAM (mobile application management) controls applications on a device.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "MAM controls applications; MDM/UEM enforce mobile policy.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.1 — Given a scenario, apply common security techniques to computing resources"
+    },
+    "verify": [
+      "MAM"
+    ]
+  },
+  {
+    "id": "d4-006",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which media sanitization method is a logical overwrite?",
+    "options": [
+      "Clear",
+      "Purge",
+      "Destroy",
+      "Degauss"
+    ],
+    "answer": 0,
+    "explanation": "Clear is a logical overwrite — the weakest sanitization method.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.2 — Explain the security implications of proper hardware, software, and data asset management"
+    },
+    "verify": [
+      "Clear"
+    ]
+  },
+  {
+    "id": "d4-007",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which sanitization method is physical destruction?",
+    "options": [
+      "Clear",
+      "Purge",
+      "Destroy",
+      "Cryptographic erase"
+    ],
+    "answer": 2,
+    "explanation": "Destroy is physical destruction — the highest assurance.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.2 — Explain the security implications of proper hardware, software, and data asset management"
+    },
+    "verify": [
+      "Destroy"
+    ]
+  },
+  {
+    "id": "d4-008",
+    "domain": 4,
+    "type": "mc",
+    "question": "Degaussing destroys magnetic media by…",
+    "options": [
+      "disrupting the magnetic field",
+      "overwriting with zeros",
+      "encrypting the data",
+      "physically shredding"
+    ],
+    "answer": 0,
+    "explanation": "Degaussing disrupts the magnetic field (a Purge method).",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.2 — Explain the security implications of proper hardware, software, and data asset management"
+    },
+    "verify": [
+      "Degaussing"
+    ]
+  },
+  {
+    "id": "d4-009",
+    "domain": 4,
+    "type": "mc",
+    "question": "Cryptographic erasure works by…",
+    "options": [
+      "destroying the encryption key",
+      "deleting the file table",
+      "overwriting every sector",
+      "degaussing the drive"
+    ],
+    "answer": 0,
+    "explanation": "Cryptographic erasure destroys the encryption key, making data unrecoverable.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.2 — Explain the security implications of proper hardware, software, and data asset management"
+    },
+    "verify": [
+      "Cryptographic erasure"
+    ]
+  },
+  {
+    "id": "d4-010",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which document proves media was sanitized or destroyed?",
+    "options": [
+      "Certificate of destruction",
+      "Service level agreement",
+      "Audit report",
+      "Risk register"
+    ],
+    "answer": 0,
+    "explanation": "A certificate of destruction documents sanitization/destruction.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.2 — Explain the security implications of proper hardware, software, and data asset management"
+    },
+    "verify": [
+      "certificate of destruction"
+    ]
+  },
+  {
+    "id": "d4-011",
+    "domain": 4,
+    "type": "tf",
+    "question": "In increasing assurance, sanitization methods run Clear → Purge → Destroy.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Clear is weakest, Destroy is strongest.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.2 — Explain the security implications of proper hardware, software, and data asset management"
+    },
+    "verify": [
+      "Clear → Purge → Destroy"
+    ]
+  },
+  {
+    "id": "d4-012",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which vulnerability management phase identifies weaknesses with scanners and SCAP?",
+    "options": [
+      "Identification",
+      "Analysis",
+      "Response/remediation",
+      "Reporting"
+    ],
+    "answer": 0,
+    "explanation": "Identification uses vulnerability scanners and SCAP.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.3 — Explain various activities associated with vulnerability management"
+    },
+    "verify": [
+      "Identification"
+    ]
+  },
+  {
+    "id": "d4-013",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which identifier names a vulnerability, and which scores its severity?",
+    "options": [
+      "CVE names; CVSS scores",
+      "CVSS names; CVE scores",
+      "CVE scores; CVSS names",
+      "NVD names; CVE scores"
+    ],
+    "answer": 0,
+    "explanation": "CVE identifies the vulnerability; CVSS scores severity.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.3 — Explain various activities associated with vulnerability management"
+    },
+    "verify": [
+      "CVE",
+      "CVSS"
+    ]
+  },
+  {
+    "id": "d4-014",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which phase re-scans or retests to confirm remediation?",
+    "options": [
+      "Validation",
+      "Identification",
+      "Analysis",
+      "Reporting"
+    ],
+    "answer": 0,
+    "explanation": "Validation re-scans or retests to confirm the fix worked.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.3 — Explain various activities associated with vulnerability management"
+    },
+    "verify": [
+      "Validation"
+    ]
+  },
+  {
+    "id": "d4-015",
+    "domain": 4,
+    "type": "mc",
+    "question": "Credentialed scans find…",
+    "options": [
+      "more than non-credentialed scans",
+      "less than non-credentialed scans",
+      "the same as non-credentialed scans",
+      "only network misconfigurations"
+    ],
+    "answer": 0,
+    "explanation": "Credentialed scans find more because they authenticate to the target.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.3 — Explain various activities associated with vulnerability management"
+    },
+    "verify": [
+      "credentialed"
+    ]
+  },
+  {
+    "id": "d4-016",
+    "domain": 4,
+    "type": "tf",
+    "question": "Bug bounty programs and responsible disclosure encourage researchers to report vulnerabilities.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Both programs reward or accept responsible reporting of vulnerabilities.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.3 — Explain various activities associated with vulnerability management"
+    },
+    "verify": [
+      "Bug bounty"
+    ]
+  },
+  {
+    "id": "d4-017",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which tool aggregates and correlates logs from many sources to detect and alert?",
+    "options": [
+      "SIEM",
+      "DLP",
+      "NetFlow",
+      "SCAP"
+    ],
+    "answer": 0,
+    "explanation": "A SIEM aggregates and correlates logs to detect and alert.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.4 — Explain security alerting and monitoring concepts and tools"
+    },
+    "verify": [
+      "SIEM"
+    ]
+  },
+  {
+    "id": "d4-018",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which devices send unsolicited alerts to a management station?",
+    "options": [
+      "SNMP traps",
+      "NetFlow",
       "Syslog",
-      "NTP",
-      "DHCP"
+      "SCAP"
     ],
-    "answer": 1,
-    "explanation": "Syslog is the standard protocol for forwarding log messages to a central server.",
+    "answer": 0,
+    "explanation": "SNMP traps are unsolicited alerts from devices.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.4 — Explain security alerting and monitoring concepts and tools"
+    },
+    "verify": [
+      "SNMP traps"
+    ]
+  },
+  {
+    "id": "d4-019",
+    "domain": 4,
+    "type": "mc",
+    "question": "NetFlow provides…",
+    "options": [
+      "metadata about network traffic without full packet capture",
+      "full packet payloads",
+      "encrypted tunnels",
+      "directory lookups"
+    ],
+    "answer": 0,
+    "explanation": "NetFlow gives traffic metadata (who talked to whom, how much), not full packets.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.4 — Explain security alerting and monitoring concepts and tools"
+    },
+    "verify": [
+      "NetFlow"
+    ]
+  },
+  {
+    "id": "d4-020",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which standard forwards log messages to a central collector?",
+    "options": [
+      "Syslog",
+      "SNMP",
+      "NetFlow",
+      "SCAP"
+    ],
+    "answer": 0,
+    "explanation": "Syslog is the standard for forwarding log messages to a central collector.",
     "difficulty": "easy",
     "source": {
       "note": "Domains/4 - Security Operations.md",
-      "section": "4.2 - Logging & Monitoring"
+      "section": "4.4 — Explain security alerting and monitoring concepts and tools"
     },
     "verify": [
       "Syslog"
     ]
   },
   {
-    "id": "seed-d5-001",
-    "domain": 5,
+    "id": "d4-021",
+    "domain": 4,
     "type": "mc",
-    "question": "Which policy defines how employees may use company computing resources?",
+    "question": "Why does alert tuning matter?",
     "options": [
-      "Acceptable Use Policy (AUP)",
-      "Business Continuity Plan (BCP)",
-      "Disaster Recovery Plan (DRP)",
-      "Service Level Agreement (SLA)"
+      "To reduce false positives so real threats are not drowned out",
+      "To increase log volume",
+      "To disable logging",
+      "To encrypt logs"
     ],
     "answer": 0,
-    "explanation": "An Acceptable Use Policy (AUP) defines acceptable use of company resources.",
-    "difficulty": "easy",
+    "explanation": "Tuning reduces false positives so real threats are not drowned out.",
+    "difficulty": "medium",
     "source": {
-      "note": "Domains/5 - Security Program Management and Oversight.md",
-      "section": "5.1 - Governance & Compliance"
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.4 — Explain security alerting and monitoring concepts and tools"
     },
     "verify": [
-      "Acceptable Use Policy"
+      "Alert tuning"
     ]
   },
   {
-    "id": "seed-d5-002",
+    "id": "d4-022",
+    "domain": 4,
+    "type": "tf",
+    "question": "DLP monitors for and blocks data exfiltration.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "DLP monitors and blocks the unauthorized transfer of sensitive data.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.4 — Explain security alerting and monitoring concepts and tools"
+    },
+    "verify": [
+      "DLP"
+    ]
+  },
+  {
+    "id": "d4-023",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which email security control authorizes which servers may send mail for a domain?",
+    "options": [
+      "SPF",
+      "DKIM",
+      "DMARC",
+      "TLS"
+    ],
+    "answer": 0,
+    "explanation": "SPF authorizes sending servers; DKIM signs; DMARC aligns both.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.5 — Given a scenario, modify enterprise capabilities to enhance security"
+    },
+    "verify": [
+      "SPF"
+    ]
+  },
+  {
+    "id": "d4-024",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which email control signs messages?",
+    "options": [
+      "SPF",
+      "DKIM",
+      "DMARC",
+      "SMTP"
+    ],
+    "answer": 1,
+    "explanation": "DKIM signs messages.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.5 — Given a scenario, modify enterprise capabilities to enhance security"
+    },
+    "verify": [
+      "DKIM"
+    ]
+  },
+  {
+    "id": "d4-025",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which control enforces endpoint compliance (patch level, AV) before granting access?",
+    "options": [
+      "NAC",
+      "EDR",
+      "FIM",
+      "DLP"
+    ],
+    "answer": 0,
+    "explanation": "NAC enforces compliance before allowing a device on the network.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.5 — Given a scenario, modify enterprise capabilities to enhance security"
+    },
+    "verify": [
+      "NAC"
+    ]
+  },
+  {
+    "id": "d4-026",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which capability detects changes to critical files?",
+    "options": [
+      "FIM",
+      "UBA",
+      "XDR",
+      "EDR"
+    ],
+    "answer": 0,
+    "explanation": "FIM (file integrity monitoring) detects changes to critical files.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.5 — Given a scenario, modify enterprise capabilities to enhance security"
+    },
+    "verify": [
+      "FIM"
+    ]
+  },
+  {
+    "id": "d4-027",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which capability detects anomalous activity deviating from a baseline?",
+    "options": [
+      "UBA/UEBA",
+      "FIM",
+      "NAC",
+      "DLP"
+    ],
+    "answer": 0,
+    "explanation": "UBA/UEBA detects behavior that deviates from a baseline.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.5 — Given a scenario, modify enterprise capabilities to enhance security"
+    },
+    "verify": [
+      "UBA/UEBA"
+    ]
+  },
+  {
+    "id": "d4-028",
+    "domain": 4,
+    "type": "tf",
+    "question": "DMARC aligns SPF and DKIM and sets policy.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "DMARC aligns SPF and DKIM and sets policy against spoofed email.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.5 — Given a scenario, modify enterprise capabilities to enhance security"
+    },
+    "verify": [
+      "DMARC"
+    ]
+  },
+  {
+    "id": "d4-029",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which protocol is a directory access protocol?",
+    "options": [
+      "LDAP",
+      "OAuth",
+      "SAML",
+      "OIDC"
+    ],
+    "answer": 0,
+    "explanation": "LDAP is the directory access protocol.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.6 — Given a scenario, implement and maintain identity and access management"
+    },
+    "verify": [
+      "LDAP"
+    ]
+  },
+  {
+    "id": "d4-030",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which is an XML-based assertion standard for web SSO and federation?",
+    "options": [
+      "SAML",
+      "OAuth",
+      "OIDC",
+      "Kerberos"
+    ],
+    "answer": 0,
+    "explanation": "SAML is the XML-based assertion standard for SSO/federation.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.6 — Given a scenario, implement and maintain identity and access management"
+    },
+    "verify": [
+      "SAML"
+    ]
+  },
+  {
+    "id": "d4-031",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which is an authorization/delegation framework using tokens?",
+    "options": [
+      "OAuth",
+      "SAML",
+      "LDAP",
+      "Kerberos"
+    ],
+    "answer": 0,
+    "explanation": "OAuth is the authorization/delegation framework.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.6 — Given a scenario, implement and maintain identity and access management"
+    },
+    "verify": [
+      "OAuth"
+    ]
+  },
+  {
+    "id": "d4-032",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which adds an identity layer on top of OAuth 2.0?",
+    "options": [
+      "OIDC",
+      "SAML",
+      "LDAP",
+      "RADIUS"
+    ],
+    "answer": 0,
+    "explanation": "OIDC adds an identity/authentication layer on OAuth 2.0.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.6 — Given a scenario, implement and maintain identity and access management"
+    },
+    "verify": [
+      "OIDC"
+    ]
+  },
+  {
+    "id": "d4-033",
+    "domain": 4,
+    "type": "mc",
+    "question": "Kerberos uses a Key Distribution Center (KDC) that issues a…",
+    "options": [
+      "Ticket Granting Ticket (TGT)",
+      "digital certificate",
+      "session cookie",
+      "OAuth token"
+    ],
+    "answer": 0,
+    "explanation": "The KDC issues a Ticket Granting Ticket (TGT).",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.6 — Given a scenario, implement and maintain identity and access management"
+    },
+    "verify": [
+      "Key Distribution Center",
+      "Ticket Granting Ticket"
+    ]
+  },
+  {
+    "id": "d4-034",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which access control model has the owner set permissions?",
+    "options": [
+      "DAC",
+      "MAC",
+      "RBAC",
+      "ABAC"
+    ],
+    "answer": 0,
+    "explanation": "DAC lets the owner set permissions.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.6 — Given a scenario, implement and maintain identity and access management"
+    },
+    "verify": [
+      "DAC"
+    ]
+  },
+  {
+    "id": "d4-035",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which access control model has the system enforce labels?",
+    "options": [
+      "MAC",
+      "DAC",
+      "RBAC",
+      "ABAC"
+    ],
+    "answer": 0,
+    "explanation": "MAC has the system enforce labels/clearances.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.6 — Given a scenario, implement and maintain identity and access management"
+    },
+    "verify": [
+      "MAC"
+    ]
+  },
+  {
+    "id": "d4-036",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which concept lets a user authenticate once and access multiple applications?",
+    "options": [
+      "SSO",
+      "Federation",
+      "MFA",
+      "PAM"
+    ],
+    "answer": 0,
+    "explanation": "SSO lets a user authenticate once to access multiple applications.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.6 — Given a scenario, implement and maintain identity and access management"
+    },
+    "verify": [
+      "SSO"
+    ]
+  },
+  {
+    "id": "d4-037",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which MFA factor is a fingerprint?",
+    "options": [
+      "Something you are",
+      "Something you know",
+      "Something you have",
+      "Somewhere you are"
+    ],
+    "answer": 0,
+    "explanation": "A fingerprint is something you are (biometric).",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.6 — Given a scenario, implement and maintain identity and access management"
+    },
+    "verify": [
+      "Biometrics"
+    ]
+  },
+  {
+    "id": "d4-038",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which PAM protects and controls accounts with elevated privileges?",
+    "options": [
+      "Privileged Access Management",
+      "Pluggable Authentication Modules",
+      "Password Authentication Protocol",
+      "Privileged Account Monitor"
+    ],
+    "answer": 0,
+    "explanation": "PAM (Privileged Access Management) controls privileged accounts.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.6 — Given a scenario, implement and maintain identity and access management"
+    },
+    "verify": [
+      "Privileged Access Management"
+    ]
+  },
+  {
+    "id": "d4-039",
+    "domain": 4,
+    "type": "mc",
+    "question": "FRR (false rejection rate) and FAR (false acceptance rate) express…",
+    "options": [
+      "biometric accuracy",
+      "encryption strength",
+      "network latency",
+      "password entropy"
+    ],
+    "answer": 0,
+    "explanation": "FRR and FAR express biometric accuracy.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.6 — Given a scenario, implement and maintain identity and access management"
+    },
+    "verify": [
+      "FRR",
+      "false acceptance rate"
+    ]
+  },
+  {
+    "id": "d4-040",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which performs a single task without manual intervention?",
+    "options": [
+      "Automation",
+      "Orchestration",
+      "SOAR",
+      "Playbook"
+    ],
+    "answer": 0,
+    "explanation": "Automation is one task; orchestration chains many tasks into a workflow.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.7 — Explain the importance of automation and orchestration related to secure operations"
+    },
+    "verify": [
+      "Automation"
+    ]
+  },
+  {
+    "id": "d4-041",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which coordinates multiple automated tasks into a workflow?",
+    "options": [
+      "Orchestration",
+      "Automation",
+      "A runbook",
+      "A script"
+    ],
+    "answer": 0,
+    "explanation": "Orchestration coordinates multiple automated tasks.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.7 — Explain the importance of automation and orchestration related to secure operations"
+    },
+    "verify": [
+      "Orchestration"
+    ]
+  },
+  {
+    "id": "d4-042",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which platform is Security Orchestration, Automation, and Response?",
+    "options": [
+      "SOAR",
+      "SIEM",
+      "EDR",
+      "XDR"
+    ],
+    "answer": 0,
+    "explanation": "SOAR is the Security Orchestration, Automation, and Response platform.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.7 — Explain the importance of automation and orchestration related to secure operations"
+    },
+    "verify": [
+      "SOAR"
+    ]
+  },
+  {
+    "id": "d4-043",
+    "domain": 4,
+    "type": "tf",
+    "question": "Playbooks and runbooks document standardized automated response procedures.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Playbooks/runbooks document standardized automated response procedures.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.7 — Explain the importance of automation and orchestration related to secure operations"
+    },
+    "verify": [
+      "Playbooks"
+    ]
+  },
+  {
+    "id": "d4-044",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which is the FIRST phase of the objectives IR process?",
+    "options": [
+      "Preparation",
+      "Detection",
+      "Containment",
+      "Recovery"
+    ],
+    "answer": 0,
+    "explanation": "The IR process begins with Preparation.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.8 — Explain appropriate incident response activities"
+    },
+    "verify": [
+      "Preparation"
+    ]
+  },
+  {
+    "id": "d4-045",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which NIST SP 800-61 phase comes after Preparation?",
+    "options": [
+      "Detection and Analysis",
+      "Containment",
+      "Eradication",
+      "Post-Incident Activity"
+    ],
+    "answer": 0,
+    "explanation": "SP 800-61 runs Preparation → Detection and Analysis → Containment/Eradication/Recovery → Post-Incident Activity.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.8 — Explain appropriate incident response activities"
+    },
+    "verify": [
+      "Detection and Analysis"
+    ]
+  },
+  {
+    "id": "d4-046",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which activity proactively searches for threats that evaded existing controls?",
+    "options": [
+      "Threat hunting",
+      "Root cause analysis",
+      "Digital forensics",
+      "Legal hold"
+    ],
+    "answer": 0,
+    "explanation": "Threat hunting proactively searches for evaded threats.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.8 — Explain appropriate incident response activities"
+    },
+    "verify": [
+      "Threat hunting"
+    ]
+  },
+  {
+    "id": "d4-047",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which documents who handled evidence and when, preserving integrity?",
+    "options": [
+      "Chain of custody",
+      "Legal hold",
+      "Root cause analysis",
+      "Order of volatility"
+    ],
+    "answer": 0,
+    "explanation": "Chain of custody documents evidence handling to preserve integrity.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.8 — Explain appropriate incident response activities"
+    },
+    "verify": [
+      "Chain of custody"
+    ]
+  },
+  {
+    "id": "d4-048",
+    "domain": 4,
+    "type": "mc",
+    "question": "What should be collected first from a live system, per order of volatility?",
+    "options": [
+      "Memory",
+      "Archives",
+      "Disk images",
+      "Log files"
+    ],
+    "answer": 0,
+    "explanation": "Memory is the most volatile and is collected first.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.8 — Explain appropriate incident response activities"
+    },
+    "verify": [
+      "Order of volatility",
+      "memory"
+    ]
+  },
+  {
+    "id": "d4-049",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which activity identifies the underlying cause so it does not recur?",
+    "options": [
+      "Root cause analysis",
+      "Threat hunting",
+      "Containment",
+      "Eradication"
+    ],
+    "answer": 0,
+    "explanation": "Root cause analysis identifies the underlying cause.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.8 — Explain appropriate incident response activities"
+    },
+    "verify": [
+      "Root cause analysis"
+    ]
+  },
+  {
+    "id": "d4-050",
+    "domain": 4,
+    "type": "tf",
+    "question": "A legal hold preserves data that may be needed for litigation.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "A legal hold preserves data that may be needed for litigation.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.8 — Explain appropriate incident response activities"
+    },
+    "verify": [
+      "Legal hold"
+    ]
+  },
+  {
+    "id": "d4-051",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which data source gives full network traffic for deep analysis?",
+    "options": [
+      "Packet captures",
+      "NetFlow",
+      "Vulnerability scans",
+      "Dashboards"
+    ],
+    "answer": 0,
+    "explanation": "Packet captures (tcpdump, Wireshark) give full traffic for deep analysis.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.9 — Given a scenario, use data sources to support an investigation"
+    },
+    "verify": [
+      "Packet captures"
+    ]
+  },
+  {
+    "id": "d4-052",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which data source reveals attribution and timeline via email headers and file timestamps?",
+    "options": [
+      "Metadata",
+      "Packet captures",
+      "NetFlow",
+      "Log files"
+    ],
+    "answer": 0,
+    "explanation": "Metadata (email headers, timestamps) reveals attribution and timeline.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.9 — Given a scenario, use data sources to support an investigation"
+    },
+    "verify": [
+      "Metadata"
+    ]
+  },
+  {
+    "id": "d4-053",
+    "domain": 4,
+    "type": "tf",
+    "question": "Correlating multiple data sources builds a complete timeline of an incident.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correlation across sources builds the complete timeline.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.9 — Given a scenario, use data sources to support an investigation"
+    },
+    "verify": [
+      "Correlating"
+    ]
+  },
+  {
+    "id": "d5-001",
     "domain": 5,
     "type": "mc",
-    "question": "In risk management, which response accepts a risk without applying additional controls?",
+    "question": "Which document is a high-level statement of management intent?",
     "options": [
-      "Risk mitigation",
-      "Risk avoidance",
-      "Risk acceptance",
-      "Risk transference"
+      "Policy",
+      "Standard",
+      "Procedure",
+      "Guideline"
     ],
-    "answer": 2,
-    "explanation": "Risk acceptance means acknowledging the risk and choosing to accept it without further controls.",
+    "answer": 0,
+    "explanation": "A policy is high-level management intent.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.1 — Summarize elements of effective security governance"
+    },
+    "verify": [
+      "Policy"
+    ]
+  },
+  {
+    "id": "d5-002",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which document contains mandatory requirements?",
+    "options": [
+      "Standard",
+      "Policy",
+      "Guideline",
+      "AUP"
+    ],
+    "answer": 0,
+    "explanation": "A standard contains mandatory requirements.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.1 — Summarize elements of effective security governance"
+    },
+    "verify": [
+      "Standard"
+    ]
+  },
+  {
+    "id": "d5-003",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which document is a recommendation rather than a mandate?",
+    "options": [
+      "Guideline",
+      "Standard",
+      "Procedure",
+      "Policy"
+    ],
+    "answer": 0,
+    "explanation": "A guideline is a recommendation, not a mandate.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.1 — Summarize elements of effective security governance"
+    },
+    "verify": [
+      "Guideline"
+    ]
+  },
+  {
+    "id": "d5-004",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which document contains step-by-step instructions?",
+    "options": [
+      "Procedure",
+      "Policy",
+      "Standard",
+      "Guideline"
+    ],
+    "answer": 0,
+    "explanation": "A procedure is step-by-step instructions.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.1 — Summarize elements of effective security governance"
+    },
+    "verify": [
+      "Procedure"
+    ]
+  },
+  {
+    "id": "d5-005",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which roles are security leadership structures in governance?",
+    "options": [
+      "CISO, CIO, and CSO",
+      "Help desk and NOC",
+      "Developers and testers",
+      "Auditors and accountants"
+    ],
+    "answer": 0,
+    "explanation": "CISO, CIO, and CSO are security leadership roles.",
     "difficulty": "medium",
     "source": {
       "note": "Domains/5 - Security Program Management and Oversight.md",
-      "section": "5.2 - Risk Management"
+      "section": "5.1 — Summarize elements of effective security governance"
     },
     "verify": [
-      "Risk acceptance"
+      "CISO, CIO, and CSO"
+    ]
+  },
+  {
+    "id": "d5-006",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which document defines permitted and prohibited use of organizational resources?",
+    "options": [
+      "Acceptable use policy (AUP)",
+      "BPA",
+      "NDA",
+      "SLA"
+    ],
+    "answer": 0,
+    "explanation": "An AUP defines permitted and prohibited use.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.1 — Summarize elements of effective security governance"
+    },
+    "verify": [
+      "acceptable use policy (AUP)"
+    ]
+  },
+  {
+    "id": "d5-007",
+    "domain": 5,
+    "type": "tf",
+    "question": "A policy is more abstract than a standard, which is more abstract than a procedure.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "The hierarchy descends Policy → Standard → Procedure in abstraction.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.1 — Summarize elements of effective security governance"
+    },
+    "verify": [
+      "Policy → Standard → Procedure"
+    ]
+  },
+  {
+    "id": "d5-008",
+    "domain": 5,
+    "type": "mc",
+    "question": "Single Loss Expectancy (SLE) equals…",
+    "options": [
+      "Asset Value (AV) × Exposure Factor (EF)",
+      "SLE × ARO",
+      "AV + EF",
+      "ALE × ARO"
+    ],
+    "answer": 0,
+    "explanation": "SLE = AV × EF.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.2 — Explain elements of the risk management process"
+    },
+    "verify": [
+      "SLE"
+    ]
+  },
+  {
+    "id": "d5-009",
+    "domain": 5,
+    "type": "mc",
+    "question": "Annualized Loss Expectancy (ALE) equals…",
+    "options": [
+      "SLE × ARO",
+      "AV × EF",
+      "SLE + ARO",
+      "EF × ARO"
+    ],
+    "answer": 0,
+    "explanation": "ALE = SLE × ARO.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.2 — Explain elements of the risk management process"
+    },
+    "verify": [
+      "ALE"
+    ]
+  },
+  {
+    "id": "d5-010",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which term is the expected number of loss events per year?",
+    "options": [
+      "ARO",
+      "EF",
+      "SLE",
+      "ALE"
+    ],
+    "answer": 0,
+    "explanation": "ARO is the expected number of loss events per year.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.2 — Explain elements of the risk management process"
+    },
+    "verify": [
+      "ARO"
+    ]
+  },
+  {
+    "id": "d5-011",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which is the level of risk an organization is willing to accept?",
+    "options": [
+      "Risk appetite",
+      "Risk tolerance",
+      "Risk register",
+      "BIA"
+    ],
+    "answer": 0,
+    "explanation": "Risk appetite is the level of risk the organization is willing to accept.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.2 — Explain elements of the risk management process"
+    },
+    "verify": [
+      "Risk appetite"
+    ]
+  },
+  {
+    "id": "d5-012",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which is a repository of identified risks with likelihood, impact, and status?",
+    "options": [
+      "Risk register",
+      "Risk appetite",
+      "BIA",
+      "Risk tolerance"
+    ],
+    "answer": 0,
+    "explanation": "The risk register stores identified risks with likelihood and impact.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.2 — Explain elements of the risk management process"
+    },
+    "verify": [
+      "Risk register"
+    ]
+  },
+  {
+    "id": "d5-013",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which risk treatment transfers risk to another party, e.g. via insurance?",
+    "options": [
+      "Transfer",
+      "Accept",
+      "Avoid",
+      "Mitigate"
+    ],
+    "answer": 0,
+    "explanation": "Transfer shifts risk (e.g., insurance); accept, avoid, and mitigate are the others.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.2 — Explain elements of the risk management process"
+    },
+    "verify": [
+      "transfer"
+    ]
+  },
+  {
+    "id": "d5-014",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which analysis identifies critical functions, RTO/RPO, and dependencies?",
+    "options": [
+      "Business impact analysis (BIA)",
+      "Risk register",
+      "Gap analysis",
+      "Vendor assessment"
+    ],
+    "answer": 0,
+    "explanation": "BIA identifies critical functions, RTO/RPO, and dependencies.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.2 — Explain elements of the risk management process"
+    },
+    "verify": [
+      "Business impact analysis"
+    ]
+  },
+  {
+    "id": "d5-015",
+    "domain": 5,
+    "type": "tf",
+    "question": "Qualitative analysis uses monetary values (SLE/ALE); quantitative uses labels.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "It is the reverse: qualitative uses labels; quantitative uses monetary values.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.2 — Explain elements of the risk management process"
+    },
+    "verify": [
+      "Qualitative analysis"
+    ]
+  },
+  {
+    "id": "d5-016",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which agreement specifies service levels such as uptime and response?",
+    "options": [
+      "SLA",
+      "NDA",
+      "MOU",
+      "BPA"
+    ],
+    "answer": 0,
+    "explanation": "An SLA specifies service levels (uptime, response).",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.3 — Explain the processes associated with third-party risk assessment and management"
+    },
+    "verify": [
+      "SLA"
+    ]
+  },
+  {
+    "id": "d5-017",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which agreement protects confidential information shared with a vendor?",
+    "options": [
+      "NDA",
+      "SLA",
+      "MSA",
+      "MOU"
+    ],
+    "answer": 0,
+    "explanation": "An NDA protects confidential information.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.3 — Explain the processes associated with third-party risk assessment and management"
+    },
+    "verify": [
+      "NDA"
+    ]
+  },
+  {
+    "id": "d5-018",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which is a memorandum of understanding expressing mutual intent?",
+    "options": [
+      "MOU",
+      "SLA",
+      "MSA",
+      "BPA"
+    ],
+    "answer": 0,
+    "explanation": "An MOU expresses mutual intent.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.3 — Explain the processes associated with third-party risk assessment and management"
+    },
+    "verify": [
+      "MOU"
+    ]
+  },
+  {
+    "id": "d5-019",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which defines the scope, methods, and limits of third-party penetration testing?",
+    "options": [
+      "Rules of engagement",
+      "SLA",
+      "NDA",
+      "MSA"
+    ],
+    "answer": 0,
+    "explanation": "Rules of engagement scope and limit third-party pen testing.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.3 — Explain the processes associated with third-party risk assessment and management"
+    },
+    "verify": [
+      "Rules of engagement"
+    ]
+  },
+  {
+    "id": "d5-020",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which is the due diligence on a vendor's security posture before engagement?",
+    "options": [
+      "Vendor assessment",
+      "Questionnaire",
+      "Monitoring",
+      "Selection"
+    ],
+    "answer": 0,
+    "explanation": "Vendor assessment is the pre-engagement due diligence.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.3 — Explain the processes associated with third-party risk assessment and management"
+    },
+    "verify": [
+      "Vendor assessment"
+    ]
+  },
+  {
+    "id": "d5-021",
+    "domain": 5,
+    "type": "tf",
+    "question": "Supply chain risk is exposure introduced through third-party products, services, and code.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Supply chain risk comes from third-party products, services, and code.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.3 — Explain the processes associated with third-party risk assessment and management"
+    },
+    "verify": [
+      "Supply chain risk"
+    ]
+  },
+  {
+    "id": "d5-022",
+    "domain": 5,
+    "type": "mc",
+    "question": "GDPR requires breach notification to the supervisory authority within…",
+    "options": [
+      "72 hours",
+      "60 days",
+      "24 hours",
+      "30 days"
+    ],
+    "answer": 0,
+    "explanation": "GDPR requires notification within 72 hours.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.4 — Summarize elements of effective security compliance"
+    },
+    "verify": [
+      "72 hours"
+    ]
+  },
+  {
+    "id": "d5-023",
+    "domain": 5,
+    "type": "mc",
+    "question": "HIPAA requires notifying affected individuals within…",
+    "options": [
+      "60 days",
+      "72 hours",
+      "30 days",
+      "90 days"
+    ],
+    "answer": 0,
+    "explanation": "HIPAA requires notification within 60 days.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.4 — Summarize elements of effective security compliance"
+    },
+    "verify": [
+      "60 days"
+    ]
+  },
+  {
+    "id": "d5-024",
+    "domain": 5,
+    "type": "mc",
+    "question": "How many high-level requirements does PCI DSS have?",
+    "options": [
+      "12",
+      "6",
+      "20",
+      "10"
+    ],
+    "answer": 0,
+    "explanation": "PCI DSS has 12 high-level requirements.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.4 — Summarize elements of effective security compliance"
+    },
+    "verify": [
+      "12"
+    ]
+  },
+  {
+    "id": "d5-025",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which of the following is a consequence of non-compliance?",
+    "options": [
+      "Fines, sanctions, loss of certification, and reputational damage",
+      "Automatic bankruptcy",
+      "Free software",
+      "A security patch"
+    ],
+    "answer": 0,
+    "explanation": "Non-compliance leads to fines, sanctions, loss of certification, and reputational damage.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.4 — Summarize elements of effective security compliance"
+    },
+    "verify": [
+      "fines, sanctions, loss of certification, and reputational damage"
+    ]
+  },
+  {
+    "id": "d5-026",
+    "domain": 5,
+    "type": "tf",
+    "question": "Compliance requires ongoing monitoring and reporting.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Compliance is continuous — ongoing monitoring and reporting.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.4 — Summarize elements of effective security compliance"
+    },
+    "verify": [
+      "monitoring and reporting"
+    ]
+  },
+  {
+    "id": "d5-027",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which is a systematic review of controls against a standard?",
+    "options": [
+      "Audit",
+      "Attestation",
+      "Penetration test",
+      "Vulnerability assessment"
+    ],
+    "answer": 0,
+    "explanation": "An audit systematically reviews controls against a standard.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.5 — Explain types and purposes of audits and assessments"
+    },
+    "verify": [
+      "Audit"
+    ]
+  },
+  {
+    "id": "d5-028",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which actively exploits weaknesses to measure impact?",
+    "options": [
+      "Penetration test",
+      "Vulnerability assessment",
+      "Audit",
+      "Attestation"
+    ],
+    "answer": 0,
+    "explanation": "A penetration test actively exploits weaknesses; a vulnerability assessment only identifies them.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.5 — Explain types and purposes of audits and assessments"
+    },
+    "verify": [
+      "Penetration test"
+    ]
+  },
+  {
+    "id": "d5-029",
+    "domain": 5,
+    "type": "mc",
+    "question": "A black box engagement means the tester has…",
+    "options": [
+      "no knowledge of the environment",
+      "full knowledge",
+      "partial knowledge",
+      "administrative access"
+    ],
+    "answer": 0,
+    "explanation": "Black box is unknown; white box is known; gray box is partial.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.5 — Explain types and purposes of audits and assessments"
+    },
+    "verify": [
+      "black box"
+    ]
+  },
+  {
+    "id": "d5-030",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which SOC report covers the Trust Services Criteria?",
+    "options": [
+      "SOC 2",
+      "SOC 1",
+      "SOC 3",
+      "SOC 0"
+    ],
+    "answer": 0,
+    "explanation": "SOC 2 covers the Trust Services Criteria (security, availability, processing integrity, confidentiality, privacy).",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.5 — Explain types and purposes of audits and assessments"
+    },
+    "verify": [
+      "SOC 2"
+    ]
+  },
+  {
+    "id": "d5-031",
+    "domain": 5,
+    "type": "mc",
+    "question": "A Type II report tests…",
+    "options": [
+      "operating effectiveness over a period",
+      "control design at a point in time",
+      "only financial controls",
+      "only IT security"
+    ],
+    "answer": 0,
+    "explanation": "Type II tests operating effectiveness over a period; Type I is design at a point in time.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.5 — Explain types and purposes of audits and assessments"
+    },
+    "verify": [
+      "Type II"
+    ]
+  },
+  {
+    "id": "d5-032",
+    "domain": 5,
+    "type": "tf",
+    "question": "A vulnerability assessment finds weaknesses; a penetration test exploits them.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Vulnerability assessments identify; penetration tests exploit to measure impact.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.5 — Explain types and purposes of audits and assessments"
+    },
+    "verify": [
+      "Vulnerability assessment"
+    ]
+  },
+  {
+    "id": "d5-033",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which practice tests and reinforces users' ability to spot malicious email?",
+    "options": [
+      "Phishing simulations",
+      "Firewall rules",
+      "Encryption",
+      "Patch management"
+    ],
+    "answer": 0,
+    "explanation": "Phishing simulations test and reinforce users' ability to spot malicious email.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.6 — Given a scenario, implement security awareness practices"
+    },
+    "verify": [
+      "Phishing simulations"
+    ]
+  },
+  {
+    "id": "d5-034",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which metrics measure security awareness effectiveness?",
+    "options": [
+      "Click rates and reporting rates",
+      "CPU utilization",
+      "Bandwidth",
+      "Password length"
+    ],
+    "answer": 0,
+    "explanation": "Click rates and reporting rates measure awareness effectiveness.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.6 — Given a scenario, implement security awareness practices"
+    },
+    "verify": [
+      "Click rates"
+    ]
+  },
+  {
+    "id": "d5-035",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which data role is accountable for data?",
+    "options": [
+      "Data owner",
+      "Data steward",
+      "Data custodian",
+      "DPO"
+    ],
+    "answer": 0,
+    "explanation": "The data owner is accountable; steward (quality/policy); custodian (storage/backup).",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.6 — Given a scenario, implement security awareness practices"
+    },
+    "verify": [
+      "data owner"
+    ]
+  },
+  {
+    "id": "d5-036",
+    "domain": 5,
+    "type": "mc",
+    "question": "Which data role handles storage and backup?",
+    "options": [
+      "Data custodian",
+      "Data owner",
+      "Data steward",
+      "DPO"
+    ],
+    "answer": 0,
+    "explanation": "The data custodian handles storage and backup.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.6 — Given a scenario, implement security awareness practices"
+    },
+    "verify": [
+      "data custodian"
+    ]
+  },
+  {
+    "id": "d5-037",
+    "domain": 5,
+    "type": "tf",
+    "question": "Gamification and interactive campaigns improve security awareness engagement and retention.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Gamification/interactive campaigns improve engagement and retention.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.6 — Given a scenario, implement security awareness practices"
+    },
+    "verify": [
+      "Gamification"
     ]
   }
 ]
