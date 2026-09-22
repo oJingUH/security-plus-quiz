@@ -8,16 +8,16 @@ Modes:
     1) Quick 10          10 random questions across all domains
     2) Domain drill      pick domains (1-5 or all) + length (10/20/all)
     3) Acronym drill     grind acronyms both ways (acronym <-> expansion)
-    4) Crypto drill      grind crypto/algorithm values both ways
+    4) Crypto & Controls drill  grind crypto values & security controls both ways
     5) Review missed     replay questions previously answered incorrectly
     6) Review acronyms   replay acronym items previously answered incorrectly
-    7) Review crypto     replay crypto items previously answered incorrectly
+    7) Review crypto & controls  replay crypto/control items previously answered incorrectly
     8) Stats             lifetime & per-domain accuracy, streaks, hardest domain
     9) Quit
 
 Answer with a-d or 1-4 (multiple choice) or t/f (true/false); the acronym and
-crypto drills take free-text answers. Enter `q` at any prompt to return to the
-menu. Progress persists to stats.json.
+crypto/controls drills take free-text answers. Enter `q` at any prompt to return
+to the menu. Progress persists to stats.json.
 
 Flags:
     --selftest              scripted 10-question round, fixed seed, no stdin
@@ -233,10 +233,10 @@ def show_menu(pal):
     print("  1) Quick 10        - 10 random questions, all domains")
     print("  2) Domain drill    - pick domains (1-5 or all) + length")
     print("  3) Acronym drill   - acronyms, both directions")
-    print("  4) Crypto drill    - crypto/algorithm values, both directions")
+    print("  4) Crypto & Controls drill - crypto values & security controls")
     print("  5) Review missed   - replay questions you got wrong")
     print("  6) Review acronyms - replay acronym items you got wrong")
-    print("  7) Review crypto   - replay crypto items you got wrong")
+    print("  7) Review crypto & controls - replay crypto/control items you got wrong")
     print("  8) Stats           - accuracy, streaks, hardest domain")
     print("  9) Quit")
     print()
@@ -474,7 +474,7 @@ def show_stats(stats, pal):
           % (a["correct"], a["total"], a_acc, len(a["missed_ids"])))
     c = stats["crypto"]
     c_acc = (100.0 * c["correct"] / c["total"]) if c["total"] else 0.0
-    print("  Crypto drill      : %d/%d  (%.1f%%)   [%d missed crypto]"
+    print("  Crypto & Controls : %d/%d  (%.1f%%)   [%d missed]"
           % (c["correct"], c["total"], c_acc, len(c["missed_ids"])))
     hr(pal, "=")
     print()

@@ -30,12 +30,13 @@ That is the entire command. It drops you into a menu.
     3) Acronym drill   grind acronyms until recall is automatic; both directions
                        (mixed / acronym->expansion / expansion->acronym),
                        length 10 / 20 / all
-    4) Crypto drill    grind crypto/algorithm values until recall is automatic;
-                       both directions (mixed / algorithm->value / value->
-                       algorithm), length 10 / 20 / all
+    4) Crypto & Controls drill  grind crypto values and security-control
+                       categories/types until recall is automatic; both
+                       directions (mixed / algorithm->value / value->algorithm),
+                       length 10 / 20 / all
     5) Review missed   replay questions you previously answered incorrectly
     6) Review acronyms replay acronym items you previously answered incorrectly
-    7) Review crypto   replay crypto items you previously answered incorrectly
+    7) Review crypto & controls  replay crypto/control items you previously answered incorrectly
     8) Stats           lifetime & per-domain accuracy, drill accuracy, current/best
                        streak, hardest domain
     9) Quit
@@ -44,10 +45,10 @@ That is the entire command. It drops you into a menu.
 
 - Answer multiple choice with `a`-`d` or `1`-`4`; true/false with `t`/`f`
   (or `true`/`false`).
-- The acronym and crypto drills take a free-text answer: type the expansion
-  (for an acronym prompt), the acronym (for an expansion prompt), the value
-  (for an algorithm prompt), or the algorithm (for a value prompt) and press
-  Enter. Matching is case-insensitive and tolerates extra whitespace.
+- The acronym and crypto/controls drills take a free-text answer: type the
+  expansion (for an acronym prompt), the acronym (for an expansion prompt), the
+  value (for an algorithm prompt), or the algorithm (for a value prompt) and
+  press Enter. Matching is case-insensitive and tolerates extra whitespace.
 - Type `q` at any prompt to abandon the round and return to the menu.
 - Question order and multiple-choice option order are shuffled every round;
   a question never repeats within a round.
@@ -79,16 +80,22 @@ Quizzes every acronym the vault defines, both directions:
 - expansion -> acronym  ("Which acronym means 'Authentication, Authorization,
   and Accounting'?")
 
-### Crypto drill
+### Crypto & Controls drill
 
-Quizzes crypto/algorithm values, both directions, each deriving from a single
-entry (an `algorithm`, a `property` such as "key size" or "digest", and a
-`value` such as "256-bit"). The `property` disambiguates the reverse prompt
-so two algorithms that share a value (e.g. two different 256-bit properties)
-stay unambiguous:
+Quizzes crypto/algorithm values AND the security-control categories/types,
+both directions, each deriving from a single entry (an `algorithm`/control name,
+a `property` such as "key size", "digest", "control category" or "control type",
+and a `value` such as "256-bit" or "Mandate behavior through policy"). The
+`property` disambiguates the reverse prompt so two algorithms that share a value
+(e.g. two different 256-bit properties) stay unambiguous:
 
 - algorithm -> value  ("AES-256 - key size?" -> "256-bit")
 - value -> algorithm  ("Which algorithm has a 160-bit digest?" -> "SHA-1")
+
+The ten control-category/type entries (technical, managerial, operational,
+physical, preventive, deterrent, detective, corrective, compensating, directive)
+are high-yield memorization facts and live in the same `crypto.json` table, so
+this one drill covers both crypto values and the control taxonomy.
 
 Both the CLI (`quiz.py`) and the GUI (`quiz_gui.py`) reach both drills; each
 front-end drives them through the SAME code path (one generic drill runner

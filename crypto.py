@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """
-crypto.py — Security+ (SY0-701) crypto/algorithm values drill logic.
+crypto.py — Security+ (SY0-701) crypto/algorithm-values and security-controls
+drill logic.
 
-Pure Python 3 standard library. Holds ALL crypto-drill logic so quiz.py (the
-CLI) and quiz_gui.py (the GUI) share one code path and cannot drift.
+Pure Python 3 standard library. Holds ALL crypto/controls-drill logic so
+quiz.py (the CLI) and quiz_gui.py (the GUI) share one code path and cannot
+drift.
 
 Responsibilities:
     - load and validate crypto.json (clean one-line error + exit 1 on missing
@@ -46,7 +48,7 @@ DEFAULT_TABLE = os.path.join(SCRIPT_DIR, "crypto.json")
 
 # Stats bucket and display tokens used by the front-ends.
 STATS_KEY = "crypto"
-TITLE = "CRYPTO DRILL"
+TITLE = "CRYPTO & CONTROLS DRILL"
 Q_PREFIX = "C"
 
 # Direction keys (internal) and their friendly labels.

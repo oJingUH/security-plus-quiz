@@ -493,10 +493,10 @@ class HomeWidget(QWidget):
             ("[1] QUICK 10", controller.start_quick),
             ("[2] DOMAIN DRILL", controller.show_drill),
             ("[3] ACRONYM DRILL", controller.show_acronym_drill),
-            ("[4] CRYPTO DRILL", controller.show_crypto_drill),
+            ("[4] CRYPTO & CONTROLS DRILL", controller.show_crypto_drill),
             ("[5] REVIEW MISSED", controller.start_review),
             ("[6] REVIEW ACRONYMS", controller.start_review_acronyms),
-            ("[7] REVIEW CRYPTO", controller.start_review_crypto),
+            ("[7] REVIEW CRYPTO & CONTROLS", controller.start_review_crypto),
             ("[8] STATS", controller.show_stats),
             ("[9] QUIT", controller.close),
         ]
@@ -1089,7 +1089,7 @@ class StatsWidget(QWidget):
         c = stats["crypto"]
         c_acc = 100.0 * c["correct"] / c["total"] if c["total"] else 0.0
         self.crypto_label.setText("%-18s%d/%d  (%.1f%%)   [%d missed]"
-                                  % ("CRYPTO DRILL", c["correct"], c["total"],
+                                  % ("CRYPTO & CONTROLS DRILL", c["correct"], c["total"],
                                      c_acc, len(c["missed_ids"])))
 
     def keyPressEvent(self, event):
@@ -1495,7 +1495,7 @@ class QuizWindow(QMainWindow):
         self.acronym_setup_widget = DrillModeSetupWidget(
             self, acronyms, "ACRONYM DRILL", self.start_acronym_drill)
         self.crypto_setup_widget = DrillModeSetupWidget(
-            self, crypto, "CRYPTO DRILL", self.start_crypto_drill)
+            self, crypto, "CRYPTO & CONTROLS DRILL", self.start_crypto_drill)
         self.question_widget = QuestionWidget(self.rng, self)
         self.drill_question_widget = DrillQuestionWidget(self.rng, self)
         self.summary_widget = SummaryWidget(self)
@@ -1585,7 +1585,7 @@ class QuizWindow(QMainWindow):
 
     def show_crypto_drill(self):
         self._show_drill_setup(crypto, self.crypto_setup_widget,
-                               self.crypto, self.crypto_error, "CRYPTO DRILL")
+                               self.crypto, self.crypto_error, "CRYPTO & CONTROLS DRILL")
 
     def show_stats(self):
         self.stats_widget.status.set_status(self._status() + " [ MODE:STATS ]")
