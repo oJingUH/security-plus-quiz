@@ -41,6 +41,7 @@ This module is imported; it is not an entry point.
 
 import json
 import os
+import re
 import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -164,6 +165,22 @@ def _make_item(entry, direction, accept):
     }
 
 
+def _key_size_variants(value):
+    """Return the canonical "-bit" sizes a key-size `value` string covers.
+
+    A single size ("256-bit") covers itself. A range ("128, 192, and 256 bits")
+    covers each component size, so an algorithm whose key size is stored as a
+    range legitimately satisfies a prompt for any one of those sizes.
+    """
+    m = re.fullmatch(r"\s*(\d+)\s*,\s*(\d+)\s*,\s*and\s*(\d+)\s*bits\s*", value)
+    if m:
+        return ["%s-bit" % n for n in m.groups()]
+    m = re.fullmatch(r"\s*(\d+)\s*bits?\s*", value)
+    if m:
+        return ["%s-bit" % m.group(1)]
+    return [value]
+
+
 def build_items(entries, direction=DIR_MIXED):
     """Return drill items in the requested direction(s).
 
@@ -176,7 +193,12 @@ def build_items(entries, direction=DIR_MIXED):
     carries an `accept` list of every valid answer for its (algorithm, property)
     or (property, value) key — derived from the source table, not a
     hand-maintained exception list — so a prompt never has two different
-    expected answers unless every one of them is acceptable."""
+    expected answers unless every one of them is acceptable.
+
+    A key size stored as a range (AES "128, 192, and 256 bits") is expanded so
+    the value -> algorithm direction for a single size (e.g. "256-bit") also
+    accepts that algorithm: AES genuinely supports 256-bit keys alongside ECC
+    and ChaCha20."""
     a2v_accept = {}  # (algorithm, property) -> [values]
     v2a_accept = {}  # (property, value) -> [algorithms]
     for e in entries:
@@ -188,6 +210,13 @@ def build_items(entries, direction=DIR_MIXED):
         v2a_accept.setdefault(k2, [])
         if e["algorithm"] not in v2a_accept[k2]:
             v2a_accept[k2].append(e["algorithm"])
+        if e["property"] == "key size":
+            for variant in _key_size_variants(e["value"]):
+                if variant == e["value"]:
+                    continue
+                v2a_accept.setdefault((e["property"], variant), [])
+                if e["algorithm"] not in v2a_accept[(e["property"], variant)]:
+                    v2a_accept[(e["property"], variant)].append(e["algorithm"])
     items = []
     for e in entries:
         if direction in (DIR_MIXED, DIR_A2V):
