@@ -125,10 +125,13 @@ def _make_item(entry, direction, accept):
     else:
         prompt = "Which acronym means '%s'?" % expansion
         answer = acronym
-    # A multi-expansion acronym (e.g. MAC) admits several correct answers on
-    # the a2e direction, so the explanation lists every official expansion.
-    if direction == DIR_A2E and len(accept) > 1:
+    # Multi-answer entries admit several correct answers, so the explanation
+    # lists every one. a2e: one acronym with several expansions (MAC). e2a: one
+    # expansion with several acronyms (CSRF/XSRF).
+    if len(accept) > 1 and direction == DIR_A2E:
         explanation = "%s stands for %s." % (acronym, _accept_display(expansion, accept))
+    elif len(accept) > 1:
+        explanation = "%s both stand for %s." % (" and ".join(accept), expansion)
     else:
         explanation = "%s stands for %s." % (acronym, expansion)
     return {
@@ -152,22 +155,27 @@ def build_items(entries, direction=DIR_MIXED):
     (id, direction) prompt, so shuffling a built list can never repeat a
     question within a round.
 
-    An acronym may have several official expansions (MAC, PAM, RA, RBAC, SAN).
-    Each a2e item therefore carries an `accept` list of EVERY expansion for its
-    acronym — derived from the source table, not a hand-maintained exception
-    list — so a prompt never has two different expected answers unless every one
-    of them is acceptable."""
-    a2e_accept = {}
+    An acronym may have several official expansions (MAC, PAM, RA, RBAC, SAN),
+    and an expansion may have several official acronyms (CSRF/XSRF, FTPS/SFTP).
+    Every item therefore carries an `accept` list of EVERY acceptable answer for
+    its acronym (a2e) or expansion (e2a) — derived from the source table, not a
+    hand-maintained exception list — so a prompt never has two different
+    expected answers unless every one of them is acceptable."""
+    a2e_accept = {}  # acronym -> [expansions]
+    e2a_accept = {}  # expansion -> [acronyms]
     for e in entries:
         a2e_accept.setdefault(e["acronym"], [])
         if e["expansion"] not in a2e_accept[e["acronym"]]:
             a2e_accept[e["acronym"]].append(e["expansion"])
+        e2a_accept.setdefault(e["expansion"], [])
+        if e["acronym"] not in e2a_accept[e["expansion"]]:
+            e2a_accept[e["expansion"]].append(e["acronym"])
     items = []
     for e in entries:
         if direction in (DIR_MIXED, DIR_A2E):
             items.append(_make_item(e, DIR_A2E, a2e_accept[e["acronym"]]))
         if direction in (DIR_MIXED, DIR_E2A):
-            items.append(_make_item(e, DIR_E2A, [e["acronym"]]))
+            items.append(_make_item(e, DIR_E2A, e2a_accept[e["expansion"]]))
     return items
 
 

@@ -37,7 +37,7 @@ DOMAIN_MIN = {1: 14, 2: 26, 3: 22, 4: 34, 5: 24}
 TOTAL_MIN = 120
 VALID_DIFFICULTY = {"easy", "medium", "hard"}
 REQUIRED_FIELDS = ["id", "domain", "type", "question", "options", "answer",
-                   "explanation", "difficulty", "source"]
+                   "answer_text", "explanation", "difficulty", "source"]
 REQUIRED_SOURCE_FIELDS = ["note", "section"]
 
 # Drill-table schemas (each validated separately).
@@ -120,6 +120,23 @@ def grounded(body_text, value):
     if not needle:
         return False
     hay = _tokenize(body_text)
+    n = len(needle)
+    for i in range(len(hay) - n + 1):
+        if hay[i:i + n] == needle:
+            return True
+    return False
+
+
+def contains_ci(text, phrase):
+    """Case-insensitive, token-boundary 'phrase appears in text' check.
+
+    Mirrors grounded() but lowercases both sides so the casing of an option
+    ("Confidentiality") and the casing of the vault ("confidentiality") agree.
+    Still token-boundary based, so "LDAP" never matches "LDAPS"."""
+    needle = [t.lower() for t in _tokenize(phrase)]
+    if not needle:
+        return False
+    hay = [t.lower() for t in _tokenize(text)]
     n = len(needle)
     for i in range(len(hay) - n + 1):
         if hay[i:i + n] == needle:
@@ -235,6 +252,7 @@ def verify_questions(args):
         # unambiguous).
         answer = q.get("answer")
         num_options = len(options) if isinstance(options, list) else 0
+        ans_idx = None
         if num_options:
             ans_idx = parse_answer(answer, num_options, qtype)
             if ans_idx is None:
@@ -244,6 +262,21 @@ def verify_questions(args):
                 norm = [str(o).strip() for o in options]
                 if len(set(norm)) != len(norm):
                     errors.append("%s: options contain duplicates" % loc)
+
+        # ANSWER MIRROR: the correct option's text must be stated explicitly
+        # (`answer_text`), and the gate requires options[answer] == answer_text.
+        # A bare in-range index flip (test A) or a question text rewritten to
+        # contradict the answer (test B) now fails.
+        answer_text = q.get("answer_text")
+        if not isinstance(answer_text, str) or not answer_text.strip():
+            errors.append("%s: 'answer_text' must be a non-empty string" % loc)
+        elif ans_idx is not None and isinstance(options, list) \
+                and 0 <= ans_idx < len(options):
+            if str(options[ans_idx]).strip() != answer_text.strip():
+                errors.append("%s: answer mirror mismatch — options[answer]=%r "
+                              "but answer_text=%r"
+                              % (loc, str(options[ans_idx]).strip(),
+                                 answer_text.strip()))
 
         # citation: note exists + section heading exists (exact match)
         if isinstance(src, dict) and "note" in src and "section" in src:
@@ -272,6 +305,31 @@ def verify_questions(args):
                                     errors.append(
                                         "%s: expected value %r not found in %r > %r"
                                         % (loc, token, rel_note, section))
+
+                    # ANSWER-BEARING GROUNDING: a multiple-choice question must
+                    # carry a verify token drawn from the CORRECT option's own
+                    # text that (i) is present in the cited section and (ii) is
+                    # not present in any other option — so the verified string
+                    # is actually discriminating and the gate can tell a correct
+                    # bank from a scrambled one.
+                    if qtype == "mc":
+                        correct_opt = None
+                        other_opts = []
+                        if isinstance(options, list) and ans_idx is not None \
+                                and 0 <= ans_idx < len(options):
+                            correct_opt = str(options[ans_idx]).strip()
+                            other_opts = [str(o).strip() for j, o
+                                          in enumerate(options) if j != ans_idx]
+                        toks = verify if isinstance(verify, list) else []
+                        has_discriminating = bool(correct_opt) and any(
+                            isinstance(t, str) and grounded(body, t)
+                            and contains_ci(correct_opt, t)
+                            and not any(contains_ci(o, t) for o in other_opts)
+                            for t in toks)
+                        if not has_discriminating:
+                            errors.append(
+                                "%s: no discriminating verify token drawn from the "
+                                "correct option (answer=%r)" % (loc, correct_opt))
 
     for d in (1, 2, 3, 4, 5):
         have = domain_counts.get(d, 0)
@@ -305,6 +363,43 @@ def verify_questions(args):
 
 
 # ---------------------------------------------------------------- drill tables
+
+def find_prompt_collisions(items, label):
+    """Return error strings for drill items that share an identical prompt with
+    different expected answers that are not all mutually acceptable.
+
+    Grouping is across ALL directions of one table. Two items may share a prompt
+    only if every expected answer in the group appears in every item's
+    accept-list — i.e. each item grades all of them as correct. This is the
+    collision invariant from the multi-expansion fix: a prompt never has two
+    different expected answers unless every one of them is acceptable."""
+    groups = {}
+    for it in items:
+        # Prompts are compared CASE-SENSITIVELY: "What does SoC stand for?" and
+        # "What does SOC stand for?" are distinct questions (SoC = System on
+        # Chip, SOC = Security Operations Center). Only the answers/accept-lists
+        # are compared case-insensitively, matching how grade() normalizes.
+        key = " ".join(str(it.get("prompt", "")).split())
+        groups.setdefault(key, []).append(it)
+    errs = []
+    for key, grp in groups.items():
+        answers = set()
+        for it in grp:
+            ans = str(it.get("answer", "")).strip()
+            if ans:
+                answers.add(" ".join(ans.lower().split()))
+        for it in grp:
+            accept = it.get("accept") or ([it["answer"]] if it.get("answer") else [])
+            accept_norm = {" ".join(str(a).lower().split()) for a in accept}
+            missing = answers - accept_norm
+            if missing:
+                errs.append(
+                    "%s: drill item id=%r (prompt %r) does not accept every "
+                    "answer for this prompt — missing %s"
+                    % (label, it.get("id"), it.get("prompt"),
+                       ", ".join(sorted(missing))))
+    return errs
+
 
 def verify_drill_table(args, mod, table_path, required_fields, content_fields,
                        label):
@@ -428,6 +523,10 @@ def verify_drill_table(args, mod, table_path, required_fields, content_fields,
             if not it.get("prompt") or not it.get("answer"):
                 errors.append("%s: drill item with empty prompt/answer: id=%r"
                               % (label, it.get("id")))
+        # COLLISION INVARIANT: a prompt may only repeat with different expected
+        # answers when every expected answer is in each item's accept-list.
+        for err in find_prompt_collisions(items, label):
+            errors.append(err)
     except Exception as e:  # noqa: BLE001 — report, don't traceback
         errors.append("%s drill build failed: %s" % (label, e))
 

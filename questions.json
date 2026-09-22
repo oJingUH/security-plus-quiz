@@ -6,11 +6,12 @@
     "question": "A firewall is which category and type of security control?",
     "options": [
       "Technical, preventive",
-      "Technical, detective",
-      "Managerial, preventive",
+      "Managerial, detective",
+      "Technical, corrective",
       "Physical, deterrent"
     ],
     "answer": 0,
+    "answer_text": "Technical, preventive",
     "explanation": "A firewall is a technology-based safeguard that stops events before they occur — technical and preventive.",
     "difficulty": "easy",
     "source": {
@@ -18,8 +19,7 @@
       "section": "1.1 — Compare and contrast various types of security controls"
     },
     "verify": [
-      "Technical",
-      "Preventive"
+      "preventive"
     ]
   },
   {
@@ -34,6 +34,7 @@
       "Detective"
     ],
     "answer": 2,
+    "answer_text": "Corrective",
     "explanation": "Corrective controls fix the environment after an event, e.g. backups and patches.",
     "difficulty": "easy",
     "source": {
@@ -56,6 +57,7 @@
       "Physical"
     ],
     "answer": 2,
+    "answer_text": "Operational",
     "explanation": "Operational controls are day-to-day procedures performed by people.",
     "difficulty": "medium",
     "source": {
@@ -78,6 +80,7 @@
       "Physical"
     ],
     "answer": 3,
+    "answer_text": "Physical",
     "explanation": "These are tangible safeguards — the physical category.",
     "difficulty": "medium",
     "source": {
@@ -100,6 +103,7 @@
       "a control is more expensive than the risk"
     ],
     "answer": 0,
+    "answer_text": "the primary control is not feasible",
     "explanation": "A compensating control is an alternative used when the primary control cannot be applied (e.g. segmenting a legacy system you cannot patch).",
     "difficulty": "hard",
     "source": {
@@ -107,7 +111,7 @@
       "section": "1.1 — Compare and contrast various types of security controls"
     },
     "verify": [
-      "Compensating"
+      "is not feasible"
     ]
   },
   {
@@ -122,6 +126,7 @@
       "Directive"
     ],
     "answer": 1,
+    "answer_text": "Deterrent",
     "explanation": "Deterrent controls (warning signs, cameras, an AUP) discourage attackers.",
     "difficulty": "medium",
     "source": {
@@ -142,6 +147,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "A policy is management-based (managerial) and mandates behavior (directive).",
     "difficulty": "medium",
     "source": {
@@ -165,6 +171,7 @@
       "Non-repudiation"
     ],
     "answer": 1,
+    "answer_text": "Integrity",
     "explanation": "Integrity ensures data is accurate and unaltered, achieved with hashing and digital signatures.",
     "difficulty": "medium",
     "source": {
@@ -187,6 +194,7 @@
       "Auditing"
     ],
     "answer": 1,
+    "answer_text": "Authorization",
     "explanation": "Authorization determines what the identity may do.",
     "difficulty": "medium",
     "source": {
@@ -209,6 +217,7 @@
       "ABAC"
     ],
     "answer": 2,
+    "answer_text": "RBAC",
     "explanation": "RBAC ties permissions to roles rather than individuals.",
     "difficulty": "easy",
     "source": {
@@ -231,6 +240,7 @@
       "trust for known VPN users"
     ],
     "answer": 1,
+    "answer_text": "no implicit trust based on location or device",
     "explanation": "Zero Trust assumes no implicit trust based on location or device — never trust, always verify.",
     "difficulty": "hard",
     "source": {
@@ -238,7 +248,7 @@
       "section": "1.2 — Summarize fundamental security concepts"
     },
     "verify": [
-      "Zero Trust"
+      "no implicit trust based on location or device"
     ]
   },
   {
@@ -253,6 +263,7 @@
       "A type of badge reader"
     ],
     "answer": 1,
+    "answer_text": "A two-door access control vestibule allowing one person at a time",
     "explanation": "A mantrap is a two-door vestibule that allows only one person through at a time.",
     "difficulty": "medium",
     "source": {
@@ -260,7 +271,7 @@
       "section": "1.2 — Summarize fundamental security concepts"
     },
     "verify": [
-      "mantraps"
+      "two-door access control"
     ]
   },
   {
@@ -275,6 +286,7 @@
       "a database of threat signatures"
     ],
     "answer": 0,
+    "answer_text": "a decoy system designed to attract attackers",
     "explanation": "A honeypot is a decoy system that lures attackers and reveals their activity.",
     "difficulty": "easy",
     "source": {
@@ -282,7 +294,7 @@
       "section": "1.2 — Summarize fundamental security concepts"
     },
     "verify": [
-      "honeypot"
+      "a decoy system designed to attract attackers"
     ]
   },
   {
@@ -297,6 +309,7 @@
       "To monitor network traffic"
     ],
     "answer": 0,
+    "answer_text": "To review and approve higher-risk changes",
     "explanation": "The CAB reviews and approves higher-risk changes.",
     "difficulty": "medium",
     "source": {
@@ -304,7 +317,7 @@
       "section": "1.3 — Explain the importance of change management processes and the impact to security"
     },
     "verify": [
-      "CAB"
+      "higher-risk changes"
     ]
   },
   {
@@ -319,6 +332,7 @@
       "A security awareness module"
     ],
     "answer": 0,
+    "answer_text": "A predefined way to revert a change if it fails",
     "explanation": "A backout plan (rollback) reverts a change if it fails or causes problems.",
     "difficulty": "medium",
     "source": {
@@ -326,7 +340,7 @@
       "section": "1.3 — Explain the importance of change management processes and the impact to security"
     },
     "verify": [
-      "rollback"
+      "way to revert a change if it fails"
     ]
   },
   {
@@ -341,6 +355,7 @@
       "A patch download window"
     ],
     "answer": 0,
+    "answer_text": "An approved period for applying a change with minimal business impact",
     "explanation": "A maintenance window is the approved period for applying a change with minimal impact.",
     "difficulty": "easy",
     "source": {
@@ -348,7 +363,7 @@
       "section": "1.3 — Explain the importance of change management processes and the impact to security"
     },
     "verify": [
-      "Maintenance window"
+      "period for applying a change with minimal business impact"
     ]
   },
   {
@@ -361,6 +376,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "Unmanaged changes frequently cause outages and misconfigurations that create vulnerabilities.",
     "difficulty": "medium",
     "source": {
@@ -383,6 +399,7 @@
       "Availability"
     ],
     "answer": 1,
+    "answer_text": "Confidentiality",
     "explanation": "Encryption provides confidentiality — only authorized parties can read the data.",
     "difficulty": "medium",
     "source": {
@@ -399,12 +416,13 @@
     "type": "mc",
     "question": "Which key decrypts a message that was encrypted with the recipient's public key?",
     "options": [
-      "The sender's private key",
+      "The sender's public key",
       "The recipient's private key",
       "The recipient's public key",
       "A shared symmetric key"
     ],
     "answer": 1,
+    "answer_text": "The recipient's private key",
     "explanation": "In asymmetric encryption, only the matching private key can decrypt what the public key encrypted.",
     "difficulty": "medium",
     "source": {
@@ -412,8 +430,7 @@
       "section": "1.4 — Explain the importance of using appropriate cryptographic solutions"
     },
     "verify": [
-      "private key",
-      "public key"
+      "s private key"
     ]
   },
   {
@@ -428,6 +445,7 @@
       "256-bit"
     ],
     "answer": 1,
+    "answer_text": "160-bit",
     "explanation": "SHA-1 produces a 160-bit digest.",
     "difficulty": "medium",
     "source": {
@@ -435,7 +453,6 @@
       "section": "1.4 — Explain the importance of using appropriate cryptographic solutions"
     },
     "verify": [
-      "SHA-1",
       "160-bit"
     ]
   },
@@ -451,6 +468,7 @@
       "256-bit"
     ],
     "answer": 0,
+    "answer_text": "128-bit",
     "explanation": "MD5 produces a 128-bit digest.",
     "difficulty": "medium",
     "source": {
@@ -458,7 +476,6 @@
       "section": "1.4 — Explain the importance of using appropriate cryptographic solutions"
     },
     "verify": [
-      "MD5",
       "128-bit"
     ]
   },
@@ -474,6 +491,7 @@
       "4096-bit"
     ],
     "answer": 1,
+    "answer_text": "2048-bit",
     "explanation": "RSA minimum is 2048-bit; 1024-bit is disallowed.",
     "difficulty": "medium",
     "source": {
@@ -481,7 +499,6 @@
       "section": "1.4 — Explain the importance of using appropriate cryptographic solutions"
     },
     "verify": [
-      "RSA",
       "2048-bit"
     ]
   },
@@ -497,6 +514,7 @@
       "Insider threat"
     ],
     "answer": 1,
+    "answer_text": "Nation-state",
     "explanation": "Nation-state actors are government-sponsored and pursue espionage or geopolitical advantage.",
     "difficulty": "easy",
     "source": {
@@ -519,6 +537,7 @@
       "Script kiddie"
     ],
     "answer": 2,
+    "answer_text": "Hacktivist",
     "explanation": "Hacktivists are ideologically driven.",
     "difficulty": "medium",
     "source": {
@@ -541,6 +560,7 @@
       "Organized crime"
     ],
     "answer": 0,
+    "answer_text": "Script kiddie",
     "explanation": "A script kiddie uses pre-built tools with low skill.",
     "difficulty": "medium",
     "source": {
@@ -563,6 +583,7 @@
       "a phishing email"
     ],
     "answer": 1,
+    "answer_text": "a sophisticated, prolonged, targeted intrusion campaign",
     "explanation": "An APT is a campaign — advanced, persistent, and targeted, not a single person.",
     "difficulty": "medium",
     "source": {
@@ -570,7 +591,7 @@
       "section": "2.1 — Compare and contrast common threat actors and motivations"
     },
     "verify": [
-      "APT"
+      "a sophisticated prolonged targeted intrusion campaign"
     ]
   },
   {
@@ -585,6 +606,7 @@
       "Hacktivist"
     ],
     "answer": 2,
+    "answer_text": "Insider threat",
     "explanation": "An insider threat has authorized access and can be malicious or accidental.",
     "difficulty": "medium",
     "source": {
@@ -605,6 +627,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "Shadow IT is a blind spot that often becomes an entry point.",
     "difficulty": "medium",
     "source": {
@@ -627,6 +650,7 @@
       "Vishing"
     ],
     "answer": 2,
+    "answer_text": "Whaling",
     "explanation": "Whaling is phishing aimed at high-value executives.",
     "difficulty": "medium",
     "source": {
@@ -649,6 +673,7 @@
       "a compromised website"
     ],
     "answer": 1,
+    "answer_text": "SMS text messages",
     "explanation": "Smishing uses SMS text messages; vishing uses voice calls.",
     "difficulty": "medium",
     "source": {
@@ -656,7 +681,7 @@
       "section": "2.2 — Explain common threat vectors and attack surfaces"
     },
     "verify": [
-      "Smishing"
+      "SMS text messages"
     ]
   },
   {
@@ -671,6 +696,7 @@
       "uses removable media"
     ],
     "answer": 0,
+    "answer_text": "compromises a website frequently visited by the intended targets",
     "explanation": "A watering hole compromises a site the targets already visit.",
     "difficulty": "medium",
     "source": {
@@ -678,7 +704,7 @@
       "section": "2.2 — Explain common threat vectors and attack surfaces"
     },
     "verify": [
-      "Watering hole"
+      "a website frequently visited by the intended targets"
     ]
   },
   {
@@ -693,6 +719,7 @@
       "hides data inside an image"
     ],
     "answer": 0,
+    "answer_text": "compromises a trusted third party or vendor to reach downstream customers",
     "explanation": "Supply chain attacks compromise a trusted vendor to reach their customers.",
     "difficulty": "medium",
     "source": {
@@ -700,7 +727,7 @@
       "section": "2.2 — Explain common threat vectors and attack surfaces"
     },
     "verify": [
-      "Supply chain"
+      "a trusted third party or vendor to reach downstream customers"
     ]
   },
   {
@@ -713,6 +740,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "These factors widen the attack surface an attacker can target.",
     "difficulty": "medium",
     "source": {
@@ -735,6 +763,7 @@
       "End-of-life software"
     ],
     "answer": 1,
+    "answer_text": "Zero-day",
     "explanation": "A zero-day is unknown to the vendor, so no patch exists when exploited.",
     "difficulty": "medium",
     "source": {
@@ -757,6 +786,7 @@
       "Race condition"
     ],
     "answer": 1,
+    "answer_text": "Misconfiguration",
     "explanation": "Leaving cloud storage public is a misconfiguration, among the most exploited weaknesses.",
     "difficulty": "medium",
     "source": {
@@ -764,7 +794,7 @@
       "section": "2.3 — Explain various types of vulnerabilities"
     },
     "verify": [
-      "misconfiguration"
+      "Misconfiguration"
     ]
   },
   {
@@ -779,6 +809,7 @@
       "VM escape"
     ],
     "answer": 1,
+    "answer_text": "End-of-life (EOL) software",
     "explanation": "EOL software no longer receives patches, so it stays exploitable.",
     "difficulty": "easy",
     "source": {
@@ -786,7 +817,7 @@
       "section": "2.3 — Explain various types of vulnerabilities"
     },
     "verify": [
-      "End-of-life (EOL) software"
+      "End-of-life EOL software"
     ]
   },
   {
@@ -801,6 +832,7 @@
       "a credential attack"
     ],
     "answer": 0,
+    "answer_text": "an outcome that depends on timing",
     "explanation": "A race condition depends on timing; TOCTOU is the classic example.",
     "difficulty": "hard",
     "source": {
@@ -808,7 +840,7 @@
       "section": "2.3 — Explain various types of vulnerabilities"
     },
     "verify": [
-      "Race condition"
+      "depends on timing"
     ]
   },
   {
@@ -823,6 +855,7 @@
       "Card skimming"
     ],
     "answer": 1,
+    "answer_text": "SQL injection",
     "explanation": "SQL injection, XSS, and CSRF are the classic web application vulnerabilities.",
     "difficulty": "medium",
     "source": {
@@ -845,6 +878,7 @@
       "Logic bomb"
     ],
     "answer": 1,
+    "answer_text": "Worm",
     "explanation": "A worm spreads on its own; a virus needs a host and user action.",
     "difficulty": "medium",
     "source": {
@@ -867,6 +901,7 @@
       "Keylogger"
     ],
     "answer": 1,
+    "answer_text": "Ransomware",
     "explanation": "Ransomware encrypts data and demands payment to restore access.",
     "difficulty": "medium",
     "source": {
@@ -889,6 +924,7 @@
       "Backdoor"
     ],
     "answer": 0,
+    "answer_text": "Trojan",
     "explanation": "A Trojan disguises itself as legitimate software to trick the user.",
     "difficulty": "medium",
     "source": {
@@ -911,6 +947,7 @@
       "Virus"
     ],
     "answer": 1,
+    "answer_text": "Rootkit",
     "explanation": "A rootkit hides its presence and grants the attacker privileged access.",
     "difficulty": "medium",
     "source": {
@@ -933,6 +970,7 @@
       "DMZ"
     ],
     "answer": 0,
+    "answer_text": "botnet",
     "explanation": "A botnet is compromised zombies controlled by command-and-control.",
     "difficulty": "medium",
     "source": {
@@ -955,6 +993,7 @@
       "Rainbow table"
     ],
     "answer": 2,
+    "answer_text": "Spraying",
     "explanation": "Spraying tries a few common passwords against many accounts to avoid lockout.",
     "difficulty": "hard",
     "source": {
@@ -977,6 +1016,7 @@
       "Slower network throughput"
     ],
     "answer": 0,
+    "answer_text": "Account lockouts and repeated failed logins",
     "explanation": "Account lockouts, repeated failed logins, and impossible travel indicate credential attacks.",
     "difficulty": "hard",
     "source": {
@@ -984,7 +1024,7 @@
       "section": "2.4 — Given a scenario, analyze indicators of malicious activity"
     },
     "verify": [
-      "account lockouts"
+      "repeated failed logins"
     ]
   },
   {
@@ -999,6 +1039,7 @@
       "Least privilege"
     ],
     "answer": 0,
+    "answer_text": "Network segmentation",
     "explanation": "Segmentation limits lateral movement after a breach.",
     "difficulty": "medium",
     "source": {
@@ -1021,6 +1062,7 @@
       "encrypts all data"
     ],
     "answer": 0,
+    "answer_text": "permits only approved items",
     "explanation": "An allow list permits only approved items; a deny list blocks known-bad items.",
     "difficulty": "easy",
     "source": {
@@ -1028,7 +1070,7 @@
       "section": "2.5 — Explain the purpose of mitigation techniques used to secure the enterprise"
     },
     "verify": [
-      "Allow list"
+      "permits only approved items"
     ]
   },
   {
@@ -1043,6 +1085,7 @@
       "Continuous monitoring"
     ],
     "answer": 1,
+    "answer_text": "Isolation / quarantine",
     "explanation": "Isolation/quarantine separates the infected system from the network.",
     "difficulty": "medium",
     "source": {
@@ -1065,6 +1108,7 @@
       "Redundancy"
     ],
     "answer": 0,
+    "answer_text": "Least privilege",
     "explanation": "Least privilege limits the damage of a compromised account.",
     "difficulty": "medium",
     "source": {
@@ -1085,6 +1129,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "Patching closes known vulnerabilities before attackers can exploit them.",
     "difficulty": "easy",
     "source": {
@@ -1107,6 +1152,7 @@
       "Backdoor"
     ],
     "answer": 1,
+    "answer_text": "Virus",
     "explanation": "A virus attaches to a host file and needs user action; a worm does not.",
     "difficulty": "easy",
     "source": {
@@ -1129,6 +1175,7 @@
       "Keylogger"
     ],
     "answer": 0,
+    "answer_text": "Backdoor",
     "explanation": "A backdoor bypasses normal authentication covertly.",
     "difficulty": "medium",
     "source": {
@@ -1151,6 +1198,7 @@
       "SQL injection"
     ],
     "answer": 1,
+    "answer_text": "Rainbow-table",
     "explanation": "Offline attacks (like rainbow tables) work on a captured hash; online attacks are rate-limited.",
     "difficulty": "hard",
     "source": {
@@ -1173,6 +1221,7 @@
       "MAC flooding"
     ],
     "answer": 1,
+    "answer_text": "DNS poisoning",
     "explanation": "On-path or DNS attacks often redirect traffic to an unknown host.",
     "difficulty": "hard",
     "source": {
@@ -1195,6 +1244,7 @@
       "Evil twin"
     ],
     "answer": 1,
+    "answer_text": "Card skimming",
     "explanation": "Card skimming/cloning reads card data at a compromised reader.",
     "difficulty": "medium",
     "source": {
@@ -1202,7 +1252,7 @@
       "section": "2.4 — Given a scenario, analyze indicators of malicious activity"
     },
     "verify": [
-      "card skimming/cloning"
+      "card"
     ]
   },
   {
@@ -1217,6 +1267,7 @@
       "Backup"
     ],
     "answer": 0,
+    "answer_text": "System hardening",
     "explanation": "System hardening reduces the attack surface by removing what is not needed.",
     "difficulty": "medium",
     "source": {
@@ -1239,6 +1290,7 @@
       "Allow lists"
     ],
     "answer": 0,
+    "answer_text": "Deception",
     "explanation": "Deception technologies misdirect attackers and provide early warning.",
     "difficulty": "medium",
     "source": {
@@ -1261,6 +1313,7 @@
       "Tokenization"
     ],
     "answer": 0,
+    "answer_text": "Secure baselines",
     "explanation": "Configuration enforcement via secure baselines prevents drift.",
     "difficulty": "medium",
     "source": {
@@ -1283,6 +1336,7 @@
       "Zero-day"
     ],
     "answer": 0,
+    "answer_text": "Virtualization",
     "explanation": "VM escape and hypervisor flaws are virtualization vulnerabilities.",
     "difficulty": "medium",
     "source": {
@@ -1305,6 +1359,7 @@
       "EOL software"
     ],
     "answer": 0,
+    "answer_text": "Supply chain",
     "explanation": "Supply chain risk is introduced through third-party products and code.",
     "difficulty": "medium",
     "source": {
@@ -1327,6 +1382,7 @@
       "Supply chain"
     ],
     "answer": 0,
+    "answer_text": "Direct access",
     "explanation": "Direct access attacks require physical or local access.",
     "difficulty": "easy",
     "source": {
@@ -1347,6 +1403,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "Insider threats may be malicious or accidental.",
     "difficulty": "easy",
     "source": {
@@ -1369,6 +1426,7 @@
       "the cloud provider's hardware"
     ],
     "answer": 0,
+    "answer_text": "the operating system and up",
     "explanation": "In IaaS the provider secures infrastructure; the customer secures the OS and up.",
     "difficulty": "medium",
     "source": {
@@ -1376,7 +1434,7 @@
       "section": "3.1 — Compare and contrast security implications of different architecture models"
     },
     "verify": [
-      "IaaS"
+      "operating system"
     ]
   },
   {
@@ -1391,6 +1449,7 @@
       "On-premises"
     ],
     "answer": 2,
+    "answer_text": "SaaS",
     "explanation": "In SaaS the provider manages everything but your data and access remain your responsibility.",
     "difficulty": "medium",
     "source": {
@@ -1413,6 +1472,7 @@
       "primary, secondary, tertiary, quaternary"
     ],
     "answer": 0,
+    "answer_text": "public, private, community, hybrid",
     "explanation": "Deployment models are public, private, community, and hybrid.",
     "difficulty": "easy",
     "source": {
@@ -1420,7 +1480,7 @@
       "section": "3.1 — Compare and contrast security implications of different architecture models"
     },
     "verify": [
-      "public, private, community, and hybrid"
+      "public private community"
     ]
   },
   {
@@ -1435,6 +1495,7 @@
       "The regulator"
     ],
     "answer": 1,
+    "answer_text": "The customer",
     "explanation": "The customer secures what they put in the cloud — a misconfigured bucket is the customer's.",
     "difficulty": "hard",
     "source": {
@@ -1442,7 +1503,7 @@
       "section": "3.1 — Compare and contrast security implications of different architecture models"
     },
     "verify": [
-      "misconfigured cloud bucket"
+      "the customer"
     ]
   },
   {
@@ -1457,6 +1518,7 @@
       "Containers"
     ],
     "answer": 1,
+    "answer_text": "Infrastructure as Code (IaC)",
     "explanation": "IaC manages infrastructure through version-controlled, repeatable code.",
     "difficulty": "medium",
     "source": {
@@ -1464,7 +1526,7 @@
       "section": "3.1 — Compare and contrast security implications of different architecture models"
     },
     "verify": [
-      "Infrastructure as Code"
+      "Infrastructure as Code IaC"
     ]
   },
   {
@@ -1479,6 +1541,7 @@
       "FPGA"
     ],
     "answer": 0,
+    "answer_text": "ICS/SCADA",
     "explanation": "ICS/SCADA controls industrial processes and is a form of operational technology (OT).",
     "difficulty": "medium",
     "source": {
@@ -1501,6 +1564,7 @@
       "Serverless"
     ],
     "answer": 0,
+    "answer_text": "RTOS",
     "explanation": "An RTOS provides deterministic, safety-critical timing.",
     "difficulty": "medium",
     "source": {
@@ -1523,6 +1587,7 @@
       "Backup network"
     ],
     "answer": 0,
+    "answer_text": "Screened subnet (DMZ)",
     "explanation": "A screened subnet (DMZ) hosts public-facing services between external and internal networks.",
     "difficulty": "easy",
     "source": {
@@ -1530,7 +1595,7 @@
       "section": "3.2 — Given a scenario, apply security principles to secure enterprise infrastructure"
     },
     "verify": [
-      "Screened subnet (DMZ)"
+      "Screened subnet DMZ"
     ]
   },
   {
@@ -1545,6 +1610,7 @@
       "UTM"
     ],
     "answer": 1,
+    "answer_text": "Stateful",
     "explanation": "A stateful firewall filters rules and tracks connection state.",
     "difficulty": "easy",
     "source": {
@@ -1567,6 +1633,7 @@
       "Load balancer"
     ],
     "answer": 0,
+    "answer_text": "WAF",
     "explanation": "A WAF protects web applications at Layer 7.",
     "difficulty": "medium",
     "source": {
@@ -1589,6 +1656,7 @@
       "Firewall"
     ],
     "answer": 1,
+    "answer_text": "IDS",
     "explanation": "IDS detects (passive); IPS detects and blocks (inline).",
     "difficulty": "medium",
     "source": {
@@ -1611,6 +1679,7 @@
       "Load balancer"
     ],
     "answer": 1,
+    "answer_text": "IPS",
     "explanation": "IPS detects and blocks inline.",
     "difficulty": "medium",
     "source": {
@@ -1633,6 +1702,7 @@
       "authentication and non-repudiation"
     ],
     "answer": 0,
+    "answer_text": "integrity only",
     "explanation": "AH provides integrity only; ESP provides encryption + integrity.",
     "difficulty": "hard",
     "source": {
@@ -1640,7 +1710,7 @@
       "section": "3.2 — Given a scenario, apply security principles to secure enterprise infrastructure"
     },
     "verify": [
-      "AH"
+      "integrity only"
     ]
   },
   {
@@ -1655,6 +1725,7 @@
       "VPN"
     ],
     "answer": 0,
+    "answer_text": "SASE",
     "explanation": "SASE converges network security services with SD-WAN into a cloud-delivered service.",
     "difficulty": "hard",
     "source": {
@@ -1675,6 +1746,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "Load balancers distribute traffic for scalability and high availability.",
     "difficulty": "medium",
     "source": {
@@ -1697,6 +1769,7 @@
       "hot, warm, cold"
     ],
     "answer": 0,
+    "answer_text": "at rest, in transit, and in use",
     "explanation": "The three data states are at rest, in transit, and in use.",
     "difficulty": "easy",
     "source": {
@@ -1704,7 +1777,7 @@
       "section": "3.3 — Compare and contrast concepts and strategies to protect data"
     },
     "verify": [
-      "at rest, in transit, and in use"
+      "at rest in transit and in use"
     ]
   },
   {
@@ -1719,6 +1792,7 @@
       "CHD"
     ],
     "answer": 1,
+    "answer_text": "PHI",
     "explanation": "PHI is protected health information.",
     "difficulty": "easy",
     "source": {
@@ -1741,6 +1815,7 @@
       "Obfuscation"
     ],
     "answer": 1,
+    "answer_text": "Tokenization",
     "explanation": "Tokenization replaces the value with a token; masking hides part of the value.",
     "difficulty": "medium",
     "source": {
@@ -1763,6 +1838,7 @@
       "Hashing"
     ],
     "answer": 0,
+    "answer_text": "Data masking",
     "explanation": "Data masking shows only partial data.",
     "difficulty": "medium",
     "source": {
@@ -1785,6 +1861,7 @@
       "Data obfuscation"
     ],
     "answer": 1,
+    "answer_text": "Data sovereignty",
     "explanation": "Data sovereignty ties data to the laws of its location.",
     "difficulty": "hard",
     "source": {
@@ -1807,6 +1884,7 @@
       "WAF"
     ],
     "answer": 0,
+    "answer_text": "DLP",
     "explanation": "DLP monitors and blocks unauthorized data transfer.",
     "difficulty": "medium",
     "source": {
@@ -1829,6 +1907,7 @@
       "Virtual"
     ],
     "answer": 0,
+    "answer_text": "Hot",
     "explanation": "A hot site is fully operational and ready immediately.",
     "difficulty": "easy",
     "source": {
@@ -1851,6 +1930,7 @@
       "Offline"
     ],
     "answer": 2,
+    "answer_text": "Cold",
     "explanation": "A cold site has space/power only.",
     "difficulty": "easy",
     "source": {
@@ -1873,6 +1953,7 @@
       "retention period"
     ],
     "answer": 0,
+    "answer_text": "maximum acceptable downtime",
     "explanation": "RTO is the maximum acceptable downtime to restore service.",
     "difficulty": "medium",
     "source": {
@@ -1880,7 +1961,7 @@
       "section": "3.4 — Explain the importance of resilience and recovery in security architecture"
     },
     "verify": [
-      "RTO"
+      "maximum acceptable downtime"
     ]
   },
   {
@@ -1895,6 +1976,7 @@
       "replication interval"
     ],
     "answer": 0,
+    "answer_text": "maximum acceptable data loss",
     "explanation": "RPO is the maximum acceptable data loss measured in time.",
     "difficulty": "hard",
     "source": {
@@ -1902,7 +1984,7 @@
       "section": "3.4 — Explain the importance of resilience and recovery in security architecture"
     },
     "verify": [
-      "RPO"
+      "maximum acceptable data loss"
     ]
   },
   {
@@ -1917,6 +1999,7 @@
       "Load balancer"
     ],
     "answer": 0,
+    "answer_text": "UPS",
     "explanation": "A UPS (uninterruptible power supply) bridges to a generator.",
     "difficulty": "medium",
     "source": {
@@ -1939,6 +2022,7 @@
       "AUP"
     ],
     "answer": 0,
+    "answer_text": "COOP",
     "explanation": "COOP (continuity of operations planning) keeps critical functions running.",
     "difficulty": "medium",
     "source": {
@@ -1959,6 +2043,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "A warm site has equipment present but requires setup.",
     "difficulty": "medium",
     "source": {
@@ -1981,6 +2066,7 @@
       "IaaS"
     ],
     "answer": 0,
+    "answer_text": "Containers",
     "explanation": "Containers share the host kernel and use namespaces and control groups.",
     "difficulty": "medium",
     "source": {
@@ -2003,6 +2089,7 @@
       "Stateless"
     ],
     "answer": 0,
+    "answer_text": "UTM",
     "explanation": "UTM bundles firewall, IPS, AV, and VPN in one appliance.",
     "difficulty": "medium",
     "source": {
@@ -2025,6 +2112,7 @@
       "WPA2"
     ],
     "answer": 0,
+    "answer_text": "IPsec",
     "explanation": "IPsec uses AH (integrity) and ESP (encryption + integrity).",
     "difficulty": "medium",
     "source": {
@@ -2047,6 +2135,7 @@
       "Snapshot"
     ],
     "answer": 0,
+    "answer_text": "Incremental",
     "explanation": "An incremental backup captures changes since the last backup of any type.",
     "difficulty": "hard",
     "source": {
@@ -2069,6 +2158,7 @@
       "Geofencing"
     ],
     "answer": 0,
+    "answer_text": "Sandboxing",
     "explanation": "Sandboxing isolates untrusted code from the host.",
     "difficulty": "easy",
     "source": {
@@ -2091,6 +2181,7 @@
       "password policy"
     ],
     "answer": 0,
+    "answer_text": "security baseline",
     "explanation": "Hardening is relative to a baseline — a known-good secure configuration.",
     "difficulty": "medium",
     "source": {
@@ -2098,7 +2189,7 @@
       "section": "4.1 — Given a scenario, apply common security techniques to computing resources"
     },
     "verify": [
-      "Security baseline"
+      "security"
     ]
   },
   {
@@ -2113,6 +2204,7 @@
       "Backup strategies"
     ],
     "answer": 0,
+    "answer_text": "Device ownership models",
     "explanation": "BYOD, COPE, CYOD, and COBO are mobile device ownership models.",
     "difficulty": "medium",
     "source": {
@@ -2120,7 +2212,7 @@
       "section": "4.1 — Given a scenario, apply common security techniques to computing resources"
     },
     "verify": [
-      "BYOD, COPE, CYOD, and COBO"
+      "device"
     ]
   },
   {
@@ -2135,6 +2227,7 @@
       "MDM enrollment"
     ],
     "answer": 0,
+    "answer_text": "Remote wipe",
     "explanation": "Remote wipe erases a lost device remotely.",
     "difficulty": "easy",
     "source": {
@@ -2155,6 +2248,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "MAM controls applications; MDM/UEM enforce mobile policy.",
     "difficulty": "medium",
     "source": {
@@ -2177,6 +2271,7 @@
       "Degauss"
     ],
     "answer": 0,
+    "answer_text": "Clear",
     "explanation": "Clear is a logical overwrite — the weakest sanitization method.",
     "difficulty": "medium",
     "source": {
@@ -2199,6 +2294,7 @@
       "Cryptographic erase"
     ],
     "answer": 2,
+    "answer_text": "Destroy",
     "explanation": "Destroy is physical destruction — the highest assurance.",
     "difficulty": "easy",
     "source": {
@@ -2221,6 +2317,7 @@
       "physically shredding"
     ],
     "answer": 0,
+    "answer_text": "disrupting the magnetic field",
     "explanation": "Degaussing disrupts the magnetic field (a Purge method).",
     "difficulty": "medium",
     "source": {
@@ -2228,7 +2325,7 @@
       "section": "4.2 — Explain the security implications of proper hardware, software, and data asset management"
     },
     "verify": [
-      "Degaussing"
+      "disrupting the magnetic field"
     ]
   },
   {
@@ -2243,6 +2340,7 @@
       "degaussing the drive"
     ],
     "answer": 0,
+    "answer_text": "destroying the encryption key",
     "explanation": "Cryptographic erasure destroys the encryption key, making data unrecoverable.",
     "difficulty": "medium",
     "source": {
@@ -2250,7 +2348,7 @@
       "section": "4.2 — Explain the security implications of proper hardware, software, and data asset management"
     },
     "verify": [
-      "Cryptographic erasure"
+      "the encryption key"
     ]
   },
   {
@@ -2265,6 +2363,7 @@
       "Risk register"
     ],
     "answer": 0,
+    "answer_text": "Certificate of destruction",
     "explanation": "A certificate of destruction documents sanitization/destruction.",
     "difficulty": "medium",
     "source": {
@@ -2285,6 +2384,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "Clear is weakest, Destroy is strongest.",
     "difficulty": "medium",
     "source": {
@@ -2307,6 +2407,7 @@
       "Reporting"
     ],
     "answer": 0,
+    "answer_text": "Identification",
     "explanation": "Identification uses vulnerability scanners and SCAP.",
     "difficulty": "easy",
     "source": {
@@ -2329,6 +2430,7 @@
       "NVD names; CVE scores"
     ],
     "answer": 0,
+    "answer_text": "CVE names; CVSS scores",
     "explanation": "CVE identifies the vulnerability; CVSS scores severity.",
     "difficulty": "hard",
     "source": {
@@ -2336,8 +2438,7 @@
       "section": "4.3 — Explain various activities associated with vulnerability management"
     },
     "verify": [
-      "CVE",
-      "CVSS"
+      "CVE names CVSS"
     ]
   },
   {
@@ -2352,6 +2453,7 @@
       "Reporting"
     ],
     "answer": 0,
+    "answer_text": "Validation",
     "explanation": "Validation re-scans or retests to confirm the fix worked.",
     "difficulty": "easy",
     "source": {
@@ -2374,6 +2476,7 @@
       "only network misconfigurations"
     ],
     "answer": 0,
+    "answer_text": "more than non-credentialed scans",
     "explanation": "Credentialed scans find more because they authenticate to the target.",
     "difficulty": "medium",
     "source": {
@@ -2381,7 +2484,7 @@
       "section": "4.3 — Explain various activities associated with vulnerability management"
     },
     "verify": [
-      "credentialed"
+      "more than non-credentialed"
     ]
   },
   {
@@ -2394,6 +2497,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "Both programs reward or accept responsible reporting of vulnerabilities.",
     "difficulty": "medium",
     "source": {
@@ -2416,6 +2520,7 @@
       "SCAP"
     ],
     "answer": 0,
+    "answer_text": "SIEM",
     "explanation": "A SIEM aggregates and correlates logs to detect and alert.",
     "difficulty": "easy",
     "source": {
@@ -2438,6 +2543,7 @@
       "SCAP"
     ],
     "answer": 0,
+    "answer_text": "SNMP traps",
     "explanation": "SNMP traps are unsolicited alerts from devices.",
     "difficulty": "medium",
     "source": {
@@ -2460,6 +2566,7 @@
       "directory lookups"
     ],
     "answer": 0,
+    "answer_text": "metadata about network traffic without full packet capture",
     "explanation": "NetFlow gives traffic metadata (who talked to whom, how much), not full packets.",
     "difficulty": "medium",
     "source": {
@@ -2467,7 +2574,7 @@
       "section": "4.4 — Explain security alerting and monitoring concepts and tools"
     },
     "verify": [
-      "NetFlow"
+      "without full packet capture"
     ]
   },
   {
@@ -2482,6 +2589,7 @@
       "SCAP"
     ],
     "answer": 0,
+    "answer_text": "Syslog",
     "explanation": "Syslog is the standard for forwarding log messages to a central collector.",
     "difficulty": "easy",
     "source": {
@@ -2504,6 +2612,7 @@
       "To encrypt logs"
     ],
     "answer": 0,
+    "answer_text": "To reduce false positives so real threats are not drowned out",
     "explanation": "Tuning reduces false positives so real threats are not drowned out.",
     "difficulty": "medium",
     "source": {
@@ -2511,7 +2620,7 @@
       "section": "4.4 — Explain security alerting and monitoring concepts and tools"
     },
     "verify": [
-      "Alert tuning"
+      "false positives so real threats"
     ]
   },
   {
@@ -2524,6 +2633,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "DLP monitors and blocks the unauthorized transfer of sensitive data.",
     "difficulty": "easy",
     "source": {
@@ -2546,6 +2656,7 @@
       "TLS"
     ],
     "answer": 0,
+    "answer_text": "SPF",
     "explanation": "SPF authorizes sending servers; DKIM signs; DMARC aligns both.",
     "difficulty": "hard",
     "source": {
@@ -2568,6 +2679,7 @@
       "SMTP"
     ],
     "answer": 1,
+    "answer_text": "DKIM",
     "explanation": "DKIM signs messages.",
     "difficulty": "hard",
     "source": {
@@ -2590,6 +2702,7 @@
       "DLP"
     ],
     "answer": 0,
+    "answer_text": "NAC",
     "explanation": "NAC enforces compliance before allowing a device on the network.",
     "difficulty": "hard",
     "source": {
@@ -2612,6 +2725,7 @@
       "EDR"
     ],
     "answer": 0,
+    "answer_text": "FIM",
     "explanation": "FIM (file integrity monitoring) detects changes to critical files.",
     "difficulty": "medium",
     "source": {
@@ -2634,6 +2748,7 @@
       "DLP"
     ],
     "answer": 0,
+    "answer_text": "UBA/UEBA",
     "explanation": "UBA/UEBA detects behavior that deviates from a baseline.",
     "difficulty": "hard",
     "source": {
@@ -2654,6 +2769,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "DMARC aligns SPF and DKIM and sets policy against spoofed email.",
     "difficulty": "hard",
     "source": {
@@ -2676,6 +2792,7 @@
       "OIDC"
     ],
     "answer": 0,
+    "answer_text": "LDAP",
     "explanation": "LDAP is the directory access protocol.",
     "difficulty": "easy",
     "source": {
@@ -2698,6 +2815,7 @@
       "Kerberos"
     ],
     "answer": 0,
+    "answer_text": "SAML",
     "explanation": "SAML is the XML-based assertion standard for SSO/federation.",
     "difficulty": "medium",
     "source": {
@@ -2720,6 +2838,7 @@
       "Kerberos"
     ],
     "answer": 0,
+    "answer_text": "OAuth",
     "explanation": "OAuth is the authorization/delegation framework.",
     "difficulty": "medium",
     "source": {
@@ -2742,6 +2861,7 @@
       "RADIUS"
     ],
     "answer": 0,
+    "answer_text": "OIDC",
     "explanation": "OIDC adds an identity/authentication layer on OAuth 2.0.",
     "difficulty": "hard",
     "source": {
@@ -2764,6 +2884,7 @@
       "OAuth token"
     ],
     "answer": 0,
+    "answer_text": "Ticket Granting Ticket (TGT)",
     "explanation": "The KDC issues a Ticket Granting Ticket (TGT).",
     "difficulty": "hard",
     "source": {
@@ -2771,8 +2892,7 @@
       "section": "4.6 — Given a scenario, implement and maintain identity and access management"
     },
     "verify": [
-      "Key Distribution Center",
-      "Ticket Granting Ticket"
+      "Ticket Granting Ticket TGT"
     ]
   },
   {
@@ -2787,6 +2907,7 @@
       "ABAC"
     ],
     "answer": 0,
+    "answer_text": "DAC",
     "explanation": "DAC lets the owner set permissions.",
     "difficulty": "easy",
     "source": {
@@ -2809,6 +2930,7 @@
       "ABAC"
     ],
     "answer": 0,
+    "answer_text": "MAC",
     "explanation": "MAC has the system enforce labels/clearances.",
     "difficulty": "easy",
     "source": {
@@ -2831,6 +2953,7 @@
       "PAM"
     ],
     "answer": 0,
+    "answer_text": "SSO",
     "explanation": "SSO lets a user authenticate once to access multiple applications.",
     "difficulty": "easy",
     "source": {
@@ -2847,12 +2970,13 @@
     "type": "mc",
     "question": "Which MFA factor is a fingerprint?",
     "options": [
-      "Something you are",
+      "Biometrics (something you are)",
       "Something you know",
       "Something you have",
       "Somewhere you are"
     ],
     "answer": 0,
+    "answer_text": "Biometrics (something you are)",
     "explanation": "A fingerprint is something you are (biometric).",
     "difficulty": "easy",
     "source": {
@@ -2875,6 +2999,7 @@
       "Privileged Account Monitor"
     ],
     "answer": 0,
+    "answer_text": "Privileged Access Management",
     "explanation": "PAM (Privileged Access Management) controls privileged accounts.",
     "difficulty": "medium",
     "source": {
@@ -2897,6 +3022,7 @@
       "password entropy"
     ],
     "answer": 0,
+    "answer_text": "biometric accuracy",
     "explanation": "FRR and FAR express biometric accuracy.",
     "difficulty": "hard",
     "source": {
@@ -2904,8 +3030,7 @@
       "section": "4.6 — Given a scenario, implement and maintain identity and access management"
     },
     "verify": [
-      "FRR",
-      "false acceptance rate"
+      "accuracy"
     ]
   },
   {
@@ -2920,6 +3045,7 @@
       "Playbook"
     ],
     "answer": 0,
+    "answer_text": "Automation",
     "explanation": "Automation is one task; orchestration chains many tasks into a workflow.",
     "difficulty": "easy",
     "source": {
@@ -2942,6 +3068,7 @@
       "A script"
     ],
     "answer": 0,
+    "answer_text": "Orchestration",
     "explanation": "Orchestration coordinates multiple automated tasks.",
     "difficulty": "medium",
     "source": {
@@ -2964,6 +3091,7 @@
       "XDR"
     ],
     "answer": 0,
+    "answer_text": "SOAR",
     "explanation": "SOAR is the Security Orchestration, Automation, and Response platform.",
     "difficulty": "easy",
     "source": {
@@ -2984,6 +3112,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "Playbooks/runbooks document standardized automated response procedures.",
     "difficulty": "easy",
     "source": {
@@ -3006,6 +3135,7 @@
       "Recovery"
     ],
     "answer": 0,
+    "answer_text": "Preparation",
     "explanation": "The IR process begins with Preparation.",
     "difficulty": "easy",
     "source": {
@@ -3028,6 +3158,7 @@
       "Post-Incident Activity"
     ],
     "answer": 0,
+    "answer_text": "Detection and Analysis",
     "explanation": "SP 800-61 runs Preparation → Detection and Analysis → Containment/Eradication/Recovery → Post-Incident Activity.",
     "difficulty": "medium",
     "source": {
@@ -3050,6 +3181,7 @@
       "Legal hold"
     ],
     "answer": 0,
+    "answer_text": "Threat hunting",
     "explanation": "Threat hunting proactively searches for evaded threats.",
     "difficulty": "medium",
     "source": {
@@ -3072,6 +3204,7 @@
       "Order of volatility"
     ],
     "answer": 0,
+    "answer_text": "Chain of custody",
     "explanation": "Chain of custody documents evidence handling to preserve integrity.",
     "difficulty": "medium",
     "source": {
@@ -3094,6 +3227,7 @@
       "Log files"
     ],
     "answer": 0,
+    "answer_text": "Memory",
     "explanation": "Memory is the most volatile and is collected first.",
     "difficulty": "hard",
     "source": {
@@ -3101,7 +3235,6 @@
       "section": "4.8 — Explain appropriate incident response activities"
     },
     "verify": [
-      "Order of volatility",
       "memory"
     ]
   },
@@ -3117,6 +3250,7 @@
       "Eradication"
     ],
     "answer": 0,
+    "answer_text": "Root cause analysis",
     "explanation": "Root cause analysis identifies the underlying cause.",
     "difficulty": "medium",
     "source": {
@@ -3137,6 +3271,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "A legal hold preserves data that may be needed for litigation.",
     "difficulty": "easy",
     "source": {
@@ -3159,6 +3294,7 @@
       "Dashboards"
     ],
     "answer": 0,
+    "answer_text": "Packet captures",
     "explanation": "Packet captures (tcpdump, Wireshark) give full traffic for deep analysis.",
     "difficulty": "medium",
     "source": {
@@ -3181,6 +3317,7 @@
       "Log files"
     ],
     "answer": 0,
+    "answer_text": "Metadata",
     "explanation": "Metadata (email headers, timestamps) reveals attribution and timeline.",
     "difficulty": "medium",
     "source": {
@@ -3201,6 +3338,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "Correlation across sources builds the complete timeline.",
     "difficulty": "easy",
     "source": {
@@ -3223,6 +3361,7 @@
       "Guideline"
     ],
     "answer": 0,
+    "answer_text": "Policy",
     "explanation": "A policy is high-level management intent.",
     "difficulty": "easy",
     "source": {
@@ -3245,6 +3384,7 @@
       "AUP"
     ],
     "answer": 0,
+    "answer_text": "Standard",
     "explanation": "A standard contains mandatory requirements.",
     "difficulty": "easy",
     "source": {
@@ -3267,6 +3407,7 @@
       "Policy"
     ],
     "answer": 0,
+    "answer_text": "Guideline",
     "explanation": "A guideline is a recommendation, not a mandate.",
     "difficulty": "easy",
     "source": {
@@ -3289,6 +3430,7 @@
       "Guideline"
     ],
     "answer": 0,
+    "answer_text": "Procedure",
     "explanation": "A procedure is step-by-step instructions.",
     "difficulty": "easy",
     "source": {
@@ -3311,6 +3453,7 @@
       "Auditors and accountants"
     ],
     "answer": 0,
+    "answer_text": "CISO, CIO, and CSO",
     "explanation": "CISO, CIO, and CSO are security leadership roles.",
     "difficulty": "medium",
     "source": {
@@ -3318,7 +3461,7 @@
       "section": "5.1 — Summarize elements of effective security governance"
     },
     "verify": [
-      "CISO, CIO, and CSO"
+      "CISO CIO and CSO"
     ]
   },
   {
@@ -3333,6 +3476,7 @@
       "SLA"
     ],
     "answer": 0,
+    "answer_text": "Acceptable use policy (AUP)",
     "explanation": "An AUP defines permitted and prohibited use.",
     "difficulty": "easy",
     "source": {
@@ -3340,7 +3484,7 @@
       "section": "5.1 — Summarize elements of effective security governance"
     },
     "verify": [
-      "acceptable use policy (AUP)"
+      "acceptable use policy"
     ]
   },
   {
@@ -3353,6 +3497,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "The hierarchy descends Policy → Standard → Procedure in abstraction.",
     "difficulty": "medium",
     "source": {
@@ -3375,6 +3520,7 @@
       "ALE × ARO"
     ],
     "answer": 0,
+    "answer_text": "Asset Value (AV) × Exposure Factor (EF)",
     "explanation": "SLE = AV × EF.",
     "difficulty": "easy",
     "source": {
@@ -3382,7 +3528,7 @@
       "section": "5.2 — Explain elements of the risk management process"
     },
     "verify": [
-      "SLE"
+      "Asset Value AV Exposure Factor EF"
     ]
   },
   {
@@ -3393,10 +3539,11 @@
     "options": [
       "SLE × ARO",
       "AV × EF",
-      "SLE + ARO",
+      "AV + ARO",
       "EF × ARO"
     ],
     "answer": 0,
+    "answer_text": "SLE × ARO",
     "explanation": "ALE = SLE × ARO.",
     "difficulty": "easy",
     "source": {
@@ -3404,7 +3551,7 @@
       "section": "5.2 — Explain elements of the risk management process"
     },
     "verify": [
-      "ALE"
+      "SLE"
     ]
   },
   {
@@ -3419,6 +3566,7 @@
       "ALE"
     ],
     "answer": 0,
+    "answer_text": "ARO",
     "explanation": "ARO is the expected number of loss events per year.",
     "difficulty": "medium",
     "source": {
@@ -3441,6 +3589,7 @@
       "BIA"
     ],
     "answer": 0,
+    "answer_text": "Risk appetite",
     "explanation": "Risk appetite is the level of risk the organization is willing to accept.",
     "difficulty": "hard",
     "source": {
@@ -3463,6 +3612,7 @@
       "Risk tolerance"
     ],
     "answer": 0,
+    "answer_text": "Risk register",
     "explanation": "The risk register stores identified risks with likelihood and impact.",
     "difficulty": "medium",
     "source": {
@@ -3485,6 +3635,7 @@
       "Mitigate"
     ],
     "answer": 0,
+    "answer_text": "Transfer",
     "explanation": "Transfer shifts risk (e.g., insurance); accept, avoid, and mitigate are the others.",
     "difficulty": "easy",
     "source": {
@@ -3507,6 +3658,7 @@
       "Vendor assessment"
     ],
     "answer": 0,
+    "answer_text": "Business impact analysis (BIA)",
     "explanation": "BIA identifies critical functions, RTO/RPO, and dependencies.",
     "difficulty": "hard",
     "source": {
@@ -3527,6 +3679,7 @@
       "False"
     ],
     "answer": 1,
+    "answer_text": "False",
     "explanation": "It is the reverse: qualitative uses labels; quantitative uses monetary values.",
     "difficulty": "medium",
     "source": {
@@ -3549,6 +3702,7 @@
       "BPA"
     ],
     "answer": 0,
+    "answer_text": "SLA",
     "explanation": "An SLA specifies service levels (uptime, response).",
     "difficulty": "easy",
     "source": {
@@ -3571,6 +3725,7 @@
       "MOU"
     ],
     "answer": 0,
+    "answer_text": "NDA",
     "explanation": "An NDA protects confidential information.",
     "difficulty": "easy",
     "source": {
@@ -3593,6 +3748,7 @@
       "BPA"
     ],
     "answer": 0,
+    "answer_text": "MOU",
     "explanation": "An MOU expresses mutual intent.",
     "difficulty": "medium",
     "source": {
@@ -3615,6 +3771,7 @@
       "MSA"
     ],
     "answer": 0,
+    "answer_text": "Rules of engagement",
     "explanation": "Rules of engagement scope and limit third-party pen testing.",
     "difficulty": "medium",
     "source": {
@@ -3637,6 +3794,7 @@
       "Selection"
     ],
     "answer": 0,
+    "answer_text": "Vendor assessment",
     "explanation": "Vendor assessment is the pre-engagement due diligence.",
     "difficulty": "medium",
     "source": {
@@ -3657,6 +3815,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "Supply chain risk comes from third-party products, services, and code.",
     "difficulty": "medium",
     "source": {
@@ -3679,6 +3838,7 @@
       "30 days"
     ],
     "answer": 0,
+    "answer_text": "72 hours",
     "explanation": "GDPR requires notification within 72 hours.",
     "difficulty": "easy",
     "source": {
@@ -3701,6 +3861,7 @@
       "90 days"
     ],
     "answer": 0,
+    "answer_text": "60 days",
     "explanation": "HIPAA requires notification within 60 days.",
     "difficulty": "easy",
     "source": {
@@ -3723,6 +3884,7 @@
       "10"
     ],
     "answer": 0,
+    "answer_text": "12",
     "explanation": "PCI DSS has 12 high-level requirements.",
     "difficulty": "easy",
     "source": {
@@ -3745,6 +3907,7 @@
       "A security patch"
     ],
     "answer": 0,
+    "answer_text": "Fines, sanctions, loss of certification, and reputational damage",
     "explanation": "Non-compliance leads to fines, sanctions, loss of certification, and reputational damage.",
     "difficulty": "easy",
     "source": {
@@ -3752,7 +3915,7 @@
       "section": "5.4 — Summarize elements of effective security compliance"
     },
     "verify": [
-      "fines, sanctions, loss of certification, and reputational damage"
+      "fines sanctions loss of certification and reputational damage"
     ]
   },
   {
@@ -3765,6 +3928,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "Compliance is continuous — ongoing monitoring and reporting.",
     "difficulty": "easy",
     "source": {
@@ -3787,6 +3951,7 @@
       "Vulnerability assessment"
     ],
     "answer": 0,
+    "answer_text": "Audit",
     "explanation": "An audit systematically reviews controls against a standard.",
     "difficulty": "easy",
     "source": {
@@ -3809,6 +3974,7 @@
       "Attestation"
     ],
     "answer": 0,
+    "answer_text": "Penetration test",
     "explanation": "A penetration test actively exploits weaknesses; a vulnerability assessment only identifies them.",
     "difficulty": "medium",
     "source": {
@@ -3831,6 +3997,7 @@
       "administrative access"
     ],
     "answer": 0,
+    "answer_text": "no knowledge of the environment",
     "explanation": "Black box is unknown; white box is known; gray box is partial.",
     "difficulty": "medium",
     "source": {
@@ -3838,7 +4005,7 @@
       "section": "5.5 — Explain types and purposes of audits and assessments"
     },
     "verify": [
-      "black box"
+      "the environment"
     ]
   },
   {
@@ -3853,6 +4020,7 @@
       "SOC 0"
     ],
     "answer": 0,
+    "answer_text": "SOC 2",
     "explanation": "SOC 2 covers the Trust Services Criteria (security, availability, processing integrity, confidentiality, privacy).",
     "difficulty": "hard",
     "source": {
@@ -3875,6 +4043,7 @@
       "only IT security"
     ],
     "answer": 0,
+    "answer_text": "operating effectiveness over a period",
     "explanation": "Type II tests operating effectiveness over a period; Type I is design at a point in time.",
     "difficulty": "hard",
     "source": {
@@ -3882,7 +4051,7 @@
       "section": "5.5 — Explain types and purposes of audits and assessments"
     },
     "verify": [
-      "Type II"
+      "operating effectiveness over a period"
     ]
   },
   {
@@ -3895,6 +4064,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "Vulnerability assessments identify; penetration tests exploit to measure impact.",
     "difficulty": "medium",
     "source": {
@@ -3917,6 +4087,7 @@
       "Patch management"
     ],
     "answer": 0,
+    "answer_text": "Phishing simulations",
     "explanation": "Phishing simulations test and reinforce users' ability to spot malicious email.",
     "difficulty": "easy",
     "source": {
@@ -3939,6 +4110,7 @@
       "Password length"
     ],
     "answer": 0,
+    "answer_text": "Click rates and reporting rates",
     "explanation": "Click rates and reporting rates measure awareness effectiveness.",
     "difficulty": "medium",
     "source": {
@@ -3946,7 +4118,7 @@
       "section": "5.6 — Given a scenario, implement security awareness practices"
     },
     "verify": [
-      "Click rates"
+      "Click rates and reporting rates"
     ]
   },
   {
@@ -3961,6 +4133,7 @@
       "DPO"
     ],
     "answer": 0,
+    "answer_text": "Data owner",
     "explanation": "The data owner is accountable; steward (quality/policy); custodian (storage/backup).",
     "difficulty": "hard",
     "source": {
@@ -3983,6 +4156,7 @@
       "DPO"
     ],
     "answer": 0,
+    "answer_text": "Data custodian",
     "explanation": "The data custodian handles storage and backup.",
     "difficulty": "medium",
     "source": {
@@ -4003,6 +4177,7 @@
       "False"
     ],
     "answer": 0,
+    "answer_text": "True",
     "explanation": "Gamification/interactive campaigns improve engagement and retention.",
     "difficulty": "easy",
     "source": {
