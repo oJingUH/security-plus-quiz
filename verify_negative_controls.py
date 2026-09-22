@@ -85,6 +85,18 @@ def main():
     json.dump(b, open(path, "w"))
     check("non-discriminating verify token", run_verify(bank_path=path))
 
+    # --- (d) TF ANSWER-BEARING GROUNDING: token grounds the subject ---
+    # d3-028's false statement is "A warm recovery site is fully operational and
+    # ready immediately."; the TRUE fact is that a warm site requires setup.
+    # "Warm" is grounded in the cited section but is the statement's subject, so
+    # the tf grounding check must reject it (exit != 0).
+    path = _tmp_copy(os.path.join(HERE, "questions.json"))
+    b = json.load(open(path))
+    t = next(x for x in b if x["id"] == "d3-028")
+    t["verify"] = ["Warm"]
+    json.dump(b, open(path, "w"))
+    check("tf token grounds subject, not inverted fact", run_verify(bank_path=path))
+
     # --- steward C/D/E: drill-table content changed/swapped with verify intact ---
     # C) expansion changed while verify strings stayed intact
     path = _tmp_copy(os.path.join(HERE, "acronyms.json"))
