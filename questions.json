@@ -503,6 +503,121 @@
     ]
   },
   {
+    "id": "d1-023",
+    "domain": 1,
+    "type": "mc",
+    "question": "Risk assessments, security planning, and written security policies belong to which security control category?",
+    "options": [
+      "Managerial",
+      "Technical",
+      "Operational",
+      "Physical"
+    ],
+    "answer": 0,
+    "answer_text": "Managerial",
+    "explanation": "Managerial controls focus on managing risk and security, which covers risk assessments, planning, and policy.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.1 — Compare and contrast various types of security controls"
+    },
+    "verify": [
+      "Managerial"
+    ]
+  },
+  {
+    "id": "d1-024",
+    "domain": 1,
+    "type": "mc",
+    "question": "A user signs in with a valid password and MFA but gets \"access denied\" when opening the payroll share. Which AAA function blocked the request?",
+    "options": [
+      "Authorization",
+      "Authentication",
+      "Accounting",
+      "Identification"
+    ],
+    "answer": 0,
+    "answer_text": "Authorization",
+    "explanation": "Authentication already succeeded, so the denial came from authorization, which decides what an authenticated identity may access.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.2 — Summarize fundamental security concepts"
+    },
+    "verify": [
+      "Authorization"
+    ]
+  },
+  {
+    "id": "d1-025",
+    "domain": 1,
+    "type": "mc",
+    "question": "During an approved maintenance window, a router upgrade breaks routing and the cause is not obvious. What should the implementer do next under the approved change request?",
+    "options": [
+      "Execute the backout plan, the documented way to revert a change if it fails",
+      "Keep troubleshooting in production until the maintenance window closes",
+      "Leave the upgrade in place and open a separate change request later",
+      "Apply an untested configuration fix without further approval"
+    ],
+    "answer": 0,
+    "answer_text": "Execute the backout plan, the documented way to revert a change if it fails",
+    "explanation": "A failed change is handled by the backout plan, which restores the prior working state instead of improvising unapproved fixes in production.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.3 — Explain the importance of change management processes and the impact to security"
+    },
+    "verify": [
+      "way to revert a change if it fails"
+    ]
+  },
+  {
+    "id": "d1-026",
+    "domain": 1,
+    "type": "mc",
+    "question": "Alice digitally signs a contract so Bob can verify it came from her. Which key does Alice use to create the signature?",
+    "options": [
+      "Alice's private key",
+      "Alice's public key",
+      "Bob's public key",
+      "A shared session key"
+    ],
+    "answer": 0,
+    "answer_text": "Alice's private key",
+    "explanation": "A digital signature is created with the signer's private key and verified by anyone holding the matching public key.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.4 — Explain the importance of using appropriate cryptographic solutions"
+    },
+    "verify": [
+      "private key"
+    ]
+  },
+  {
+    "id": "d1-027",
+    "domain": 1,
+    "type": "mc",
+    "question": "An administrator generates a key pair and a certificate signing request (CSR) for a web server. Which item must stay on the server and never be sent to the certificate authority?",
+    "options": [
+      "The private key",
+      "The public key",
+      "The CSR",
+      "The server's fully qualified domain name"
+    ],
+    "answer": 0,
+    "answer_text": "The private key",
+    "explanation": "A CSR carries the public key and is signed with the private key, which never leaves the requester.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/1 - General Security Concepts.md",
+      "section": "1.4 — Explain the importance of using appropriate cryptographic solutions"
+    },
+    "verify": [
+      "private key"
+    ]
+  },
+  {
     "id": "d2-001",
     "domain": 2,
     "type": "mc",
@@ -1415,6 +1530,75 @@
     ]
   },
   {
+    "id": "d2-041",
+    "domain": 2,
+    "type": "mc",
+    "question": "A program checks that a user may write to a temporary file, then opens it a moment later. In that gap, an attacker replaces the file with a link to a system file. What kind of vulnerability is this?",
+    "options": [
+      "A race condition whose outcome depends on timing",
+      "A buffer overflow",
+      "Directory traversal",
+      "Memory injection"
+    ],
+    "answer": 0,
+    "answer_text": "A race condition whose outcome depends on timing",
+    "explanation": "This is a time-of-check to time-of-use (TOCTOU) race condition, because the file changes between the check and the use.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.3 — Explain various types of vulnerabilities"
+    },
+    "verify": [
+      "depends on timing"
+    ]
+  },
+  {
+    "id": "d2-042",
+    "domain": 2,
+    "type": "mc",
+    "question": "An attacker types ' OR '1'='1' -- into a login form's username field and is logged in without a valid password. Which vulnerability did the attacker exploit?",
+    "options": [
+      "SQL injection",
+      "Cross-site scripting (XSS)",
+      "Buffer overflow",
+      "Directory traversal"
+    ],
+    "answer": 0,
+    "answer_text": "SQL injection",
+    "explanation": "The input rewrote the logic of the application's SQL query so the credential check always returned true.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.3 — Explain various types of vulnerabilities"
+    },
+    "verify": [
+      "SQL injection"
+    ]
+  },
+  {
+    "id": "d2-043",
+    "domain": 2,
+    "type": "mc",
+    "question": "A retailer moves its payment terminals and card-processing servers onto an isolated network zone so fewer systems fall within PCI DSS assessment scope. Which mitigation is this?",
+    "options": [
+      "Network segmentation",
+      "Least privilege",
+      "Deception",
+      "System hardening"
+    ],
+    "answer": 0,
+    "answer_text": "Network segmentation",
+    "explanation": "Network segmentation isolates the cardholder data environment, which limits which systems are in PCI DSS scope.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/2 - Threats, Vulnerabilities, and Mitigations.md",
+      "section": "2.5 — Explain the purpose of mitigation techniques used to secure the enterprise"
+    },
+    "verify": [
+      "Network segmentation"
+    ]
+  },
+  {
     "id": "d3-001",
     "domain": 3,
     "type": "mc",
@@ -2147,6 +2331,52 @@
     ]
   },
   {
+    "id": "d3-033",
+    "domain": 3,
+    "type": "mc",
+    "question": "A clinic's spreadsheet links patient names to their diagnoses and lab results. Which regulated data type is this?",
+    "options": [
+      "PHI",
+      "Cardholder data",
+      "Intellectual property",
+      "Public data"
+    ],
+    "answer": 0,
+    "answer_text": "PHI",
+    "explanation": "Health information tied to an identifiable individual is protected health information (PHI) under HIPAA.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.3 — Compare and contrast concepts and strategies to protect data"
+    },
+    "verify": [
+      "PHI"
+    ]
+  },
+  {
+    "id": "d3-034",
+    "domain": 3,
+    "type": "mc",
+    "question": "A server gets a full backup every Sunday night and an incremental backup every other night. It fails on Friday morning. Which backups are needed to restore it to Thursday night's state?",
+    "options": [
+      "Sunday's full backup plus every incremental backup from Monday through Thursday",
+      "Sunday's full backup plus only Thursday's backup",
+      "Only Thursday's backup",
+      "Only Sunday's full backup"
+    ],
+    "answer": 0,
+    "answer_text": "Sunday's full backup plus every incremental backup from Monday through Thursday",
+    "explanation": "Each incremental holds only the changes since the previous backup, so a restore needs the last full backup plus every incremental after it.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/3 - Security Architecture.md",
+      "section": "3.4 — Explain the importance of resilience and recovery in security architecture"
+    },
+    "verify": [
+      "incremental"
+    ]
+  },
+  {
     "id": "d4-001",
     "domain": 4,
     "type": "mc",
@@ -2309,7 +2539,7 @@
     "id": "d4-008",
     "domain": 4,
     "type": "mc",
-    "question": "Degaussing destroys magnetic media by…",
+    "question": "Degaussing sanitizes magnetic media by…",
     "options": [
       "disrupting the magnetic field",
       "overwriting with zeros",
@@ -3150,7 +3380,7 @@
     "id": "d4-045",
     "domain": 4,
     "type": "mc",
-    "question": "Which NIST SP 800-61 phase comes after Preparation?",
+    "question": "In the NIST SP 800-61 Rev. 2 incident response lifecycle, which phase comes after Preparation?",
     "options": [
       "Detection and Analysis",
       "Containment",
@@ -3159,7 +3389,7 @@
     ],
     "answer": 0,
     "answer_text": "Detection and Analysis",
-    "explanation": "SP 800-61 runs Preparation → Detection and Analysis → Containment/Eradication/Recovery → Post-Incident Activity.",
+    "explanation": "SP 800-61 Rev. 2 runs Preparation → Detection and Analysis → Containment/Eradication/Recovery → Post-Incident Activity. Rev. 3 (April 2025) replaced this with a CSF 2.0-based model; SY0-701 still tests the four-phase flow.",
     "difficulty": "medium",
     "source": {
       "note": "Domains/4 - Security Operations.md",
@@ -3347,6 +3577,236 @@
     },
     "verify": [
       "Correlating"
+    ]
+  },
+  {
+    "id": "d4-054",
+    "domain": 4,
+    "type": "mc",
+    "question": "Which solution lets an organization centrally enforce passcodes, device encryption, and app restrictions on company smartphones?",
+    "options": [
+      "Mobile device management (MDM)",
+      "Network access control (NAC)",
+      "Security information and event management (SIEM)",
+      "Data loss prevention (DLP)"
+    ],
+    "answer": 0,
+    "answer_text": "Mobile device management (MDM)",
+    "explanation": "MDM centrally manages mobile devices and enforces security policy on them.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.1 — Given a scenario, apply common security techniques to computing resources"
+    },
+    "verify": [
+      "Mobile device"
+    ]
+  },
+  {
+    "id": "d4-055",
+    "domain": 4,
+    "type": "mc",
+    "question": "Employees use personal phones for work (BYOD) and object to IT controlling the whole device, but the company still needs to manage and wipe corporate data. Which approach fits best?",
+    "options": [
+      "Mobile application management that controls only the corporate applications and their data",
+      "Full mobile device management with whole-device remote wipe",
+      "Geofencing that disables the phones outside the office",
+      "Requiring a VPN connection for all personal traffic on the phones"
+    ],
+    "answer": 0,
+    "answer_text": "Mobile application management that controls only the corporate applications and their data",
+    "explanation": "MAM manages only work apps and their data, which addresses the privacy concerns that full-device MDM raises on personal phones.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.1 — Given a scenario, apply common security techniques to computing resources"
+    },
+    "verify": [
+      "applications"
+    ]
+  },
+  {
+    "id": "d4-056",
+    "domain": 4,
+    "type": "mc",
+    "question": "Why is degaussing an unreliable way to sanitize a solid-state drive (SSD)?",
+    "options": [
+      "SSDs store data in flash memory, so disrupting the magnetic field does not erase it",
+      "SSD firmware blocks the degausser's erase command",
+      "Degaussing only works on drives that are already encrypted",
+      "SSDs are too small to fit inside a degausser"
+    ],
+    "answer": 0,
+    "answer_text": "SSDs store data in flash memory, so disrupting the magnetic field does not erase it",
+    "explanation": "Degaussing erases magnetic media, and NIST SP 800-88 says it must not be used to sanitize flash-based storage such as SSDs.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.2 — Explain the security implications of proper hardware, software, and data asset management"
+    },
+    "verify": [
+      "disrupting the magnetic field"
+    ]
+  },
+  {
+    "id": "d4-057",
+    "domain": 4,
+    "type": "mc",
+    "question": "A team reviews OSINT threat feeds, runs static code analysis, and monitors third-party packages for newly disclosed flaws. Which vulnerability management activity do these belong to?",
+    "options": [
+      "Identification",
+      "Analysis",
+      "Response and remediation",
+      "Validation of remediation"
+    ],
+    "answer": 0,
+    "answer_text": "Identification",
+    "explanation": "SY0-701 lists threat feeds, static analysis, and package monitoring as vulnerability identification methods.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.3 — Explain various activities associated with vulnerability management"
+    },
+    "verify": [
+      "Identification"
+    ]
+  },
+  {
+    "id": "d4-058",
+    "domain": 4,
+    "type": "mc",
+    "question": "A SOC wants a platform that takes SIEM alerts, enriches them with threat intelligence, and automatically runs predefined response playbooks such as isolating a host. Which should it deploy?",
+    "options": [
+      "SOAR",
+      "SIEM",
+      "NAC",
+      "DLP"
+    ],
+    "answer": 0,
+    "answer_text": "SOAR",
+    "explanation": "SOAR platforms orchestrate and automate predefined response actions, while a SIEM collects and correlates the alerts.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.7 — Explain the importance of automation and orchestration related to secure operations"
+    },
+    "verify": [
+      "SOAR"
+    ]
+  },
+  {
+    "id": "d4-059",
+    "domain": 4,
+    "type": "mc",
+    "question": "A company routes all account provisioning and firewall changes through a single orchestration server. Which risk does this design most directly introduce?",
+    "options": [
+      "The automation becomes a single point of failure if that server goes down",
+      "Reaction time improves because changes no longer wait on analysts",
+      "Staff can handle more work, acting as a workforce multiplier",
+      "Standard configurations are applied the same way every time"
+    ],
+    "answer": 0,
+    "answer_text": "The automation becomes a single point of failure if that server goes down",
+    "explanation": "SY0-701 lists single point of failure among automation considerations, and if the one orchestration server fails every automated workflow stops.",
+    "difficulty": "easy",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.7 — Explain the importance of automation and orchestration related to secure operations"
+    },
+    "verify": [
+      "Automation"
+    ]
+  },
+  {
+    "id": "d4-060",
+    "domain": 4,
+    "type": "mc",
+    "question": "Building an incident response team, assembling a jump kit of forensic tools, and setting up out-of-band communication happen in which incident response phase?",
+    "options": [
+      "Preparation",
+      "Detection",
+      "Containment",
+      "Lessons learned"
+    ],
+    "answer": 0,
+    "answer_text": "Preparation",
+    "explanation": "These activities ready the organization before an incident occurs, which is the Preparation phase.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.8 — Explain appropriate incident response activities"
+    },
+    "verify": [
+      "Preparation"
+    ]
+  },
+  {
+    "id": "d4-061",
+    "domain": 4,
+    "type": "mc",
+    "question": "An investigator wants to know where and when a photo found on a suspect's phone was taken. Which data source should be examined?",
+    "options": [
+      "Metadata",
+      "Packet captures",
+      "Firewall logs",
+      "Vulnerability scans"
+    ],
+    "answer": 0,
+    "answer_text": "Metadata",
+    "explanation": "Photo metadata (Exif) records details such as the capture date and time and GPS coordinates.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.9 — Given a scenario, use data sources to support an investigation"
+    },
+    "verify": [
+      "Metadata"
+    ]
+  },
+  {
+    "id": "d4-062",
+    "domain": 4,
+    "type": "mc",
+    "question": "During an investigation, an analyst notices the firewall's clock runs seven minutes ahead of the domain controller's. Why does this matter?",
+    "options": [
+      "Correlating events across the two sources into one accurate timeline becomes unreliable",
+      "The firewall will stop forwarding its logs to the SIEM",
+      "Every log entry the firewall wrote becomes encrypted and unreadable",
+      "The firewall's logs no longer need to be retained"
+    ],
+    "answer": 0,
+    "answer_text": "Correlating events across the two sources into one accurate timeline becomes unreliable",
+    "explanation": "Out-of-sync clocks produce inconsistent timestamps, so events from different sources cannot be lined up reliably.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.9 — Given a scenario, use data sources to support an investigation"
+    },
+    "verify": [
+      "Correlating"
+    ]
+  },
+  {
+    "id": "d4-063",
+    "domain": 4,
+    "type": "mc",
+    "question": "A mobile app offers \"Sign in with Google\" and receives an ID token, a JSON Web Token describing the authenticated user. Which protocol is in use?",
+    "options": [
+      "OIDC",
+      "SAML",
+      "LDAP",
+      "Kerberos"
+    ],
+    "answer": 0,
+    "answer_text": "OIDC",
+    "explanation": "OpenID Connect adds an identity layer to OAuth 2.0 and returns the user's identity in a JWT ID token, unlike SAML's XML assertions.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/4 - Security Operations.md",
+      "section": "4.6 — Given a scenario, implement and maintain identity and access management"
+    },
+    "verify": [
+      "OIDC"
     ]
   },
   {
@@ -3581,7 +4041,7 @@
     "id": "d5-011",
     "domain": 5,
     "type": "mc",
-    "question": "Which is the level of risk an organization is willing to accept?",
+    "question": "Which describes the broad amount of risk an organization is willing to accept in pursuit of its objectives?",
     "options": [
       "Risk appetite",
       "Risk tolerance",
@@ -3590,7 +4050,7 @@
     ],
     "answer": 0,
     "answer_text": "Risk appetite",
-    "explanation": "Risk appetite is the level of risk the organization is willing to accept.",
+    "explanation": "Risk appetite is the broad amount of risk accepted in pursuit of objectives (expansionary, conservative, neutral); risk tolerance is the acceptable deviation around it.",
     "difficulty": "hard",
     "source": {
       "note": "Domains/5 - Security Program Management and Oversight.md",
@@ -3786,7 +4246,7 @@
     "id": "d5-020",
     "domain": 5,
     "type": "mc",
-    "question": "Which is the due diligence on a vendor's security posture before engagement?",
+    "question": "Which third-party activity uses penetration testing, right-to-audit clauses, and independent assessments to evaluate a vendor's security?",
     "options": [
       "Vendor assessment",
       "Questionnaire",
@@ -3795,7 +4255,7 @@
     ],
     "answer": 0,
     "answer_text": "Vendor assessment",
-    "explanation": "Vendor assessment is the pre-engagement due diligence.",
+    "explanation": "Vendor assessment covers pen testing, right-to-audit clauses, internal-audit evidence, and independent assessments; due diligence belongs to vendor selection.",
     "difficulty": "medium",
     "source": {
       "note": "Domains/5 - Security Program Management and Oversight.md",
@@ -4012,7 +4472,7 @@
     "id": "d5-030",
     "domain": 5,
     "type": "mc",
-    "question": "Which SOC report covers the Trust Services Criteria?",
+    "question": "Which SOC report gives a detailed, restricted-use report on controls against the Trust Services Criteria?",
     "options": [
       "SOC 2",
       "SOC 1",
@@ -4021,7 +4481,7 @@
     ],
     "answer": 0,
     "answer_text": "SOC 2",
-    "explanation": "SOC 2 covers the Trust Services Criteria (security, availability, processing integrity, confidentiality, privacy).",
+    "explanation": "SOC 2 reports on controls against the Trust Services Criteria in detail for restricted use; SOC 3 covers the same criteria as a general-use summary.",
     "difficulty": "hard",
     "source": {
       "note": "Domains/5 - Security Program Management and Oversight.md",
@@ -4186,6 +4646,98 @@
     },
     "verify": [
       "Gamification"
+    ]
+  },
+  {
+    "id": "d5-038",
+    "domain": 5,
+    "type": "mc",
+    "question": "A document requires every company laptop to use full-disk encryption with AES-256 and a PIN of at least 12 characters. Which type of governance document is this?",
+    "options": [
+      "Standard",
+      "Policy",
+      "Guideline",
+      "Procedure"
+    ],
+    "answer": 0,
+    "answer_text": "Standard",
+    "explanation": "Standards set specific, mandatory technical requirements, such as encryption and password rules, that support a broader policy.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.1 — Summarize elements of effective security governance"
+    },
+    "verify": [
+      "Standard"
+    ]
+  },
+  {
+    "id": "d5-039",
+    "domain": 5,
+    "type": "mc",
+    "question": "A HIPAA covered entity discovers a breach of unsecured PHI affecting 800 residents of one state. Besides notifying individuals, it must notify prominent media outlets in that state no later than…",
+    "options": [
+      "60 days after discovery",
+      "72 hours after discovery",
+      "30 days after discovery",
+      "90 days after discovery"
+    ],
+    "answer": 0,
+    "answer_text": "60 days after discovery",
+    "explanation": "45 CFR 164.406 requires media notice for breaches affecting more than 500 residents of a state no later than 60 calendar days after discovery.",
+    "difficulty": "hard",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.4 — Summarize elements of effective security compliance"
+    },
+    "verify": [
+      "60 days"
+    ]
+  },
+  {
+    "id": "d5-040",
+    "domain": 5,
+    "type": "mc",
+    "question": "News of a company's compliance failures spreads, and customers move to competitors even though no regulator has imposed a penalty yet. Which consequence of non-compliance is this?",
+    "options": [
+      "Reputational damage",
+      "Fines",
+      "Sanctions",
+      "Loss of license"
+    ],
+    "answer": 0,
+    "answer_text": "Reputational damage",
+    "explanation": "Customers leaving because of public perception, with no regulatory penalty involved, is reputational damage.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.4 — Summarize elements of effective security compliance"
+    },
+    "verify": [
+      "reputational damage"
+    ]
+  },
+  {
+    "id": "d5-041",
+    "domain": 5,
+    "type": "mc",
+    "question": "The VP of Sales decides how customer records in the CRM are classified and approves who may access them, while IT staff run the backups. Which role does the VP hold?",
+    "options": [
+      "Data owner",
+      "Data custodian",
+      "Data processor",
+      "Data subject"
+    ],
+    "answer": 0,
+    "answer_text": "Data owner",
+    "explanation": "The data owner is the senior official responsible for the data, including its classification and access approvals, while custodians handle storage and backup.",
+    "difficulty": "medium",
+    "source": {
+      "note": "Domains/5 - Security Program Management and Oversight.md",
+      "section": "5.6 — Given a scenario, implement security awareness practices"
+    },
+    "verify": [
+      "data owner"
     ]
   }
 ]

@@ -16,3 +16,7 @@ venv/
 .idea/
 *.swp
 .DS_Store
+
+# PyInstaller output (packaging/build.py)
+build/
+dist/

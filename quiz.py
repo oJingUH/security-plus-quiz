@@ -6,14 +6,16 @@ Pure Python 3 standard library. No dependencies, no TUI framework.
 
 Modes:
     1) Quick 10          10 random questions across all domains
-    2) Domain drill      pick domains (1-5 or all) + length (10/20/all)
-    3) Acronym drill     grind acronyms both ways (acronym <-> expansion)
-    4) Crypto & Controls drill  grind crypto values & security controls both ways
-    5) Review missed     replay questions previously answered incorrectly
-    6) Review acronyms   replay acronym items previously answered incorrectly
-    7) Review crypto & controls  replay crypto/control items previously answered incorrectly
-    8) Stats             lifetime & per-domain accuracy, streaks, hardest domain
-    9) Quit
+    2) Daily 10          the same 10 questions for everyone today + a share card
+    3) Practice exam     90 questions, 90 minutes, weighted like SY0-701
+    4) Domain drill      pick domains (1-5 or all) + length (10/20/all)
+    5) Acronym drill     grind acronyms both ways (acronym <-> expansion)
+    6) Crypto & Controls drill  grind crypto values & security controls both ways
+    7) Review missed     replay questions previously answered incorrectly
+    8) Review acronyms   replay acronym items previously answered incorrectly
+    9) Review crypto & controls  replay crypto/control items previously answered incorrectly
+    0) Stats             lifetime & per-domain accuracy, streaks, hardest domain
+    q) Quit
 
 Answer with a-d or 1-4 (multiple choice) or t/f (true/false); the acronym and
 crypto/controls drills take free-text answers. Enter `q` at any prompt to return
@@ -26,6 +28,8 @@ Flags:
     --selftest --review     scripted review-missed-questions round, no stdin
     --selftest --review-acronyms  scripted review-missed-acronyms round
     --selftest --review-crypto    scripted review-missed-crypto round
+    --selftest --daily      scripted Daily 10 round + share card
+    --selftest --exam       scripted practice exam on a fake clock that runs out
     --seed N                deterministic shuffling
     --bank PATH             explicit question-bank path
 
@@ -33,19 +37,39 @@ Colour is used when stdout is a tty and NO_COLOR is unset.
 """
 
 import argparse
+import datetime
 import json
 import os
 import random
 import sys
 import tempfile
 import textwrap
+import time
 
 import acronyms
 import crypto
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_BANK = os.path.join(SCRIPT_DIR, "questions.json")
-DEFAULT_STATS = os.path.join(SCRIPT_DIR, "stats.json")
+
+
+def default_stats_path():
+    """stats.json sits next to the scripts when run from source. A packaged
+    (PyInstaller) build must not write there: a one-file build unpacks into a
+    temp dir that is deleted on exit, and an installed app dir may be
+    read-only. Frozen builds use the per-user data directory instead."""
+    if not getattr(sys, "frozen", False):
+        return os.path.join(SCRIPT_DIR, "stats.json")
+    if sys.platform == "win32":
+        base = os.environ.get("APPDATA") or os.path.expanduser("~")
+    elif sys.platform == "darwin":
+        base = os.path.expanduser("~/Library/Application Support")
+    else:
+        base = os.environ.get("XDG_DATA_HOME") or os.path.expanduser("~/.local/share")
+    return os.path.join(base, "security-plus-quiz", "stats.json")
+
+
+DEFAULT_STATS = default_stats_path()
 
 DOMAIN_NAMES = {
     1: "General Security Concepts",
@@ -175,6 +199,7 @@ def load_stats(path):
 
 def save_stats(stats, path):
     try:
+        os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
             json.dump(stats, f, ensure_ascii=False, indent=2)
     except OSError:
@@ -231,14 +256,16 @@ def show_banner(pal):
 
 def show_menu(pal):
     print("  1) Quick 10        - 10 random questions, all domains")
-    print("  2) Domain drill    - pick domains (1-5 or all) + length")
-    print("  3) Acronym drill   - acronyms, both directions")
-    print("  4) Crypto & Controls drill - crypto values & security controls")
-    print("  5) Review missed   - replay questions you got wrong")
-    print("  6) Review acronyms - replay acronym items you got wrong")
-    print("  7) Review crypto & controls - replay crypto/control items you got wrong")
-    print("  8) Stats           - accuracy, streaks, hardest domain")
-    print("  9) Quit")
+    print("  2) Daily 10        - today's 10, same for everyone, shareable")
+    print("  3) Practice exam   - 90 questions, 90 minutes, SY0-701 weights")
+    print("  4) Domain drill    - pick domains (1-5 or all) + length")
+    print("  5) Acronym drill   - acronyms, both directions")
+    print("  6) Crypto & Controls drill - crypto values & security controls")
+    print("  7) Review missed   - replay questions you got wrong")
+    print("  8) Review acronyms - replay acronym items you got wrong")
+    print("  9) Review crypto & controls - replay crypto/control items you got wrong")
+    print("  0) Stats           - accuracy, streaks, hardest domain")
+    print("  q) Quit")
     print()
 
 
@@ -288,13 +315,13 @@ def parse_key(raw, keys, qtype):
     return None
 
 
-def present_question(i, total, q, shown, pal):
+def present_question(i, total, q, shown, pal, tag=None):
     print()
     hr(pal)
-    tag = pal.dim("Q%d/%d  [Domain %d - %s]  %s"
-                  % (i, total, q["domain"], DOMAIN_NAMES[q["domain"]],
-                     q["difficulty"]))
-    print(tag)
+    if tag is None:
+        tag = "Q%d/%d  [Domain %d - %s]  %s" % (
+            i, total, q["domain"], DOMAIN_NAMES[q["domain"]], q["difficulty"])
+    print(pal.dim(tag))
     print()
     paragraph(q["question"])
     print()
@@ -334,8 +361,9 @@ def present_feedback(q, shown, correct_key, chosen_correct, pal):
 
 def run_round(questions, pal, rng, answer_fn, stats=None, stats_path=None):
     """Run one round. `answer_fn(i, prompt, correct_key, keys)` returns a raw
-    answer string (it owns printing the prompt). Returns None (results are
-    handled internally); records stats when `stats` is provided."""
+    answer string (it owns printing the prompt). Returns the [(question,
+    correct)] results of a finished round, or None if the player quit; records
+    stats when `stats` is provided."""
     order = list(questions)
     rng.shuffle(order)
 
@@ -351,7 +379,7 @@ def run_round(questions, pal, rng, answer_fn, stats=None, stats_path=None):
             if key == "quit":
                 print(pal.yellow("  Quit to menu."))
                 _summarize(results, pal)
-                return
+                return None
             if key is not None:
                 break
             print(pal.yellow("  Enter %s (or q to quit)."
@@ -369,6 +397,7 @@ def run_round(questions, pal, rng, answer_fn, stats=None, stats_path=None):
         present_feedback(q, shown, correct_key, chosen_correct, pal)
 
     _summarize(results, pal)
+    return results
 
 
 def _keys_help(qtype):
@@ -385,18 +414,7 @@ def _summarize(results, pal):
     hr(pal, "=")
     print(pal.bold("  Round summary"))
     print("  Score: %d/%d  (%.0f%%)" % (score, total, pct))
-
-    agg = {}
-    for q, ok in results:
-        d = q["domain"]
-        a = agg.setdefault(d, [0, 0])
-        a[1] += 1
-        if ok:
-            a[0] += 1
-    print("  Per-domain:")
-    for d in sorted(agg):
-        c, t = agg[d]
-        print("    Domain %d (%s): %d/%d" % (d, DOMAIN_NAMES[d], c, t))
+    _print_domain_breakdown(results)
 
     missed = [q for q, ok in results if not ok]
     if missed:
@@ -412,6 +430,20 @@ def _summarize(results, pal):
         print(pal.green("  Clean round - nothing missed."))
     hr(pal, "=")
     print()
+
+
+def _print_domain_breakdown(results):
+    agg = {}
+    for q, ok in results:
+        d = q["domain"]
+        a = agg.setdefault(d, [0, 0])
+        a[1] += 1
+        if ok:
+            a[0] += 1
+    print("  Per-domain:")
+    for d in sorted(agg):
+        c, t = agg[d]
+        print("    Domain %d (%s): %d/%d" % (d, DOMAIN_NAMES[d], c, t))
 
 
 # ---------------------------------------------------------------- selection
@@ -438,6 +470,140 @@ def select_review_drill(mod, table, stats):
     want = set(stats[mod.STATS_KEY]["missed_ids"])
     pool = mod.build_items(table, mod.DIR_MIXED)
     return [it for it in pool if it["id"] in want]
+
+
+# ---------------------------------------------------------------- daily 10
+
+SHARE_URL = "https://github.com/oJingUH/security-plus-quiz"
+
+
+def daily_rng(day):
+    """The Daily 10 draws, orders and shuffles with this rng. A string seed
+    hashes the same on every machine, so everyone playing on the same date
+    with the same bank gets an identical round, which is what makes a shared
+    result comparable. Drive the whole round with it, not just selection."""
+    return random.Random("secplus-daily-%s" % day.isoformat())
+
+
+def select_daily(bank, rng):
+    # Sorted so the draw doesn't depend on the bank file's ordering.
+    return rng.sample(sorted(bank, key=lambda q: q["id"]), min(10, len(bank)))
+
+
+def share_text(day, results):
+    """Wordle-style result card: one square per question, in the order asked."""
+    score = sum(1 for _, ok in results if ok)
+    grid = "".join("\U0001F7E9" if ok else "\U0001F7E5" for _, ok in results)
+    return ("Security+ Daily 10 \u00b7 %s \u00b7 %d/%d\n%s\n%s"
+            % (day.isoformat(), score, len(results), grid, SHARE_URL))
+
+
+def print_share(day, results, pal):
+    print(pal.bold("  Share your result (copy the lines below):"))
+    print()
+    print(share_text(day, results))
+    print()
+
+
+# ---------------------------------------------------------------- practice exam
+
+# The real exam: at most 90 questions in 90 minutes, 750 to pass on a 100-900
+# scale. The 90 are split by the SY0-701 domain weights 12/22/18/28/20%.
+EXAM_COUNTS = {1: 11, 2: 20, 3: 16, 4: 25, 5: 18}
+EXAM_SECONDS = 90 * 60
+EXAM_PASS = 750
+
+
+def select_exam(bank, rng):
+    out = []
+    for d, n in EXAM_COUNTS.items():
+        pool = [q for q in bank if q["domain"] == d]
+        out.extend(rng.sample(pool, min(n, len(pool))))
+    return out
+
+
+def scaled_score(correct, total):
+    """Linear estimate on CompTIA's 100-900 scale. CompTIA does not publish its
+    scaling, so treat this as a rough guide, not a prediction."""
+    return round(100 + 800 * correct / total) if total else 100
+
+
+def run_exam(questions, pal, rng, answer_fn, stats=None, stats_path=None,
+             clock=time.monotonic, seconds=EXAM_SECONDS):
+    """Practice exam: no feedback until the end, and questions left unanswered
+    (time ran out, or `q`) count as wrong. input() cannot be interrupted
+    portably, so the clock is checked around each answer and one given after
+    the deadline is discarded. Returns the [(question, correct)] results for
+    every question, answered or not."""
+    order = list(questions)
+    rng.shuffle(order)
+    print()
+    print(pal.bold("  Practice exam: %d questions, %d minutes."
+                   % (len(order), seconds // 60)))
+    print("  No feedback until the end. Enter q to end the exam early.")
+
+    deadline = clock() + seconds
+    results = []
+    for i, q in enumerate(order, 1):
+        left = deadline - clock()
+        if left <= 0:
+            print(pal.yellow("  Time is up."))
+            break
+        keys, shown, correct_key = make_choices(q, rng)
+        present_question(i, len(order), q, shown, pal,
+                         tag="Q%d/%d  %d:%02d left" % ((i, len(order)) + divmod(int(left), 60)))
+        while True:
+            key = parse_key(answer_fn(i, "> ", correct_key, keys), keys, q["type"])
+            if key is not None:
+                break
+            print(pal.yellow("  Enter %s (or q to end the exam)."
+                             % _keys_help(q["type"])))
+        if key == "quit":
+            print(pal.yellow("  Exam ended early."))
+            break
+        if clock() > deadline:
+            print(pal.yellow("  Time is up. That answer came too late to count."))
+            break
+        ok = (key == correct_key)
+        results.append((q, ok))
+        if stats is not None:
+            record_answer(stats, q, ok)
+            save_stats(stats, stats_path)
+
+    answered = len(results)
+    results += [(q, False) for q in order[answered:]]
+    elapsed = min(seconds, clock() - (deadline - seconds))
+    _summarize_exam(results, answered, elapsed, pal)
+    return results
+
+
+def _summarize_exam(results, answered, elapsed, pal):
+    total = len(results)
+    score = sum(1 for _, ok in results if ok)
+    scaled = scaled_score(score, total)
+    passed = scaled >= EXAM_PASS
+    print()
+    hr(pal, "=")
+    print(pal.bold("  Practice exam results"))
+    print("  Score: %d/%d  (%.0f%%)   answered %d/%d in %d:%02d"
+          % ((score, total, 100.0 * score / total if total else 0.0, answered, total)
+             + divmod(int(elapsed), 60)))
+    verdict = pal.green("PASS") if passed else pal.red("FAIL")
+    print("  Estimated scaled score: %d/900  %s  (%d to pass)"
+          % (scaled, verdict, EXAM_PASS))
+    print(pal.dim("  Linear estimate: CompTIA doesn't publish its scaling, and the"))
+    print(pal.dim("  real exam adds performance-based questions."))
+    _print_domain_breakdown(results)
+    missed = [q for q, ok in results if not ok]
+    if missed:
+        print("  Missed or unanswered (correct answer below each):")
+        for q in missed:
+            for n, line in enumerate(textwrap.wrap(q["question"], WIDTH - 6) or [""]):
+                print(("    - " if n == 0 else "      ") + line)
+            for line in textwrap.wrap("-> " + q["answer_text"], WIDTH - 6):
+                print(pal.green("      " + line))
+    hr(pal, "=")
+    print()
 
 
 # ---------------------------------------------------------------- stats view
@@ -531,6 +697,60 @@ def run_review_selftest(bank, pal, rng, stats=None, stats_path=None):
                       % ", ".join(sorted(remaining))))
         return 1
     print(pal.green("REVIEW SELF-TEST COMPLETE"))
+    return 0
+
+
+def run_daily_selftest(bank, pal):
+    day = datetime.date(2026, 1, 1)
+    first = [q["id"] for q in select_daily(bank, daily_rng(day))]
+    again = [q["id"] for q in select_daily(bank, daily_rng(day))]
+    other = [q["id"] for q in select_daily(bank, daily_rng(day + datetime.timedelta(days=1)))]
+    if first != again or first == other:
+        print(pal.red("  DAILY SELF-TEST FAIL: daily draw is not stable per date"))
+        return 1
+
+    def scripted(i, prompt, correct_key, keys):
+        chosen = correct_key if i != 3 else next(k for k in keys if k != correct_key)
+        print(prompt + chosen, flush=True)
+        return chosen
+
+    rng = daily_rng(day)
+    results = run_round(select_daily(bank, rng), pal, rng, scripted)
+    card = share_text(day, results)
+    if "9/10" not in card or card.splitlines()[1][2] != "\U0001F7E5":
+        print(pal.red("  DAILY SELF-TEST FAIL: unexpected share card: %r" % card))
+        return 1
+    print_share(day, results, pal)
+    print(pal.green("DAILY SELF-TEST COMPLETE"))
+    return 0
+
+
+def run_exam_selftest(bank, pal, rng):
+    """Every answer takes 70 fake seconds, so the 90-minute clock runs out
+    around question 77 and the rest must be scored as unanswered."""
+    qs = select_exam(bank, rng)
+    counts = {d: sum(1 for q in qs if q["domain"] == d) for d in EXAM_COUNTS}
+    if counts != EXAM_COUNTS:
+        print(pal.red("  EXAM SELF-TEST FAIL: domain split %r" % counts))
+        return 1
+    now = [0.0]
+
+    def clock():
+        return now[0]
+
+    def scripted(i, prompt, correct_key, keys):
+        now[0] += 70
+        chosen = correct_key if i % 4 else next(k for k in keys if k != correct_key)
+        print(prompt + chosen, flush=True)
+        return chosen
+
+    results = run_exam(qs, pal, rng, scripted, clock=clock)
+    answered = EXAM_SECONDS // 70
+    score = sum(1 for _, ok in results if ok)
+    if len(results) != len(qs) or score != answered - answered // 4:
+        print(pal.red("  EXAM SELF-TEST FAIL: %d results, score %d" % (len(results), score)))
+        return 1
+    print(pal.green("EXAM SELF-TEST COMPLETE"))
     return 0
 
 
@@ -795,7 +1015,19 @@ def run_menu(bank, stats, pal, rng, args):
             qs = select_quick(bank, rng)
             run_round(qs, pal, rng, interactive_answer, stats, args.stats)
 
-        elif choice in ("2", "drill"):
+        elif choice in ("2", "daily"):
+            day = datetime.date.today()
+            drng = daily_rng(day)
+            results = run_round(select_daily(bank, drng), pal, drng,
+                                interactive_answer, stats, args.stats)
+            if results is not None:
+                print_share(day, results, pal)
+
+        elif choice in ("3", "exam"):
+            run_exam(select_exam(bank, rng), pal, rng, interactive_answer,
+                     stats, args.stats)
+
+        elif choice in ("4", "drill"):
             domains = pick_domains(pal)
             if domains == "quit":
                 continue
@@ -811,13 +1043,13 @@ def run_menu(bank, stats, pal, rng, args):
             qs = select_drill(bank, rng, domains, length)
             run_round(qs, pal, rng, interactive_answer, stats, args.stats)
 
-        elif choice in ("3", "acronym", "acronyms"):
+        elif choice in ("5", "acronym", "acronyms"):
             _drill_menu_entry(acronyms, pal, rng, stats, args)
 
-        elif choice in ("4", "crypto", "cryptodrill"):
+        elif choice in ("6", "crypto", "cryptodrill"):
             _drill_menu_entry(crypto, pal, rng, stats, args)
 
-        elif choice in ("5", "review"):
+        elif choice in ("7", "review"):
             qs = select_review(bank, stats)
             if not qs:
                 print("  Nothing to review - you have no missed questions yet.")
@@ -825,23 +1057,23 @@ def run_menu(bank, stats, pal, rng, args):
                 continue
             run_round(qs, pal, rng, interactive_answer, stats, args.stats)
 
-        elif choice in ("6", "reviewacronyms", "review-acronyms",
+        elif choice in ("8", "reviewacronyms", "review-acronyms",
                         "review_acronyms"):
             _drill_review_menu_entry(acronyms, pal, rng, stats, args,
                                      "acronyms")
 
-        elif choice in ("7", "reviewcrypto", "review-crypto", "review_crypto"):
+        elif choice in ("9", "reviewcrypto", "review-crypto", "review_crypto"):
             _drill_review_menu_entry(crypto, pal, rng, stats, args, "crypto")
 
-        elif choice in ("8", "stats"):
+        elif choice in ("0", "stats"):
             show_stats(stats, pal)
 
-        elif choice in ("9", "q", "quit", "exit"):
+        elif choice in ("q", "quit", "exit"):
             print("  Good luck on the exam.")
             break
 
         else:
-            print("  Unknown choice. Enter 1-9.")
+            print("  Unknown choice. Enter 0-9 or q.")
 
 
 def _selftest_stats(args, needs_write=False):
@@ -873,6 +1105,10 @@ def main(argv=None):
                     help="with --selftest: run a scripted review-missed-acronyms round")
     ap.add_argument("--review-crypto", action="store_true",
                     help="with --selftest: run a scripted review-missed-crypto round")
+    ap.add_argument("--daily", action="store_true",
+                    help="with --selftest: run a scripted Daily 10 round")
+    ap.add_argument("--exam", action="store_true",
+                    help="with --selftest: run a scripted practice exam on a fake clock")
     args = ap.parse_args(argv)
 
     pal = Palette(color_enabled())
@@ -896,10 +1132,16 @@ def main(argv=None):
         if args.review:
             stats, sp = _selftest_stats(args, needs_write=True)
             return run_review_selftest(bank, pal, rng, stats, sp)
+        if args.daily:
+            return run_daily_selftest(bank, pal)
+        if args.exam:
+            return run_exam_selftest(bank, pal, rng)
         return run_selftest(bank, pal, rng)
 
     rng = random.Random(args.seed)
     stats = load_stats(stats_path)
+    # The menu saves through args.stats; without --stats it would be None.
+    args.stats = stats_path
     run_menu(bank, stats, pal, rng, args)
     return 0
 
