@@ -15,6 +15,8 @@ The GUI edition uses PySide6 / Qt6.
     crypto.json      crypto/algorithm values table (all cited to vault notes)
     questions.json   question bank (all cited to vault notes)
     verify_bank.py   integrity checker for the bank and the drill tables
+    verify_negative_controls.py  negative-control suite for the verifier gate
+    preview/         rendered GUI screenshots (offscreen, see Self-test / CI)
     README.md        this file
 
 ## Run it
@@ -85,12 +87,18 @@ Quizzes every acronym the vault defines, both directions:
 Quizzes crypto/algorithm values AND the security-control categories/types,
 both directions, each deriving from a single entry (an `algorithm`/control name,
 a `property` such as "key size", "digest", "control category" or "control type",
-and a `value` such as "256-bit" or "Mandate behavior through policy"). The
-`property` disambiguates the reverse prompt so two algorithms that share a value
-(e.g. two different 256-bit properties) stay unambiguous:
+and a `value` such as "256-bit" or "Mandate behavior through policy"):
 
 - algorithm -> value  ("AES-256 - key size?" -> "256-bit")
 - value -> algorithm  ("Which algorithm has a 160-bit digest?" -> "SHA-1")
+
+Some facts legitimately collide — ECC has two key sizes (256-bit and 384-bit,
+so "ECC - key size?" has two right answers), and ECC and ChaCha20 both use a
+256-bit key. `build_items` resolves these with an accept-list: every item
+carries the full set of valid answers for its (algorithm, property) or
+(property, value) key, and grading accepts any of them. Control entries use
+their own prompt template instead of the algorithm/value wording — the reverse
+direction asks "Which control category/type means '<value>'?".
 
 The ten control-category/type entries (technical, managerial, operational,
 physical, preventive, deterrent, detective, corrective, compensating, directive)
@@ -181,7 +189,7 @@ Edit `questions.json`. Each question is one object:
       "difficulty": "easy",        // "easy" | "medium" | "hard"
       "source": {
         "note": "Domains/1 - General Security Concepts.md",  // path relative to the vault
-        "section": "1.4 - Cryptography"                     // a heading that exists in that note
+        "section": "1.4 — Explain the importance of using appropriate cryptographic solutions"  // exact heading in that note
       },
       "verify": ["SHA-1", "160-bit"]  // optional: literal strings that MUST
     }                                 // appear in the cited section
@@ -190,7 +198,8 @@ Rules:
 
 - Only derive questions from the vault notes — do not invent facts.
 - The `section` string must exactly match a heading in `note` (e.g.
-  `"1.4 - Cryptography"`). The em-dash vs hyphen matters.
+  `"1.4 — Explain the importance of using appropriate cryptographic
+  solutions"`). The em-dash vs hyphen matters.
 - Add a `"verify"` list for any numeric/acronym/crypto item so
   `verify_bank.py` can confirm the fact actually appears in the source.
 
@@ -222,10 +231,10 @@ Or one object to `crypto.json`:
       "verify": ["AES-256", "256-bit"]
     }
 
-The `property` field is what makes the value->algorithm direction
-unambiguous; keep `(property, value)` unique per algorithm. Run
-`python3 verify_bank.py` after editing to confirm citations resolve and the
-`verify` strings are grounded.
+The value->algorithm direction resolves collisions with an accept-list (every
+legitimate answer is accepted), so two entries may legitimately share a
+`property` and `value`. Run `python3 verify_bank.py` after editing to confirm
+citations resolve and the `verify` strings are grounded.
 
 ## Grounding
 
@@ -238,14 +247,14 @@ to this project — the quiz never modifies it.
 
 ## Current state
 
-The question bank and both drill tables currently hold SEED / STUB data only
-(ids prefixed `seed-`): 10 questions, 6 acronyms, 6 crypto entries. The real
-bank (180-190 questions) and the full acronym/crypto tables land in a later
-pass; the schemas above are final, so that pass is data-only. The citations
-point at future vault notes that do not exist yet, and the seed counts are far
-below the exam-weight targets — therefore `python3 verify_bank.py` is EXPECTED
-TO FAIL right now (vault not found / per-domain counts LOW). Once the real
-bank, tables, and vault notes land, it should pass.
+The bank holds 184 questions — 162 multiple-choice and 22 true/false (11 true,
+11 false) — spread across the five SY0-701 domains, meeting the exam-weight
+minimums of 14/26/22/34/24 (total 120). The drill tables hold 316 acronym
+entries and 44 crypto/control entries. Every question and drill entry is cited
+to a private Obsidian vault that is NOT distributed with this repo, so
+`python3 verify_bank.py` passes only when pointed at that vault via `--vault
+/path/to/Security+` or the `SECURITY_PLUS_VAULT` environment variable; without
+it the checker reports the vault as missing and exits non-zero.
 
 ## License
 

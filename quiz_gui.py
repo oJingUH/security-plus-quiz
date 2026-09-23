@@ -493,10 +493,10 @@ class HomeWidget(QWidget):
             ("[1] QUICK 10", controller.start_quick),
             ("[2] DOMAIN DRILL", controller.show_drill),
             ("[3] ACRONYM DRILL", controller.show_acronym_drill),
-            ("[4] CRYPTO & CONTROLS DRILL", controller.show_crypto_drill),
+            ("[4] CRYPTO && CONTROLS DRILL", controller.show_crypto_drill),
             ("[5] REVIEW MISSED", controller.start_review),
             ("[6] REVIEW ACRONYMS", controller.start_review_acronyms),
-            ("[7] REVIEW CRYPTO & CONTROLS", controller.start_review_crypto),
+            ("[7] REVIEW CRYPTO && CONTROLS", controller.start_review_crypto),
             ("[8] STATS", controller.show_stats),
             ("[9] QUIT", controller.close),
         ]

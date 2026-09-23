@@ -5,7 +5,17 @@ Each new gate check must make verify_bank.py exit non-zero on a COPY carrying
 one defect. This script mutates a copy of the bank/drill tables, runs the
 verifier, and asserts the defect is caught (exit != 0). It exits non-zero if any
 negative control unexpectedly PASSES (i.e. the gate fails to catch the defect).
+
+The vault each citation is verified against is resolved exactly like
+verify_bank.py does: an explicit ``--vault /path/to/Security+`` wins, then the
+``SECURITY_PLUS_VAULT`` environment variable, then ``./Security+`` relative to
+the current directory. The project directory is derived from ``__file__``, so
+this script works from any checkout location.
+
+Usage:
+    python3 verify_negative_controls.py [--vault /path/to/Security+]
 """
+import argparse
 import json
 import os
 import shutil
@@ -13,8 +23,7 @@ import subprocess
 import sys
 import tempfile
 
-HERE = "/home/ojinguh/security-quiz"
-VAULT = "/home/ojinguh/Documents/Obsidian Vault/Security+"
+HERE = os.path.dirname(os.path.abspath(__file__))
 VB = os.path.join(HERE, "verify_bank.py")
 
 PASS = 0
@@ -28,8 +37,8 @@ def _tmp_copy(src):
     return dst
 
 
-def run_verify(bank_path=None, acronyms_path=None, crypto_path=None):
-    cmd = [sys.executable, VB, "--vault", VAULT]
+def run_verify(vault, bank_path=None, acronyms_path=None, crypto_path=None):
+    cmd = [sys.executable, VB, "--vault", vault]
     if bank_path:
         cmd += ["--bank", bank_path]
     if acronyms_path:
@@ -48,7 +57,20 @@ def check(name, exit_code):
         failures.append(name)
 
 
-def main():
+def main(argv=None):
+    ap = argparse.ArgumentParser(
+        description="Negative controls for the Security+ verify_bank gate.")
+    ap.add_argument("--vault", default=None,
+                    help="path to the Security+ vault "
+                         "(default: SECURITY_PLUS_VAULT, then ./Security+)")
+    args = ap.parse_args(argv)
+
+    vault = args.vault or os.environ.get("SECURITY_PLUS_VAULT") or "Security+"
+    if not os.path.isdir(vault):
+        print("vault not found: %s" % vault)
+        print("pass --vault /path/to/Security+  (or set SECURITY_PLUS_VAULT)")
+        return 1
+
     print("Negative controls (each mutated copy must FAIL the verifier)")
     print("=" * 66)
     bank = json.load(open(os.path.join(HERE, "questions.json")))
@@ -63,7 +85,7 @@ def main():
     new_idx = (t["answer"] + 1) % len(t["options"])  # different, still in range
     t["answer"] = new_idx
     json.dump(b, open(path, "w"))
-    check("answer index flip (in-range)", run_verify(path))
+    check("answer index flip (in-range)", run_verify(vault, path))
 
     # --- (a) ANSWER MIRROR: text/answer contradiction (test B) ---
     path = _tmp_copy(os.path.join(HERE, "questions.json"))
@@ -72,7 +94,7 @@ def main():
     wrong = t["options"][(t["answer"] + 1) % len(t["options"])]
     t["answer_text"] = wrong  # contradicts options[answer]
     json.dump(b, open(path, "w"))
-    check("answer_text contradiction", run_verify(path))
+    check("answer_text contradiction", run_verify(vault, path))
 
     # --- (c) ANSWER-BEARING GROUNDING: non-discriminating verify token ---
     path = _tmp_copy(os.path.join(HERE, "questions.json"))
@@ -83,7 +105,7 @@ def main():
     wrong_opt = t["options"][(t["answer"] + 1) % len(t["options"])]
     t["verify"] = [wrong_opt.strip()]
     json.dump(b, open(path, "w"))
-    check("non-discriminating verify token", run_verify(bank_path=path))
+    check("non-discriminating verify token", run_verify(vault, bank_path=path))
 
     # --- (d) TF ANSWER-BEARING GROUNDING: token grounds the subject ---
     # d3-028's false statement is "A warm recovery site is fully operational and
@@ -95,7 +117,8 @@ def main():
     t = next(x for x in b if x["id"] == "d3-028")
     t["verify"] = ["Warm"]
     json.dump(b, open(path, "w"))
-    check("tf token grounds subject, not inverted fact", run_verify(bank_path=path))
+    check("tf token grounds subject, not inverted fact",
+          run_verify(vault, bank_path=path))
 
     # --- steward C/D/E: drill-table content changed/swapped with verify intact ---
     # C) expansion changed while verify strings stayed intact
@@ -104,7 +127,7 @@ def main():
     e = next(x for x in a if x["id"] == "a-mac")
     e["expansion"] = "Access Control List"  # keep verify ["MAC", "Mandatory Access Control"]
     json.dump(a, open(path, "w"))
-    check("expansion changed, verify intact (C)", run_verify(acronyms_path=path))
+    check("expansion changed, verify intact (C)", run_verify(vault, acronyms_path=path))
 
     # D) acronym expansion swapped with another acronym's (both in section)
     path = _tmp_copy(os.path.join(HERE, "acronyms.json"))
@@ -113,7 +136,7 @@ def main():
     rbac = next(x for x in a if x["id"] == "a-rbac")
     mac["expansion"], rbac["expansion"] = rbac["expansion"], mac["expansion"]
     json.dump(a, open(path, "w"))
-    check("acronym expansion swapped (D)", run_verify(acronyms_path=path))
+    check("acronym expansion swapped (D)", run_verify(vault, acronyms_path=path))
 
     # E) crypto value swapped with another value in the same section
     path = _tmp_copy(os.path.join(HERE, "crypto.json"))
@@ -122,7 +145,7 @@ def main():
     des = next(x for x in c if x["id"] == "c-3des")
     aes["value"], des["value"] = des["value"], aes["value"]
     json.dump(c, open(path, "w"))
-    check("crypto value swapped (E)", run_verify(crypto_path=path))
+    check("crypto value swapped (E)", run_verify(vault, crypto_path=path))
 
     # --- (b) COLLISION INVARIANT: colliding drill prompt ---
     sys.path.insert(0, HERE)
