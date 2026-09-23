@@ -5,6 +5,16 @@ CompTIA Security+ (SY0-701) exam. Pure Python 3 standard library for the
 CLI — no pip installs, no venv, no third-party packages, no TUI framework.
 The GUI edition uses PySide6 / Qt6.
 
+## Exam version
+
+The bank targets SY0-701 (V7), which CompTIA retires on June 11, 2027 for the
+English exam (August 13, 2027 for Japanese, Portuguese, Spanish and Thai).
+Security+ V8 (SY0-801) is expected on or around November 17, 2026, with new
+domain weights (16/24/19/27/14), Domain 2 renamed "Threats, Vulnerabilities,
+and Attacks", and a new AI objective (2.6). This bank does not cover V8.
+Sources: https://www.comptia.org/en-us/certifications/security/v7/ and
+https://www.comptia.org/training/resources/exam-objectives/exam-objectives-under-development
+
 ## Files
 
     quiz.py          entry point (single file)
@@ -17,9 +27,28 @@ The GUI edition uses PySide6 / Qt6.
     verify_bank.py   integrity checker for the bank and the drill tables
     verify_negative_controls.py  negative-control suite for the verifier gate
     preview/         rendered GUI screenshots (offscreen, see Self-test / CI)
+    assets/          app icon (icon.svg is the source, icon.png is bundled)
+    packaging/       build.py + pinned build requirements for the executables
+    .github/workflows/release.yml  builds and publishes releases on a version tag
     README.md        this file
 
 ## Run it
+
+Download the archive for your OS from the
+[Releases](https://github.com/oJingUH/security-plus-quiz/releases) page and
+unpack it. Each one holds the GUI (`SecurityPlusQuiz`) and the terminal quiz
+(`secplus-quiz`); neither needs Python installed.
+
+- Windows x64: run `SecurityPlusQuiz.exe`. The builds are unsigned, so
+  SmartScreen may ask you to confirm ("More info" -> "Run anyway").
+- macOS (Apple silicon or Intel): the builds are unsigned, so the first launch
+  of `SecurityPlusQuiz.app` needs right-click -> Open. For the terminal quiz,
+  clear the download quarantine first:
+  `xattr -d com.apple.quarantine secplus-quiz`.
+- Linux x64: `./SecurityPlusQuiz`. Built on Ubuntu 24.04, so it needs glibc
+  2.39 or newer.
+
+From source:
 
     python3 quiz.py
 
@@ -28,20 +57,47 @@ That is the entire command. It drops you into a menu.
 ## Modes
 
     1) Quick 10        10 random questions across all domains
-    2) Domain drill    pick domains (1-5, comma/space, or "all") + length (10/20/all)
-    3) Acronym drill   grind acronyms until recall is automatic; both directions
+    2) Daily 10        today's 10 questions, identical for everyone on the same
+                       date and bank version, ending in a shareable result card
+    3) Practice exam   90 questions in 90 minutes, split by the SY0-701 domain
+                       weights, no feedback until the end, estimated scaled score
+    4) Domain drill    pick domains (1-5, comma/space, or "all") + length (10/20/all)
+    5) Acronym drill   grind acronyms until recall is automatic; both directions
                        (mixed / acronym->expansion / expansion->acronym),
                        length 10 / 20 / all
-    4) Crypto & Controls drill  grind crypto values and security-control
+    6) Crypto & Controls drill  grind crypto values and security-control
                        categories/types until recall is automatic; both
                        directions (mixed / algorithm->value / value->algorithm),
                        length 10 / 20 / all
-    5) Review missed   replay questions you previously answered incorrectly
-    6) Review acronyms replay acronym items you previously answered incorrectly
-    7) Review crypto & controls  replay crypto/control items you previously answered incorrectly
-    8) Stats           lifetime & per-domain accuracy, drill accuracy, current/best
+    7) Review missed   replay questions you previously answered incorrectly
+    8) Review acronyms replay acronym items you previously answered incorrectly
+    9) Review crypto & controls  replay crypto/control items you previously answered incorrectly
+    0) Stats           lifetime & per-domain accuracy, drill accuracy, current/best
                        streak, hardest domain
-    9) Quit
+    q) Quit
+
+### Daily 10
+
+Every player on the same local date gets the same 10 questions in the same
+order, as long as they run the same bank version. When the round ends you get a
+Wordle-style card to paste anywhere. The GUI copies it with `[C] COPY RESULT`;
+the CLI prints it:
+
+    Security+ Daily 10 · 2026-09-23 · 8/10
+    🟩🟩🟥🟩🟩🟩🟥🟩🟩🟩
+    https://github.com/oJingUH/security-plus-quiz
+
+### Practice exam
+
+It mirrors the real exam's format: at most 90 questions in 90 minutes, drawn
+11/20/16/25/18 across the domains to match the SY0-701 weights of
+12/22/18/28/20%. There is no feedback until you finish. Ending early (`q`, or
+END EXAM in the GUI) or running out of time counts every unanswered question as
+wrong. The results show your score, an estimated 100-900 scaled score against
+the 750 pass mark, the per-domain breakdown, and each missed question with its
+correct answer. The scaled score is a linear estimate. CompTIA doesn't publish
+its scaling, and the real exam also has performance-based questions this bank
+can't simulate.
 
 ## Controls
 
@@ -51,18 +107,23 @@ That is the entire command. It drops you into a menu.
   expansion (for an acronym prompt), the acronym (for an expansion prompt), the
   value (for an algorithm prompt), or the algorithm (for a value prompt) and
   press Enter. Matching is case-insensitive and tolerates extra whitespace.
-- Type `q` at any prompt to abandon the round and return to the menu.
+- Type `q` at any prompt to abandon the round and return to the menu (in the
+  practice exam, `q` ends and scores the exam).
 - Question order and multiple-choice option order are shuffled every round;
   a question never repeats within a round.
-- After each answer you get immediate feedback: CORRECT/INCORRECT, the right
+- After each answer (except in the practice exam) you get immediate feedback: CORRECT/INCORRECT, the right
   answer, a one-line explanation, and the source citation
   (`note > section`).
 
 ## Progress
 
-Progress is saved to `stats.json` next to `quiz.py` (lifetime totals,
-per-domain correct/total, missed question ids, current and best streak, and
-separate `acronyms` and `crypto` sections for drill accuracy). Drill accuracy
+Progress is saved to `stats.json` next to `quiz.py` when run from source, or
+in the per-user data directory for the packaged builds (`%APPDATA%` on
+Windows, `~/Library/Application Support` on macOS, `$XDG_DATA_HOME` or
+`~/.local/share` on Linux, each under `security-plus-quiz/`). It holds
+lifetime totals, per-domain correct/total, missed question ids, current and
+best streak, and separate `acronyms` and `crypto` sections for drill accuracy.
+Drill accuracy
 is tracked independently so grinding acronyms or crypto values never distorts
 your per-domain scores. A missing or corrupt `stats.json` is treated as a
 fresh start — it will never crash the game. Older stats files without an
@@ -118,6 +179,8 @@ cannot drift.
     python3 quiz.py --selftest --review       # scripted review-missed-questions round
     python3 quiz.py --selftest --review-acronyms  # scripted review-missed-acronyms round
     python3 quiz.py --selftest --review-crypto    # scripted review-missed-crypto round
+    python3 quiz.py --selftest --daily        # scripted Daily 10 round + share card
+    python3 quiz.py --selftest --exam         # scripted practice exam; a fake clock runs out
     python3 quiz.py --seed 42                 # deterministic shuffling
     python3 quiz.py --bank /path/q.json
 
@@ -125,6 +188,25 @@ The GUI has the same discipline headless:
 
     QT_QPA_PLATFORM=offscreen python3 quiz_gui.py --selftest
     QT_QPA_PLATFORM=offscreen python3 quiz_gui.py --screenshot preview/
+
+## Releases
+
+Pushing a version tag builds the Windows, macOS (Apple silicon and Intel) and
+Linux executables and publishes them as a GitHub Release. Ordinary pushes
+build nothing.
+
+    git tag v1.2.0
+    git push origin v1.2.0
+
+A tag with a hyphen (`v1.2.0-rc.1`) publishes as a pre-release. To try the
+builds without releasing, run the `release` workflow from the Actions tab; the
+archives appear as workflow artifacts. Each build runs the source self-tests,
+then the packaged self-tests, before anything is uploaded.
+
+To build locally for the current OS (PyInstaller cannot cross-compile):
+
+    pip install -r packaging/requirements.txt
+    python packaging/build.py --version dev    # -> dist/security-plus-quiz-dev-<os>-<arch>.*
 
 ## Verify the bank
 
@@ -247,7 +329,7 @@ to this project — the quiz never modifies it.
 
 ## Current state
 
-The bank holds 184 questions — 162 multiple-choice and 22 true/false (11 true,
+The bank holds 208 questions — 186 multiple-choice and 22 true/false (11 true,
 11 false) — spread across the five SY0-701 domains, meeting the exam-weight
 minimums of 14/26/22/34/24 (total 120). The drill tables hold 316 acronym
 entries and 44 crypto/control entries. Every question and drill entry is cited

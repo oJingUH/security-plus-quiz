@@ -196,9 +196,9 @@
   },
   {
     "id": "c-rsa-key-size-through-2030",
-    "display": "RSA (key size (through 2030))",
+    "display": "RSA (key size (2031 and beyond))",
     "algorithm": "RSA",
-    "property": "key size (through 2030)",
+    "property": "key size (2031 and beyond)",
     "value": "3072-bit",
     "source": {
       "note": "Facts/SY0-701 Verbatim Facts.md",

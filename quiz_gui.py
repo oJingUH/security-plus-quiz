@@ -9,7 +9,8 @@ across both tools.
 
 Screens (QStackedWidget): Home, Drill setup, Acronym setup, Crypto setup,
 Question, Summary, Stats, plus a Drill question screen and Drill summary for
-the acronym and crypto drills.
+the acronym and crypto drills. The Daily 10 and the practice exam reuse the
+Question and Summary screens.
 
 Both drills are driven by ONE generic widget set keyed off the shared drill
 modules (acronyms.py / crypto.py), mirroring the CLI — a drift between the two
@@ -20,8 +21,10 @@ QPalette + stylesheet (never the system palette), so --screenshot renders are
 a faithful preview of the real window.
 
 Flags:
-    --selftest     run a headless 10-question round AND scripted acronym/crypto
-                   drill rounds through the real click/answer handlers, print
+    --selftest     run a headless 10-question round, a Daily 10 (share card
+                   to clipboard), a practice exam ended by its clock, AND
+                   scripted acronym/crypto drill rounds through the real
+                   click/answer handlers, print
                    the score / per-domain tally. Writes to a TEMPORARY stats
                    file (never the real stats.json) unless an explicit
                    --stats PATH is given.
@@ -33,11 +36,13 @@ Flags:
 """
 
 import argparse
+import datetime
 import json
 import os
 import random
 import sys
 import tempfile
+import time
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 if SCRIPT_DIR not in sys.path:
@@ -66,6 +71,7 @@ from PySide6.QtWidgets import (
     QButtonGroup,
     QCheckBox,
     QGraphicsDropShadowEffect,
+    QGridLayout,
     QHBoxLayout,
     QLabel,
     QLineEdit,
@@ -81,9 +87,8 @@ from PySide6.QtWidgets import (
 )
 
 DEFAULT_BANK = os.path.join(SCRIPT_DIR, "questions.json")
-DEFAULT_STATS = os.path.join(SCRIPT_DIR, "stats.json")
-ICON_PATH = os.path.join(os.path.expanduser("~"),
-                         ".local/share/icons/security-plus-quiz.svg")
+DEFAULT_STATS = quiz.DEFAULT_STATS
+ICON_PATH = os.path.join(SCRIPT_DIR, "assets", "icon.png")
 
 APP_NAME = "Security+ Quiz"
 DESKTOP_FILE = "security-plus-quiz"
@@ -489,26 +494,35 @@ class HomeWidget(QWidget):
 
         lay.addSpacing(8)
 
+        # Order matches HOME_KEYS in QuizWindow.keyPressEvent.
         menu_items = [
             ("[1] QUICK 10", controller.start_quick),
-            ("[2] DOMAIN DRILL", controller.show_drill),
-            ("[3] ACRONYM DRILL", controller.show_acronym_drill),
-            ("[4] CRYPTO && CONTROLS DRILL", controller.show_crypto_drill),
-            ("[5] REVIEW MISSED", controller.start_review),
-            ("[6] REVIEW ACRONYMS", controller.start_review_acronyms),
-            ("[7] REVIEW CRYPTO && CONTROLS", controller.start_review_crypto),
-            ("[8] STATS", controller.show_stats),
-            ("[9] QUIT", controller.close),
+            ("[2] DAILY 10", controller.start_daily),
+            ("[3] PRACTICE EXAM", controller.start_exam),
+            ("[4] DOMAIN DRILL", controller.show_drill),
+            ("[5] ACRONYM DRILL", controller.show_acronym_drill),
+            ("[6] CRYPTO && CONTROLS DRILL", controller.show_crypto_drill),
+            ("[7] REVIEW MISSED", controller.start_review),
+            ("[8] REVIEW ACRONYMS", controller.start_review_acronyms),
+            ("[9] REVIEW CRYPTO && CONTROLS", controller.start_review_crypto),
+            ("[0] STATS", controller.show_stats),
+            ("[Q] QUIT", controller.close),
         ]
+        # Two columns (play modes | review, stats, quit) so the header and boot
+        # log keep their full height at the minimum window size.
+        grid = QGridLayout()
+        grid.setHorizontalSpacing(12)
+        grid.setVerticalSpacing(2)
         self.buttons = []
-        for label, cb in menu_items:
+        for i, (label, cb) in enumerate(menu_items):
             b = QPushButton(label)
             b.setProperty("role", "menu")
             b.setFocusPolicy(Qt.NoFocus)
             b.setMinimumHeight(30)
             b.clicked.connect(cb)
-            lay.addWidget(b)
+            grid.addWidget(b, i % 6, i // 6)
             self.buttons.append(b)
+        lay.addLayout(grid)
 
         lay.addSpacing(8)
 
@@ -679,6 +693,8 @@ class QuestionWidget(QWidget):
         self.display_keys = []
         self.correct_display_key = None
         self.option_buttons = []
+        # Practice exam: no verdict, explanation or source until the end.
+        self.exam_mode = False
 
         self.setFocusPolicy(Qt.StrongFocus)
         self.setAutoFillBackground(True)
@@ -756,10 +772,16 @@ class QuestionWidget(QWidget):
         dname = quiz.DOMAIN_NAMES[q["domain"]].upper()
         dlabel, dcolor = _DIFF_TAG.get(q["difficulty"].lower(),
                                        (q["difficulty"].upper(), C_GREEN_BRIGHT))
-        header = "Q%02d/%d  [DOM-%d %s]" % (index, total, q["domain"], dname)
-        self.qheader_label.setText(
-            '<span style="color:%s">%s</span>  <span style="color:%s">[%s]</span>'
-            % (C_GREEN_BRIGHT, header, dcolor, dlabel))
+        if self.exam_mode:
+            # Like the real exam: no domain or difficulty hints.
+            self.qheader_label.setText(
+                '<span style="color:%s">Q%02d/%d  [PRACTICE EXAM]</span>'
+                % (C_GREEN_BRIGHT, index, total))
+        else:
+            header = "Q%02d/%d  [DOM-%d %s]" % (index, total, q["domain"], dname)
+            self.qheader_label.setText(
+                '<span style="color:%s">%s</span>  <span style="color:%s">[%s]</span>'
+                % (C_GREEN_BRIGHT, header, dcolor, dlabel))
         self.progress_label.setText(ascii_progress_html(index, total))
 
         self.question_label.setText(q["question"])
@@ -789,6 +811,9 @@ class QuestionWidget(QWidget):
         self.explanation_label.setVisible(False)
         self.source_label.setVisible(False)
         self.next_button.setEnabled(False)
+        # An exam answer advances on its own; HOME ends (and scores) the exam.
+        self.next_button.setVisible(not self.exam_mode)
+        self.home_button.setText("[ END EXAM ]" if self.exam_mode else "[ HOME ]")
         self.update()
 
     def answer(self, key):
@@ -797,6 +822,11 @@ class QuestionWidget(QWidget):
         self.answered = True
         self.chosen_index = self.display_keys.index(key)
         correct = (self.chosen_index == self.correct_index)
+
+        if self.exam_mode:
+            self.answered_signal.emit(self.q, correct)
+            self.advance_signal.emit()
+            return
 
         for i, opt in enumerate(self.option_buttons):
             opt.set_interactive(False)
@@ -887,16 +917,32 @@ class SummaryWidget(QWidget):
         self.status = StatusStrip(controller.animate)
         lay.addWidget(self.status)
 
-        title = QLabel("SESSION COMPLETE")
-        title.setProperty("role", "heading")
-        f = title.font()
+        self.title = QLabel("SESSION COMPLETE")
+        self.title.setProperty("role", "heading")
+        f = self.title.font()
         f.setPointSize(15)
         f.setBold(True)
-        title.setFont(f)
-        lay.addWidget(title)
+        self.title.setFont(f)
+        lay.addWidget(self.title)
 
         self.score_label = QLabel("")
         lay.addWidget(self.score_label)
+
+        # Practice exam: estimated scaled score and pass/fail.
+        self.exam_label = QLabel("")
+        self.exam_label.setVisible(False)
+        lay.addWidget(self.exam_label)
+
+        # Daily 10: the result grid and a copy-to-clipboard share card.
+        share_row = QHBoxLayout()
+        self.grid_label = QLabel("")
+        share_row.addWidget(self.grid_label)
+        share_row.addStretch(1)
+        self.share_btn = QPushButton("[ C ] COPY RESULT")
+        self.share_btn.clicked.connect(self.copy_share)
+        share_row.addWidget(self.share_btn)
+        lay.addLayout(share_row)
+        self.share = None
 
         pd = QLabel("PER-DOMAIN:")
         pd.setProperty("role", "dim")
@@ -915,6 +961,7 @@ class SummaryWidget(QWidget):
 
         self.missed_list = QListWidget()
         self.missed_list.setWordWrap(True)
+        self.missed_list.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.missed_list.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
         self.missed_list.setFocusPolicy(Qt.NoFocus)
         self.missed_list.setVisible(False)
@@ -938,12 +985,38 @@ class SummaryWidget(QWidget):
         row.addWidget(self.home_btn)
         lay.addLayout(row)
 
-    def update(self, results):
+    def update(self, results, mode=None, day=None):
         total = len(results)
         score = sum(1 for _, ok in results if ok)
         pct = 100.0 * score / total if total else 0.0
         self.score_label.setText("SCORE %02d/%02d    ACCURACY %3d%%"
                                  % (score, total, round(pct)))
+        titles = {"daily": "DAILY 10 \u00b7 %s" % (day.isoformat() if day else ""),
+                  "exam": "PRACTICE EXAM COMPLETE"}
+        self.title.setText(titles.get(mode, "SESSION COMPLETE"))
+
+        exam = (mode == "exam")
+        if exam:
+            scaled = quiz.scaled_score(score, total)
+            passed = scaled >= quiz.EXAM_PASS
+            self.exam_label.setText(
+                'EST. SCALED %d/900  <span style="color:%s">[%s]</span>'
+                '  <span style="color:%s">%d TO PASS \u00b7 LINEAR ESTIMATE</span>'
+                % (scaled, C_GREEN_BRIGHT if passed else C_RED,
+                   "PASS" if passed else "FAIL", C_GREEN_DIM, quiz.EXAM_PASS))
+        self.exam_label.setVisible(exam)
+
+        # The on-screen grid uses the theme's block glyphs (emoji fonts are
+        # not guaranteed on every desktop); the copied card uses emoji.
+        daily = (mode == "daily" and day is not None)
+        self.share = quiz.share_text(day, results) if daily else None
+        self.grid_label.setText("".join(
+            '<span style="color:%s">%s</span>'
+            % (C_GREEN_BRIGHT if ok else C_RED, BLOCK_FULL * 2) + "\u00a0"
+            for _, ok in results) if daily else "")
+        self.grid_label.setVisible(daily)
+        self.share_btn.setText("[ C ] COPY RESULT")
+        self.share_btn.setVisible(daily)
 
         agg = {}
         for q, ok in results:
@@ -968,15 +1041,27 @@ class SummaryWidget(QWidget):
             self.missed_list.setVisible(True)
             self.clean_label.setVisible(False)
             for q in missed:
-                self.missed_list.addItem(
-                    QListWidgetItem("[DOM-%d] %s" % (q["domain"], q["question"])))
+                text = "[DOM-%d] %s" % (q["domain"], q["question"])
+                if exam:  # no per-question feedback was shown, so show it here
+                    text += "\n    -> %s" % q["answer_text"]
+                self.missed_list.addItem(QListWidgetItem(text))
         else:
             self.missed_header.setVisible(False)
             self.missed_list.setVisible(False)
             self.clean_label.setVisible(True)
 
+    def copy_share(self):
+        if self.share is None:
+            return
+        QGuiApplication.clipboard().setText(self.share)
+        self.share_btn.setText("[ C ] COPIED")
+
     def keyPressEvent(self, event):
         key = event.key()
+        if key == Qt.Key_C and self.share is not None:
+            self.copy_share()
+            event.accept()
+            return
         if key == Qt.Key_R:
             self.controller.play_again()
             event.accept()
@@ -1448,6 +1533,11 @@ class DrillSummaryWidget(QWidget):
 
 # ---------------------------------------------------------------- main window
 
+# Home-screen shortcuts, in HomeWidget's menu order.
+HOME_KEYS = [Qt.Key_1, Qt.Key_2, Qt.Key_3, Qt.Key_4, Qt.Key_5, Qt.Key_6,
+             Qt.Key_7, Qt.Key_8, Qt.Key_9, Qt.Key_0, Qt.Key_Q]
+
+
 class QuizWindow(QMainWindow):
     def __init__(self, bank, stats, stats_path, rng, animate=True):
         super().__init__()
@@ -1466,6 +1556,14 @@ class QuizWindow(QMainWindow):
         self.mode = None
         self.drill_domains = None
         self.drill_length = None
+        self.daily_day = None
+
+        # Practice exam clock. time.monotonic() deadline; the timer only
+        # refreshes the countdown and ends the exam when it passes.
+        self.exam_deadline = None
+        self.exam_timer = QTimer(self)
+        self.exam_timer.setInterval(1000)
+        self.exam_timer.timeout.connect(self._exam_tick)
 
         # Generic drill state — the active module (acronyms or crypto) and its
         # round bookkeeping. Both drills share this one code path.
@@ -1533,6 +1631,11 @@ class QuizWindow(QMainWindow):
 
     def _round_status(self):
         total = len(self.order) if self.order else 0
+        if self.mode == "exam":
+            # Score stays hidden until the end, like the real exam.
+            left = max(0, int(self.exam_deadline - time.monotonic()))
+            return "%s [ ANSWERED:%02d/%d ] [ TIME:%d:%02d ]" % (
+                (self._status(), len(self.results), total) + divmod(left, 60))
         return "%s [ SCORE:%02d/%d ] [ STREAK:%d ]" % (
             self._status(), self.score, total, self.stats["current_streak"])
 
@@ -1561,6 +1664,13 @@ class QuizWindow(QMainWindow):
     # ----- navigation -----
 
     def go_home(self):
+        if self.exam_timer.isActive():
+            reply = QMessageBox.question(
+                self, APP_NAME,
+                "End the practice exam now? Unanswered questions count as wrong.")
+            if reply == QMessageBox.StandardButton.Yes:
+                self.finish_exam()
+            return
         self.home_widget.status.set_status(self._status() + " [ MODE:STANDBY ]")
         self.stack.setCurrentWidget(self.home_widget)
         self.home_widget.setFocus()
@@ -1599,6 +1709,28 @@ class QuizWindow(QMainWindow):
         qs = quiz.select_quick(self.bank, self.rng)
         self.start_round(qs, "quick")
 
+    def start_daily(self):
+        self.daily_day = datetime.date.today()
+        drng = quiz.daily_rng(self.daily_day)
+        self.start_round(quiz.select_daily(self.bank, drng), "daily", rng=drng)
+
+    def start_exam(self):
+        self.exam_deadline = time.monotonic() + quiz.EXAM_SECONDS
+        self.start_round(quiz.select_exam(self.bank, self.rng), "exam")
+        self.exam_timer.start()
+
+    def _exam_tick(self):
+        if time.monotonic() >= self.exam_deadline:
+            self.finish_exam()
+        else:
+            self.question_widget.status.set_status(self._round_status())
+
+    def finish_exam(self):
+        """End the exam; anything not yet answered counts as wrong."""
+        self.exam_timer.stop()
+        self.results += [(q, False) for q in self.order[len(self.results):]]
+        self._show_summary()
+
     def start_drill(self):
         domains = self.drill_widget.selected_domains()
         if not domains:
@@ -1626,6 +1758,10 @@ class QuizWindow(QMainWindow):
     def play_again(self):
         if self.mode == "quick":
             self.start_quick()
+        elif self.mode == "daily":
+            self.start_daily()
+        elif self.mode == "exam":
+            self.start_exam()
         elif self.mode == "drill":
             qs = quiz.select_drill(self.bank, self.rng,
                                    self.drill_domains, self.drill_length)
@@ -1635,12 +1771,17 @@ class QuizWindow(QMainWindow):
         elif self.mode == "review":
             self.start_review()
 
-    def start_round(self, questions, mode, domains=None, length=None):
+    def start_round(self, questions, mode, domains=None, length=None, rng=None):
+        """`rng` overrides the window's rng for this round's order and option
+        shuffles (the Daily 10 must be identical for everyone)."""
+        rng = rng or self.rng
         self.mode = mode
         self.drill_domains = domains
         self.drill_length = length
         self.order = list(questions)
-        self.rng.shuffle(self.order)
+        rng.shuffle(self.order)
+        self.question_widget.rng = rng
+        self.question_widget.exam_mode = (mode == "exam")
         self.results = []
         self.score = 0
         self.round_index = 0
@@ -1669,12 +1810,14 @@ class QuizWindow(QMainWindow):
         if self.round_index < len(self.order):
             self._show_current_question()
             self.question_widget.setFocus()
+        elif self.mode == "exam":
+            self.finish_exam()
         else:
             self._show_summary()
 
     def _show_summary(self):
         self.summary_widget.status.set_status(self._round_status())
-        self.summary_widget.update(self.results)
+        self.summary_widget.update(self.results, self.mode, self.daily_day)
         self.stack.setCurrentWidget(self.summary_widget)
         self.summary_widget.setFocus()
 
@@ -1801,11 +1944,8 @@ class QuizWindow(QMainWindow):
                 cb.setChecked(not cb.isChecked())
                 event.accept()
                 return
-            num_map = {Qt.Key_1: 0, Qt.Key_2: 1, Qt.Key_3: 2, Qt.Key_4: 3,
-                       Qt.Key_5: 4, Qt.Key_6: 5, Qt.Key_7: 6, Qt.Key_8: 7,
-                       Qt.Key_9: 8}
-            if key in num_map:
-                self.home_widget.buttons[num_map[key]].click()
+            if key in HOME_KEYS:
+                self.home_widget.buttons[HOME_KEYS.index(key)].click()
                 event.accept()
                 return
         super().keyPressEvent(event)
@@ -1878,6 +2018,54 @@ def run_selftest(args):
         for d in sorted(tally):
             c, t = tally[d]
             print("  Domain %d (%s): %d/%d" % (d, quiz.DOMAIN_NAMES[d], c, t))
+
+        # Daily 10: same draw as the CLI for the same date, then a share card
+        # that reaches the clipboard.
+        win.start_daily()
+        cli_ids = [q["id"] for q in quiz.select_daily(
+            bank, quiz.daily_rng(win.daily_day))]
+        if sorted(q["id"] for q in win.order) != sorted(cli_ids):
+            print("SELFTEST FAIL: GUI daily draw differs from the CLI's")
+            return 1
+        for idx in range(len(win.order)):
+            qw = win.question_widget
+            qw.option_buttons[qw.display_keys.index(qw.correct_display_key)].click()
+            qw.next_button.click()
+            app.processEvents()
+        sw = win.summary_widget
+        sw.share_btn.click()
+        if not sw.share_btn.isVisible() or sw.share is None or \
+                QGuiApplication.clipboard().text() != sw.share:
+            print("SELFTEST FAIL: daily share card did not reach the clipboard")
+            return 1
+        print("Daily 10 share card:")
+        print(sw.share)
+
+        # Practice exam: answers advance without feedback; ending the clock
+        # early must score every unanswered question as wrong.
+        win.start_exam()
+        if len(win.order) != sum(quiz.EXAM_COUNTS.values()):
+            print("SELFTEST FAIL: exam drew %d questions" % len(win.order))
+            return 1
+        for idx in range(5):
+            qw = win.question_widget
+            qw.option_buttons[qw.display_keys.index(qw.correct_display_key)].click()
+            app.processEvents()
+            if qw.verdict_label.isVisible() or win.round_index != idx + 1:
+                print("SELFTEST FAIL: exam answer showed feedback or did not advance")
+                return 1
+        win.exam_deadline = time.monotonic() - 1
+        win._exam_tick()
+        app.processEvents()
+        exam_score = sum(1 for _, ok in win.results if ok)
+        if (win.exam_timer.isActive() or len(win.results) != len(win.order)
+                or exam_score != 5
+                or win.stack.currentWidget() is not win.summary_widget):
+            print("SELFTEST FAIL: exam timeout did not score the exam")
+            return 1
+        print("Practice exam: %d/%d after timeout, est. scaled %d"
+              % (exam_score, len(win.results),
+                 quiz.scaled_score(exam_score, len(win.results))))
 
         # Acronym + crypto drills: scripted mixed round (10 items) through the
         # real answer handler (free-text input -> grade -> stats).
@@ -2023,7 +2211,7 @@ def run_screenshot(args):
         win.show()
         app.processEvents()
 
-        # 01 — home screen with all nine buttons.
+        # 01 — home screen with every menu button.
         win.go_home()
         ok = shot("01-home.png") and ok
 
@@ -2075,6 +2263,25 @@ def run_screenshot(args):
         # 09 — stats screen with non-zero data accumulated by the round above.
         win.show_stats()
         ok = shot("09-stats.png") and ok
+
+        # 16 — Daily 10 summary with the share grid (two misses).
+        win.start_daily()
+        for i in range(len(win.order)):
+            qw = win.question_widget
+            key = qw.correct_display_key if i not in (2, 6) else next(
+                k for k in qw.display_keys if k != qw.correct_display_key)
+            qw.option_buttons[qw.display_keys.index(key)].click()
+            qw.next_button.click()
+        ok = shot("16-daily-summary.png") and ok
+
+        # 17/18 — practice exam question, then results after ending early.
+        win.start_exam()
+        for _ in range(3):
+            qw = win.question_widget
+            qw.option_buttons[qw.display_keys.index(qw.correct_display_key)].click()
+        ok = shot("17-exam-question.png") and ok
+        win.finish_exam()
+        ok = shot("18-exam-summary.png") and ok
 
         # Acronym drill (deterministic mixed round, 10 items).
         pool = acronyms.build_items(win.acronyms, acronyms.DIR_MIXED)
